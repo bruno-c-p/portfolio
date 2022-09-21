@@ -1,0 +1,28 @@
+.cabecalho {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cabecalho__lista {
+  display: flex;
+  align-items: center;
+  gap: 1.875rem;
+}
+
+.cabecalho__lista li:last-child {
+  border: 2px solid var(--a2);
+  border-radius: 5px;
+  padding: 0.625rem 1.25rem;
+}
+
+.cabecalho__lista li:last-child a {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  color: var(--a2);
+}
+
+.cabecalho__lista li a {
+  color: var(--c2);
+}
