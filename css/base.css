@@ -1,6 +1,8 @@
 @import "./reset.css";
 @import "./cabecalho.css";
 @import "./introducao.css";
+@import "./sobre-mim.css";
+@import "./tecnologias.css";
 
 :root {
   --c1: #f5f7fa;
@@ -30,6 +32,19 @@ a {
   margin-right: auto;
   max-width: 90rem;
   padding: 0 4%;
+}
+
+.subtitulo {
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--c2);
+}
+
+.emfase-texto {
+  color: var(--c2);
+  font-weight: 700;
 }
 
 .link-externo {
