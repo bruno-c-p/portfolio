@@ -1,0 +1,35 @@
+.introducao {
+  margin-top: 5rem;
+  display: flex;
+  gap: 8.75rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.introducao__conteudo .introducao__conteudo--span {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--a4);
+  line-height: 1.5;
+}
+
+.introducao__conteudo .introducao__conteudo-titulo {
+  margin-top: 1rem;
+  color: var(--c1);
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.introducao__conteudo .introducao__conteudo-titulo--span {
+  color: var(--c4);
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.introducao__conteudo .introducao__conteudo-texto {
+  margin-top: 2rem;
+  color: var(--c6);
+  max-width: 60ch;
+  line-height: 1.4;
+}

@@ -10,7 +10,7 @@
   gap: 1.875rem;
 }
 
-.cabecalho__lista .cabecalho__link:last-child {
+.cabecalho__lista .cabecalho__lista-link:last-child {
   cursor: pointer;
   border: 2px solid var(--a2);
   border-radius: 5px;
@@ -18,20 +18,20 @@
   transition: 0.2s;
 }
 
-.cabecalho__lista .cabecalho__link:last-child:hover {
+.cabecalho__lista .cabecalho__lista-link:last-child:hover {
   background-color: var(--a10);
 }
 
-.cabecalho__lista .cabecalho__link a {
+.cabecalho__lista .cabecalho__lista-link a {
   transition: 0.3s;
   color: var(--c2);
 }
 
-.cabecalho__lista .cabecalho__link:hover a {
+.cabecalho__lista .cabecalho__lista-link:hover a {
   color: var(--a2);
 }
 
-.cabecalho__lista .cabecalho__link:last-child a {
+.cabecalho__lista .cabecalho__lista-link:last-child a {
   display: flex;
   align-items: center;
   gap: 0.625rem;

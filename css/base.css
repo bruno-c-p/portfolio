@@ -1,5 +1,6 @@
 @import "./reset.css";
 @import "./cabecalho.css";
+@import "./introducao.css";
 
 :root {
   --c1: #f5f7fa;
@@ -8,6 +9,7 @@
   --c6: #989ea6;
   --c11: #242833;
   --c12: #0b0c12;
+  --a1: #a4daf9;
   --a2: #8ec0ee;
   --a4: #6c96d4;
   --a10: #051936;
@@ -27,4 +29,10 @@ a {
   margin-left: auto;
   margin-right: auto;
   max-width: 90rem;
+  padding: 0 4%;
+}
+
+.link-externo {
+  color: var(--a1);
+  text-decoration: underline;
 }
