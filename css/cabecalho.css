@@ -10,19 +10,30 @@
   gap: 1.875rem;
 }
 
-.cabecalho__lista li:last-child {
+.cabecalho__lista .cabecalho__link:last-child {
+  cursor: pointer;
   border: 2px solid var(--a2);
   border-radius: 5px;
   padding: 0.625rem 1.25rem;
+  transition: 0.2s;
 }
 
-.cabecalho__lista li:last-child a {
+.cabecalho__lista .cabecalho__link:last-child:hover {
+  background-color: var(--a10);
+}
+
+.cabecalho__lista .cabecalho__link a {
+  transition: 0.3s;
+  color: var(--c2);
+}
+
+.cabecalho__lista .cabecalho__link:hover a {
+  color: var(--a2);
+}
+
+.cabecalho__lista .cabecalho__link:last-child a {
   display: flex;
   align-items: center;
   gap: 0.625rem;
   color: var(--a2);
-}
-
-.cabecalho__lista li a {
-  color: var(--c2);
 }
