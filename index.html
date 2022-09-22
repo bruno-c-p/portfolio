@@ -16,8 +16,9 @@
 <body>
   <header class="cabecalho container">
     <a href="./index.html"><img src="./assets/svg/logo.svg" alt="Logo"></a>
-    <nav class="cabecalho__navegacao">
-      <ul class="cabecalho__lista">
+    <nav id="navegacao" class="cabecalho__navegacao">
+      <button id="botao-menu-mobile" aria-label="Abrir menu" aria-haspopup="true" aria-controls="cabecalho__lista" aria-expanded="false"><span id="menu-hamburguer"></span></button>
+      <ul role="menu" class="cabecalho__lista">
         <li class="cabecalho__lista-link"><a href="#sobre">Sobre</a></li>
         <li class="cabecalho__lista-link"><a href="#experiencia">Experiência</a></li>
         <li class="cabecalho__lista-link"><a href="#formacao">Formação</a></li>
@@ -99,6 +100,7 @@
 
   <footer></footer>
   <script src="./js/aba.js"></script>
+  <script src="./js/menu.js"></script>
 </body>
 
 </html>
