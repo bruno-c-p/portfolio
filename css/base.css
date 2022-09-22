@@ -50,6 +50,47 @@ a {
   color: var(--c2);
 }
 
+.subtitulo-linhas-laterais {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.subtitulo-linhas-laterais::before,
+.subtitulo-linhas-laterais::after {
+  content: "";
+  border-top: 2px solid;
+  margin: 0 20px 0 0;
+  flex: 1 0 20px;
+  color: var(--c11);
+}
+
+.subtitulo-linhas-laterais::after {
+  margin: 0 0 0 20px;
+}
+
+.subtitulo-linha-direita {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.subtitulo-linha-direita::after {
+  content: "";
+  border-top: 2px solid;
+  margin: 0 20px 0 0;
+  flex: 1 0 20px;
+  color: var(--c11);
+}
+
+.subtitulo-linha-direita::after {
+  margin: 0 0 0 20px;
+}
+
 .emfase-texto {
   color: var(--c2);
   font-weight: 700;
