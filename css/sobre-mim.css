@@ -1,6 +1,7 @@
 .sobre-mim-tecnologias {
   margin-top: 7.5rem;
   display: flex;
+  gap: 8.75rem;
   justify-content: space-around;
 }
 
