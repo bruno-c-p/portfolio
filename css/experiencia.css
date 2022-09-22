@@ -66,6 +66,7 @@
 .experiencia__aba-conteudos--texto {
   margin-top: 1rem;
   color: var(--c6);
+  line-height: 1.4;
 }
 
 .experiencia__aba-conteudos--texto span {
@@ -80,5 +81,36 @@
 
   .experiencia__abas {
     border-right: none;
+  }
+
+  .experiencia__aba-conteudos {
+    padding-top: 1.5rem;
+  }
+}
+
+.experiencia__aba-conteudos--texto span {
+  color: var(--a1);
+  margin-right: 0.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .experiencia {
+    margin-top: 3rem;
+  }
+
+  .experiencia__aba-conteudos--texto,
+  .experiencia__aba-conteudos--texto span {
+    font-size: 0.875rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .experiencia__aba-conteudos--titulo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .experiencia__aba-conteudos--titulo img {
+    max-height: 1.5rem;
   }
 }
