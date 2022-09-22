@@ -1,7 +1,12 @@
 .cabecalho {
   margin-top: 2.5rem;
   display: flex;
+  align-items: center;
   justify-content: space-between;
+}
+
+.cabecalho__logo {
+  height: clamp(1.5rem, 1em + 3vw, 2rem);
 }
 
 #botao-menu-mobile {
