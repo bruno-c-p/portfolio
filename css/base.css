@@ -4,6 +4,7 @@
 @import "./sobre-mim.css";
 @import "./tecnologias.css";
 @import "./experiencia.css";
+@import "./rodape.css";
 
 :root {
   --c1: #f5f7fa;

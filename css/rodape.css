@@ -1,0 +1,25 @@
+.rodape {
+  margin-top: 5rem;
+}
+
+.rodape__conteudo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rodape__linha {
+  background-color: var(--c11);
+  width: 100%;
+  height: 2px;
+}
+
+.rodape__texto {
+  margin: 2.5rem 0;
+  color: var(--c6);
+}
+
+@media screen and (max-width: 480px) {
+  .rodape__texto {
+    font-size: 0.875rem;
+  }
+}
