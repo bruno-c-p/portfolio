@@ -1,9 +1,14 @@
 .introducao {
   margin-top: 5rem;
   display: flex;
-  gap: 8.75rem;
+  gap: 8rem;
   justify-content: center;
   align-items: center;
+}
+
+.introducao__img {
+  max-width: 22rem;
+  width: 100%;
 }
 
 .introducao__conteudo .introducao__conteudo--span {
@@ -14,16 +19,17 @@
 }
 
 .introducao__conteudo .introducao__conteudo-titulo {
+  font-size: clamp(2rem, 1em + 3vw, 4rem);
   margin-top: 1rem;
   color: var(--c1);
-  font-size: 4rem;
   font-weight: 700;
   line-height: 1.1;
 }
 
 .introducao__conteudo .introducao__conteudo-titulo--span {
+  font-size: clamp(2rem, 1em + 3vw, 4rem);
+  display: inline-block;
   color: var(--c4);
-  font-size: 4rem;
   font-weight: 700;
 }
 
@@ -32,4 +38,25 @@
   color: var(--c6);
   max-width: 60ch;
   line-height: 1.4;
+}
+
+@media screen and (max-width: 1024px) {
+  .introducao {
+    gap: clamp(4rem, 1em + 3vw, 8.75rem);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .introducao {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .introducao {
+    margin-top: 2rem;
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
