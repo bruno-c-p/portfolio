@@ -2,11 +2,6 @@
   margin-top: 5rem;
 }
 
-.rodape__conteudo {
-  display: flex;
-  justify-content: space-between;
-}
-
 .rodape__linha {
   background-color: var(--c11);
   width: 100%;
