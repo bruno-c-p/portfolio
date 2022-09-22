@@ -14,62 +14,91 @@
 </head>
 
 <body>
+  <header class="cabecalho container">
+    <a href="./index.html"><img src="./assets/svg/logo.svg" alt="Logo"></a>
+    <nav class="cabecalho__navegacao">
+      <ul class="cabecalho__lista">
+        <li class="cabecalho__lista-link"><a href="#sobre">Sobre</a></li>
+        <li class="cabecalho__lista-link"><a href="#experiencia">Experiência</a></li>
+        <li class="cabecalho__lista-link"><a href="#formacao">Formação</a></li>
+        <li class="cabecalho__lista-link"><a href="#projetos">Projetos</a></li>
+        <li class="cabecalho__lista-link"><a href="contato">Contato</a></li>
+        <li class="cabecalho__lista-link">
+          <a href="./assets/curriculo.pdf" download>
+            Currículo
+            <img src="./assets/svg/botao-download.svg" alt="Botão de download">
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-</body>
-<header class="cabecalho container">
-  <a href="./index.html"><img src="./assets/svg/logo.svg" alt="Logo"></a>
-  <nav class="cabecalho__navegacao">
-    <ul class="cabecalho__lista">
-      <li class="cabecalho__lista-link"><a href="#sobre">Sobre</a></li>
-      <li class="cabecalho__lista-link"><a href="#experiencia">Experiência</a></li>
-      <li class="cabecalho__lista-link"><a href="#formacao">Formação</a></li>
-      <li class="cabecalho__lista-link"><a href="#projetos">Projetos</a></li>
-      <li class="cabecalho__lista-link"><a href="contato">Contato</a></li>
-      <li class="cabecalho__lista-link">
-        <a href="./assets/curriculo.pdf" download>
-          Currículo
-          <img src="./assets/svg/botao-download.svg" alt="Botão de download">
-        </a>
-      </li>
-    </ul>
-  </nav>
-</header>
-
-<main>
-  <section class="introducao container">
-    <img src="./assets/img/foto-banner.png" alt="Foto de Perfil" class="introducao__img">
-    <div class="introducao__conteudo">
-      <span class="introducao__conteudo--span">Olá, meu nome é</span>
-      <h1 class="introducao__conteudo-titulo">Bruno Cardozo P. <br><span class="introducao__conteudo-titulo--span">Software Developer.</span></h1>
-      <p class="introducao__conteudo-texto">Desenvolvedor focado em soluções para a internet. Atualmente, estou participando de uma formação em desenvolvimento web na <a target="_blank" class="link-externo" href="https://wises.com.br/">Wise</a>.</p>
-    </div>
-  </section>
-
-  <div class="sobre-mim-tecnologias container">
-    <section class="sobre-mim">
-      <h2 class="subtitulo">Sobre mim</h2>
-      <p class="sobre-mim__texto">Meu interesse em programação começou em 2020 quando tive uma experiência com criação de design de interfaces na empresa em que eu trabalhava, porém, tive vontade de fazer o design ser funcional. Nessa época aprendi muito sobre <strong class="emfase-texto">HTML</strong>, <strong class="emfase-texto">CSS</strong> e <strong class="emfase-texto">JavaScript</strong>!
-      </p>
-      <p class="sobre-mim__texto">Desde então, tive a oportunidade de trabalhar em uma <a class="link-externo" href="https://www.projedata.com.br/">empresa de ERP</a> atuando na parte de migração do sistema desktop para a web utilizando <strong class="emfase-texto">Java</strong> e <strong class="emfase-texto">SQL</strong>. Meu principal foco atualmente é participando de uma formação na Wise, estudando uma stack Java.</p>
-    </section>
-    <section class="tecnologias">
-      <h2 class="subtitulo">Tecnologias</h2>
-      <div class="tecnologias__icones">
-        <img src="./assets/svg/icone-html.svg" alt="Logo HTML5">
-        <img src="./assets/svg/icone-css.svg" alt="Logo CSS">
-        <img src="./assets/svg/icone-js.svg" alt="Logo JavaScript">
-        <img src="./assets/svg/icone-ts.svg" alt="Logo TypeScript">
-        <img src="./assets/svg/icone-angular.svg" alt="Logo Angular">
-        <img src="./assets/svg/icone-java.svg" alt="Logo Java">
-        <img src="./assets/svg/icone-spring.svg" alt="Logo Spring Framework">
-        <img src="./assets/svg/icone-git.svg" alt="Logo Git">
-        <img src="./assets/svg/icone-my-sql.svg" alt="Logo MySQL">
-        <img src="./assets/svg/icone-postgre-sql.svg" alt="Logo PostgreSQL">
+  <main>
+    <section class="introducao container">
+      <img src="./assets/img/foto-banner.png" alt="Foto de Perfil" class="introducao__img">
+      <div class="introducao__conteudo">
+        <span class="introducao__conteudo--span">Olá, meu nome é</span>
+        <h1 class="introducao__conteudo-titulo">Bruno Cardozo P. <br><span class="introducao__conteudo-titulo--span">Software Developer.</span></h1>
+        <p class="introducao__conteudo-texto">Desenvolvedor focado em soluções para a internet. Atualmente, estou participando de uma formação em desenvolvimento web na <a target="_blank" class="link-externo" href="https://wises.com.br/">Wise</a>.</p>
       </div>
     </section>
-  </div>
-</main>
 
-<footer></footer>
+    <div class="sobre-mim-tecnologias container">
+      <section class="sobre-mim">
+        <h2 class="subtitulo">Sobre mim</h2>
+        <p class="sobre-mim__texto">Meu interesse em programação começou em 2020 quando tive uma experiência com criação de design de interfaces na empresa em que eu trabalhava, porém, tive vontade de fazer o design ser funcional. Nessa época aprendi muito sobre <strong class="emfase-texto">HTML</strong>, <strong class="emfase-texto">CSS</strong> e <strong class="emfase-texto">JavaScript</strong>!
+        </p>
+        <p class="sobre-mim__texto">Desde então, tive a oportunidade de trabalhar em uma <a class="link-externo" href="https://www.projedata.com.br/">empresa de ERP</a> atuando na parte de migração do sistema desktop para a web utilizando <strong class="emfase-texto">Java</strong> e <strong class="emfase-texto">SQL</strong>. Meu principal foco atualmente é participando de uma formação na Wise, estudando uma stack Java.</p>
+      </section>
+
+      <section class="tecnologias">
+        <h2 class="subtitulo">Tecnologias</h2>
+        <div class="tecnologias__icones">
+          <img src="./assets/svg/icone-html.svg" alt="Logo HTML5">
+          <img src="./assets/svg/icone-css.svg" alt="Logo CSS">
+          <img src="./assets/svg/icone-js.svg" alt="Logo JavaScript">
+          <img src="./assets/svg/icone-ts.svg" alt="Logo TypeScript">
+          <img src="./assets/svg/icone-angular.svg" alt="Logo Angular">
+          <img src="./assets/svg/icone-java.svg" alt="Logo Java">
+          <img src="./assets/svg/icone-spring.svg" alt="Logo Spring Framework">
+          <img src="./assets/svg/icone-git.svg" alt="Logo Git">
+          <img src="./assets/svg/icone-my-sql.svg" alt="Logo MySQL">
+          <img src="./assets/svg/icone-postgre-sql.svg" alt="Logo PostgreSQL">
+        </div>
+      </section>
+    </div>
+
+    <section class="experiencia container">
+      <h2 class="subtitulo">Onde já trabalhei</h2>
+      <div class="experiencia__aba">
+        <ul class="experiencia__abas">
+          <li data-target="#projedata" class="ativo">Projedata</li>
+          <li data-target="#brm">Brm</li>
+        </ul>
+
+        <ul class="experiencia__aba-conteudos">
+          <li id="projedata" class="ativo">
+            <h3 class="experiencia__aba-conteudos--titulo">Estagiário <img src="./assets/svg/projedata-nome.svg" alt="@Projedata"></h3>
+            <span class="experiencia__aba-conteudos--data">Abril 2021 - Outubro 2021</span>
+            <p class="experiencia__aba-conteudos--texto"><span>/&gt;</span>Nivelamento na linguagem Java e em banco de dados Oracle SQL.</p>
+            <p class="experiencia__aba-conteudos--texto"><span>/&gt;</span>Treinamento sobre Form/Report Builder & SQL developer.</p>
+            <p class="experiencia__aba-conteudos--texto"><span>/&gt;</span>Trabalhando na parte de migração do sistema utilizando o framework Arcturus.</p>
+          </li>
+
+          <li id="brm">
+            <h3 class="experiencia__aba-conteudos--titulo">Designer / Auxiliar Financeiro <img src="./assets/svg/empresa-brm.svg" alt="@Brm"></h3>
+            <span class="experiencia__aba-conteudos--data">Abril 2018 - Fevereiro 2021</span>
+            <p class="experiencia__aba-conteudos--texto"><span>/&gt;</span>Responsável pelo design gráfico da empresa.</p>
+            <p class="experiencia__aba-conteudos--texto"><span>/&gt;</span>Trabalhando na constante melhoria dos processos de impressão.</p>
+            <p class="experiencia__aba-conteudos--texto"><span>/&gt;</span>Auxiliando na parte financeira: emissão de notas, pagamentos, entre outros.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer></footer>
+  <script src="./js/aba.js"></script>
+</body>
 
 </html>
