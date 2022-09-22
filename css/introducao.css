@@ -42,7 +42,7 @@
 
 @media screen and (max-width: 1024px) {
   .introducao {
-    gap: clamp(4rem, 1em + 3vw, 8.75rem);
+    gap: clamp(4rem, 1em + 3vw, 8rem);
   }
 }
 

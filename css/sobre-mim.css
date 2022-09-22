@@ -1,16 +1,28 @@
 .sobre-mim-tecnologias {
   margin-top: 7.5rem;
   display: flex;
-  gap: 8.75rem;
+  gap: 8rem;
   justify-content: space-around;
 }
 
-.sobre-mim {
-  max-width: 60ch;
-}
-
 .sobre-mim .sobre-mim__texto {
+  max-width: 60ch;
   color: var(--c6);
   line-height: 1.4;
   margin-bottom: 1.25rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .sobre-mim-tecnologias {
+    gap: clamp(5rem, 1em + 3vw, 8rem);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sobre-mim-tecnologias {
+    margin-top: 3rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
 }

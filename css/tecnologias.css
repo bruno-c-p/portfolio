@@ -1,5 +1,12 @@
 .tecnologias__icones {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 615px;
   gap: 4rem;
+}
+
+.tecnologias__icones img {
+  height: clamp(3rem, 1em + 3vw, 4rem);
 }
