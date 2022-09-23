@@ -13,12 +13,13 @@
 
 .contato__texto {
   color: var(--c6);
-  max-width: 36ch;
+  width: 100%;
   line-height: 1.5;
   font-size: 1.5rem;
 }
 
 .contato__lista {
+  width: 100%;
   display: flex;
   gap: 1.5rem;
   flex-direction: column;
@@ -37,6 +38,12 @@
   color: var(--c4);
   text-transform: uppercase;
   text-decoration: underline;
+}
+
+@media screen and (max-width: 1024px) {
+  .contato__grid {
+    gap: clamp(5rem, 1em + 3vw, 8rem);
+  }
 }
 
 @media screen and (max-width: 768px) {

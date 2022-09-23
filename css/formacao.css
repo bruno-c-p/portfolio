@@ -5,8 +5,11 @@
   justify-content: space-around;
 }
 
+.formacao {
+  width: 100%;
+}
+
 .formacao__texto {
-  max-width: 60ch;
   color: var(--c6);
   line-height: 1.4;
   margin-bottom: 1.25rem;
