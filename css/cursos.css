@@ -1,0 +1,36 @@
+.cursos {
+  width: 100%;
+}
+
+.cursos__lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cursos__lista li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.cursos__lista-conteudo {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.cursos__lista-texto {
+  color: var(--c4);
+  line-height: 1.4;
+}
+
+.cursos__lista-texto span {
+  color: var(--c6);
+}
+
+.cursos__lista-texto--horas {
+  font-weight: 700;
+  color: var(--c6);
+}
