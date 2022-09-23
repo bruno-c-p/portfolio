@@ -1,10 +1,7 @@
 const botaoMobile = document.querySelector("#botao-menu-mobile")
+const opcoesMenu = document.querySelectorAll(".cabecalho__lista-link")
 
 function toggleMenu(event) {
-  if (event.type == "touchstart") {
-    event.preventDefault()
-  }
-
   const navegacao = document.querySelector("#navegacao")
   navegacao.classList.toggle("ativo")
 
@@ -19,4 +16,7 @@ function toggleMenu(event) {
 }
 
 botaoMobile.addEventListener("click", toggleMenu)
-botaoMobile.addEventListener("touchstart", toggleMenu)
+
+opcoesMenu.forEach((opcao) => {
+  opcao.addEventListener("click", toggleMenu)
+})
