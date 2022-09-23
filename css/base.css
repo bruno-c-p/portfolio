@@ -8,6 +8,7 @@
 @import "./cursos.css";
 @import "./contato.css";
 @import "./rodape.css";
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap");
 
 :root {
   --c1: #f5f7fa;
