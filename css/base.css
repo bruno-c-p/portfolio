@@ -6,6 +6,7 @@
 @import "./experiencia.css";
 @import "./formacao.css";
 @import "./cursos.css";
+@import "./projetos.css";
 @import "./contato.css";
 @import "./rodape.css";
 
@@ -97,9 +98,17 @@ a {
   margin: 0 0 0 20px;
 }
 
+.emfase-texto,
+.emfase-texto-azul {
+  font-weight: 700;
+}
+
 .emfase-texto {
   color: var(--c2);
-  font-weight: 700;
+}
+
+.emfase-texto-azul {
+  color: var(--a4);
 }
 
 .link-externo {
