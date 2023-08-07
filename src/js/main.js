@@ -1,3 +1,16 @@
+const menuButton = document.querySelector("#menuButton");
+const menuMobile = document.querySelector("#menuMobile");
+
+menuButton.addEventListener("click", () => {
+  handleIcon();
+  menuMobile.classList.toggle("hidden");
+});
+
+function handleIcon() {
+  const menuIcon = document.querySelector("#menuIcon");
+  menuIcon.name = menuIcon.name === "menu" ? "close" : "menu";
+}
+
 const abas = document.querySelectorAll(".experiencia__abas li")
 const conteudos = document.querySelectorAll(".experiencia__aba-conteudos li")
 

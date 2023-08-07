@@ -1,84 +1,125 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html class="scroll-smooth" lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Portfólio do software developer Bruno Cardozo Pereira">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="./assets/ico/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="./icons/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnhttps://nerdcave.com/tailwind-cheat-sheetect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/base.css">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="./src/index.css">
   <title>Bruno Cardozo Pereira | Dev</title>
-  
   <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
     })(window, document, "clarity", "script", "ey8qskwf8j");
   </script>
 </head>
 
-<body>
-  <header class="cabecalho container">
-    <a href="./index.html"><img class="cabecalho__logo" src="./assets/svg/logo.svg" alt="Logo"></a>
-    <nav id="navegacao" class="cabecalho__navegacao">
-      <button id="botao-menu-mobile" aria-label="Abrir menu" aria-haspopup="true" aria-controls="cabecalho__lista" aria-expanded="false"><span id="menu-hamburguer"></span></button>
-      <ul role="menu" class="cabecalho__lista">
-        <li class="cabecalho__lista-link"><a href="#sobre">Sobre</a></li>
-        <li class="cabecalho__lista-link"><a href="#experiencia">Experiência</a></li>
-        <li class="cabecalho__lista-link"><a href="#formacao">Formação</a></li>
-        <li class="cabecalho__lista-link"><a href="#projetos">Projetos</a></li>
-        <li class="cabecalho__lista-link"><a href="#contato">Contato</a></li>
-        <li class="cabecalho__lista-link">
-          <a href="./assets/docs/curriculo.pdf" download>
+<body class="bg-gray-950 text-white">
+  <nav class="bg-gray-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <a href="#" class="flex-shrink-0">
+            <img class="min-w-fit" src="./img/logo.svg">
+          </a>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-4 text-white">
+              <a href="#" class="text-sm font-medium text-white hover:text-gray-300">Home</a>
+              <a href="#" class="text-sm font-medium text-white hover:text-gray-300">About</a>
+              <a href="#" class="text-sm font-medium text-white hover:text-gray-300">Projects</a>
+            </div>
+          </div>
+        </div>
+        <div class="flex lg:hidden">
+          <button id="menuButton" type="button" aria-label="Menu" aria-expanded="false" class="inline-flex items-center justify-center p-2 rounded-md">
+            <ion-icon id="menuIcon" class="text-3xl cursor-pointer mx-2 text-blue-300 block" name="menu"></ion-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="menuMobile" class="hidden lg:hidden">
+      <div class="px-2 pt-2 pd-3 sm:px-3">
+        <a href="" class="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+        <a href="" class="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium">Sobre</a>
+        <a href="" class="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium">Contato</a>
+      </div>
+    </div>
+  </nav>
+  <header class="mx-auto max-w-7xl pt-10 px-4pc flex justify-between items-center">
+    <a href="/">
+      <img class="min-w-fit" src="./img/logo.svg">
+    </a>
+    <nav class="flex bg-slate-950">
+      <span class="text-3xl cursor-pointer mx-2 text-blue-300 lg:hidden block">
+        <ion-icon name="menu" onclick="handleMenu(this)"></ion-icon>
+      </span>
+      <ul role="menu" id="" class="nav-menu hidden lg:flex gap-6">
+        <li class="nav-link"><a class="p-2 block hover:text-blue-300 duration-300" href="#sobre">Sobre</a></li>
+        <li class="nav-link"><a class="p-2 block hover:text-blue-300 duration-300" href="#experiencia">Experiência</a></li>
+        <li class="nav-link"><a class="p-2 block hover:text-blue-300 duration-300" href="#formacao">Formação</a></li>
+        <li class="nav-link"><a class="p-2 block hover:text-blue-300 duration-300" href="#projetos">Projetos</a></li>
+        <li class="nav-link"><a class="p-2 block hover:text-blue-300 duration-300" href="#contato">Contato</a></li>
+        <li class="nav-link">
+          <a class="py-2 px-4 duration-300 flex gap-2 border-2 border-blue-200 rounded text-blue-200 items-center hover:bg-blue-950 hover:scale-105" href="./docs/curriculo.pdf" target="_blank">
             Currículo
-            <img src="./assets/svg/botao-download.svg" alt="Botão de download">
+            <svg class="stroke-current text-blue-200 pb-[2px]" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.642822 14V15.2857C0.642822 15.9677 0.91374 16.6218 1.39598 17.104C1.87821 17.5862 2.53227 17.8572 3.21425 17.8572H14.7857C15.4677 17.8572 16.1217 17.5862 16.604 17.104C17.0862 16.6218 17.3571 15.9677 17.3571 15.2857V14M5.14282 8.21431L8.99997 12.7143M8.99997 12.7143L12.8571 8.21431M8.99997 12.7143L8.99996 1.14288" stroke-width="1.71429" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
           </a>
         </li>
       </ul>
     </nav>
   </header>
-
-  <main>
-    <section class="introducao container">
-      <img class="introducao__img" src="./assets/img/foto-banner.webp" alt="Foto de Perfil">
-
-      <div class="introducao__conteudo">
-        <span class="introducao__conteudo--span">Olá, meu nome é</span>
-        <h1 class="introducao__conteudo-titulo">Bruno Cardozo.</h1>
-        <span class="introducao__conteudo-titulo--span">Software Developer.</span>
-        <p class="introducao__conteudo-texto">Desenvolvedor focado em soluções para a internet. Atualmente, estou participando de uma formação em desenvolvimento web na <a target="_blank" class="link-externo" href="https://wises.com.br/">Wise</a>.</p>
+  <main class="mx-auto max-w-7xl mt-20 px-4pc">
+    <section class="flex gap-36 items-center">
+      <img class="" src="./img/foto-banner.webp" alt="Foto de Perfil">
+      <div class="">
+        <span class="block uppercase mb-4 text-gray-500 font-bold">Olá, meu nome é</span>
+        <h1 class="font-bold text-6xl">Bruno Cardozo.</h1>
+        <span class="block font-bold text-6xl text-gray-300 mb-8">Software Enginner.</span>
+        <p class="text-gray-400">Desenvolvedor Full-Stack especializado em soluções para a web. Atualmente,
+          trabalho como desenvolvedor backend Java na <a class="text-blue-200 underline"
+            href="https://www.wises.com.br">Wise</a>.
+        </p>
       </div>
     </section>
-
-    <div id="sobre" class="sobre-mim-tecnologias container">
-      <section class="sobre-mim">
-        <h2 class="subtitulo subtitulo-linha-direita">Sobre mim</h2>
-        <p class="sobre-mim__texto">Meu interesse em programação começou em 2020 quando tive uma experiência com criação de design de interfaces onde eu trabalhava e tive vontade de fazer o design ser funcional. Acabei aprendendo sobre <strong class="emfase-texto">HTML</strong>, <strong class="emfase-texto">CSS</strong> e <strong class="emfase-texto">JavaScript</strong>!
+    <div id="sobre" class="flex gap-36 mt-20">
+      <section class="max-w-lg">
+        <h2 class="text-3xl font-bold mb-8">Sobre mim</h2>
+        <p class="text-gray-400">Meu interesse em programação começou em 2020 quando tive uma experiência com criação
+          de design de interfaces onde eu trabalhava e tive vontade de fazer o design ser funcional. Acabei aprendendo
+          sobre <strong class="emfase-texto">HTML</strong>, <strong class="emfase-texto">CSS</strong> e <strong
+            class="emfase-texto">JavaScript</strong>!
         </p>
-        <p class="sobre-mim__texto">Já trabalhei em uma <a class="link-externo" href="https://www.projedata.com.br/">empresa de ERP</a> atuando na parte de migração do sistema desktop para a web utilizando <strong class="emfase-texto">Java</strong> e <strong class="emfase-texto">SQL</strong>. Meu principal foco atualmente é participando de uma formação na Wise, estudando uma stack Java.</p>
+        <p class="text-gray-400 mt-4">Já trabalhei em uma <a class="link-externo"
+            href="https://www.projedata.com.br/">empresa de ERP</a> atuando na parte de migração do sistema desktop para
+          a web utilizando <strong class="emfase-texto">Java</strong> e <strong class="emfase-texto">SQL</strong>. Meu
+          principal foco atualmente é participando de uma formação na Wise, estudando uma stack Java.</p>
       </section>
-
       <section class="tecnologias">
         <h2 class="subtitulo subtitulo-linha-direita">Tecnologias</h2>
         <ul class="tecnologias__icones">
-          <li><img src="./assets/svg/icone-html.svg" alt="Logo HTML5"></li>
-          <li><img src="./assets/svg/icone-css.svg" alt="Logo CSS"></li>
-          <li><img src="./assets/svg/icone-js.svg" alt="Logo JavaScript"></li>
-          <li><img src="./assets/svg/icone-ts.svg" alt="Logo TypeScript"></li>
-          <li><img src="./assets/svg/icone-angular.svg" alt="Logo Angular"></li>
-          <li><img src="./assets/svg/icone-java.svg" alt="Logo Java"></li>
-          <li><img src="./assets/svg/icone-spring.svg" alt="Logo Spring Framework"></li>
-          <li><img src="./assets/svg/icone-git.svg" alt="Logo Git"></li>
-          <li><img src="./assets/svg/icone-postgre-sql.svg" alt="Logo PostgreSQL"></li>
+          <li><img src="./icons/icone-html.svg" alt="Logo HTML5"></li>
+          <li><img src="./icons/icone-css.svg" alt="Logo CSS"></li>
+          <li><img src="./icons/icone-js.svg" alt="Logo JavaScript"></li>
+          <li><img src="./icons/icone-ts.svg" alt="Logo TypeScript"></li>
+          <li><img src="./icons/icone-angular.svg" alt="Logo Angular"></li>
+          <li><img src="./icons/icone-java.svg" alt="Logo Java"></li>
+          <li><img src="./icons/icone-spring.svg" alt="Logo Spring Framework"></li>
+          <li><img src="./icons/icone-git.svg" alt="Logo Git"></li>
+          <li><img src="./icons/icone-postgre-sql.svg" alt="Logo PostgreSQL"></li>
         </ul>
       </section>
     </div>
-
     <section id="experiencia" class="experiencia container">
       <h2 class="subtitulo subtitulo-linhas-laterais">Onde já trabalhei</h2>
       <div class="experiencia__aba">
@@ -86,77 +127,75 @@
           <li data-target="#projedata" class="ativo">Projedata</li>
           <li data-target="#brm">Brm</li>
         </ul>
-
         <ul class="experiencia__aba-conteudos">
           <li id="projedata" class="ativo">
-            <h3 class="experiencia__aba-conteudos--titulo">Estagiário <img src="./assets/svg/projedata-nome.svg" alt="@Projedata"></h3>
+            <h3 class="experiencia__aba-conteudos--titulo">Estagiário</h3>
             <span class="experiencia__aba-conteudos--data">Abril 2021 - Outubro 2021</span>
-            <p class="experiencia__aba-conteudos--texto"><span>/&gt;</span>Nivelamento na linguagem Java e em banco de dados Oracle SQL.</p>
-            <p class="experiencia__aba-conteudos--texto"><span>/&gt;</span>Treinamento sobre Form/Report Builder & SQL developer.</p>
-            <p class="experiencia__aba-conteudos--texto"><span>/&gt;</span>Trabalhando na parte de migração do sistema utilizando o framework Arcturus.</p>
+            <p class="experiencia__aba-conteudos--texto"><span>/&gt;</span>Nivelamento na linguagem Java e em banco de
+              dados Oracle SQL.</p>
+            <p class="experiencia__aba-conteudos--texto"><span>/&gt;</span>Treinamento sobre Form/Report Builder & SQL
+              developer.</p>
+            <p class="experiencia__aba-conteudos--texto"><span>/&gt;</span>Trabalhando na parte de migração do sistema
+              utilizando o framework Arcturus.</p>
           </li>
-
           <li id="brm">
-            <h3 class="experiencia__aba-conteudos--titulo">Designer <img src="./assets/svg/empresa-brm.svg" alt="@Brm"></h3>
+            <h3 class="experiencia__aba-conteudos--titulo">Designer</h3>
             <span class="experiencia__aba-conteudos--data">Abril 2018 - Fevereiro 2021</span>
-            <p class="experiencia__aba-conteudos--texto"><span>/&gt;</span>Responsável pelo design gráfico da empresa.</p>
-            <p class="experiencia__aba-conteudos--texto"><span>/&gt;</span>Trabalhando na constante melhoria dos processos de impressão.</p>
-            <p class="experiencia__aba-conteudos--texto"><span>/&gt;</span>Auxiliando na parte financeira: emissão de notas, pagamentos, entre outros.</p>
+            <p class="experiencia__aba-conteudos--texto"><span>/&gt;</span>Responsável pelo design gráfico da empresa.
+            </p>
+            <p class="experiencia__aba-conteudos--texto"><span>/&gt;</span>Trabalhando na constante melhoria dos
+              processos de impressão.</p>
+            <p class="experiencia__aba-conteudos--texto"><span>/&gt;</span>Auxiliando na parte financeira: emissão de
+              notas, pagamentos, entre outros.</p>
           </li>
         </ul>
       </div>
     </section>
-
     <div class="formacao-cursos container">
       <section id="formacao" class="formacao">
         <div class="formacao__conteudo">
           <h2 class="subtitulo subtitulo-linha-direita">Formação</h2>
-          <p class="formacao__texto">Estou na 6ª fase cursando bacharel em <strong class="emfase-texto">Sistemas de Informação</strong> pela <a target="_blank" class="link-externo" href="https://unibave.net/">UNIBAVE</a>. Além disso me mantenho sempre atualizado com cursos intensivos online.</p>
+          <p class="formacao__texto">Estou na 6ª fase cursando bacharel em <strong class="emfase-texto">Sistemas de
+              Informação</strong> pela <a target="_blank" class="link-externo" href="https://unibave.net/">UNIBAVE</a>.
+            Além disso me mantenho sempre atualizado com cursos intensivos online.</p>
         </div>
-
         <div class="formacao__idiomas">
-          <h3 class="formacao__idiomas-titulo"><img src="./assets/svg/icone-idioma.svg" alt="Símbolo chinês"> Idiomas</h3>
+          <h3 class="formacao__idiomas-titulo">Idiomas</h3>
           <div class="formacao__idiomas-textos">
             <p class="formacao__idiomas-texto">Inglês <span>/ Técnico</span></p>
             <p class="formacao__idiomas-texto">Português <span>/ Fluente</span></p>
           </div>
         </div>
       </section>
-
       <section class="cursos">
         <h2 class="subtitulo subtitulo-linha-direita">Cursos</h2>
         <ul class="cursos__lista">
           <li>
             <div class="cursos__lista-conteudo">
-              <img src="./assets/svg/icone-livro.svg" alt="Ícone do livro">
               <p class="cursos__lista-texto">Java Básico <span>- Loiane</span></p>
             </div>
             <p class="cursos__lista-texto--horas">54h</p>
           </li>
           <li>
             <div class="cursos__lista-conteudo">
-              <img src="./assets/svg/icone-livro.svg" alt="Ícone do livro">
               <p class="cursos__lista-texto">Java Completo: POO + Projetos <span>- Nélio Alves</span></p>
             </div>
             <p class="cursos__lista-texto--horas">54h</p>
           </li>
           <li>
             <div class="cursos__lista-conteudo">
-              <img src="./assets/svg/icone-livro.svg" alt="Ícone do livro">
               <p class="cursos__lista-texto">Formação Desenvolvedor Moderno <span>- DevSuperior</span></p>
             </div>
             <p class="cursos__lista-texto--horas">160h</p>
           </li>
           <li>
             <div class="cursos__lista-conteudo">
-              <img src="./assets/svg/icone-livro.svg" alt="Ícone do livro">
               <p class="cursos__lista-texto">Fullstack Angular & Spring <span>- Algaworks</span></p>
             </div>
             <p class="cursos__lista-texto--horas">120h</p>
           </li>
           <li>
             <div class="cursos__lista-conteudo">
-              <img src="./assets/svg/icone-livro.svg" alt="Ícone do livro">
               <p class="cursos__lista-texto">UI Design para Iniciantes <span>- Origamid</span></p>
             </div>
             <p class="cursos__lista-texto--horas">30h</p>
@@ -164,90 +203,86 @@
         </ul>
       </section>
     </div>
-
     <section class="projetos container">
       <h2 class="subtitulo subtitulo-linhas-laterais">Meus projetos</h2>
       <div class="projetos__cards">
         <div class="projetos__card">
           <div class="projetos__card-container">
-            <img class="projetos__img" src="./assets/img/background-projetos.webp" alt="Projeto DS meta">
           </div>
           <div class="projetos__detalhes">
             <a target="_blank" href="https://github.com/bruno-c-p/dsmeta-spring-react-9">
-              <h3 class="projetos__detalhes-titulo">Ds meta <img src="./assets/svg/icone-ir-gradiente.svg" alt="Ícone de link"></h3>
+              <h3 class="projetos__detalhes-titulo">Ds meta</h3>
               <p class="projetos__detalhes-texto">
-                <strong class="emfase-texto-azul">Spring</strong> Back-End with <strong class="emfase-texto-azul">React</strong> Front-End and API integration (<strong class="emfase-texto-azul">twilio</strong>).
+                <strong class="emfase-texto-azul">Spring</strong> Back-End with <strong
+                  class="emfase-texto-azul">React</strong> Front-End and API integration (<strong
+                  class="emfase-texto-azul">twilio</strong>).
               </p>
             </a>
           </div>
         </div>
         <div class="projetos__card">
           <div class="projetos__card-container">
-            <img class="projetos__img" src="./assets/img/background-projetos.webp" alt="Projeto jogo de xadrez">
           </div>
           <div class="projetos__detalhes">
             <a target="_blank" href="https://github.com/bruno-c-p/devsuperior-chess">
-              <h3 class="projetos__detalhes-titulo">Jogo de Xadrez <img src="./assets/svg/icone-ir-gradiente.svg" alt="Ícone de link"></h3>
+              <h3 class="projetos__detalhes-titulo">Jogo de Xadrez</h3>
               <p class="projetos__detalhes-texto">
-                Jogo de xadrez em <strong class="emfase-texto-azul">Java</strong> para entender os fundamentos da linguagem.
+                Jogo de xadrez em <strong class="emfase-texto-azul">Java</strong> para entender os fundamentos da
+                linguagem.
               </p>
             </a>
           </div>
         </div>
         <div class="projetos__card">
           <div class="projetos__card-container">
-            <img class="projetos__img" src="./assets/img/background-projetos.webp" alt="Projeto jogo da velha">
           </div>
           <div class="projetos__detalhes">
             <a target="_blank" href="https://github.com/bruno-c-p/softblue-tictactoe">
-              <h3 class="projetos__detalhes-titulo">Jogo da velha <img src="./assets/svg/icone-ir-gradiente.svg" alt="Ícone de link"></h3>
+              <h3 class="projetos__detalhes-titulo">Jogo da velha</h3>
               <p class="projetos__detalhes-texto">
-                Jogo da velha em <strong class="emfase-texto-azul">Java</strong> para entender os fundamentos da linguagem.
+                Jogo da velha em <strong class="emfase-texto-azul">Java</strong> para entender os fundamentos da
+                linguagem.
               </p>
             </a>
           </div>
         </div>
         <div class="projetos__card">
           <div class="projetos__card-container">
-            <img class="projetos__img" src="./assets/img/background-projetos.webp" alt="Projeto web services">
           </div>
           <div class="projetos__detalhes">
             <a target="_blank" href="https://github.com/bruno-c-p/spring-hibernate-postgresql-heroku">
-              <h3 class="projetos__detalhes-titulo">Web services <img src="./assets/svg/icone-ir-gradiente.svg" alt="Ícone de link"></h3>
+              <h3 class="projetos__detalhes-titulo">Web services</h3>
               <p class="projetos__detalhes-texto">
-                Web Services with <strong class="emfase-texto-azul">Springboot</strong> & <strong class="emfase-texto-azul">Hibernate</strong>.
+                Web Services with <strong class="emfase-texto-azul">Springboot</strong> & <strong
+                  class="emfase-texto-azul">Hibernate</strong>.
               </p>
             </a>
           </div>
         </div>
       </div>
     </section>
-
     <section id="contato" class="contato container">
       <h2 class="subtitulo subtitulo-linhas-laterais">Contato</h2>
       <div class="contato__grid">
-        <p class="contato__texto">Estou disponível para novos projetos no momento. Entre em contato comigo e marcamos uma conversa. 👋</p>
+        <p class="contato__texto">Estou disponível para novos projetos no momento. Entre em contato comigo e marcamos
+          uma conversa. 👋</p>
         <div class="contato__links">
           <ul class="contato__lista">
-            <li><a href="mailto:bruno.cardozo.pereira@gmail.com">Email <img src="./assets/svg/icone-ir.svg" alt="Ícone de link"></a></li>
-            <li><a href="https://github.com/bruno-c-p">Github <img src="./assets/svg/icone-ir.svg" alt="Ícone de link"></a></li>
-            <li><a href="https://www.linkedin.com/in/bruno-cardozo-pereira/">Linkedin <img src="./assets/svg/icone-ir.svg" alt="Ícone de link"></a></li>
+            <li><a href="mailto:bruno.cardozo.pereira@gmail.com">Email</a></li>
+            <li><a href="https://github.com/bruno-c-p">Github</a></li>
+            <li><a href="https://www.linkedin.com/in/bruno-cardozo-pereira/">Linkedin</a></li>
           </ul>
         </div>
       </div>
     </section>
   </main>
-
   <footer class="rodape container">
     <div class="rodape__linha"></div>
     <p class="rodape__texto">© Bruno Cardozo Pereira 2022.</p>
   </footer>
-
-  <script src="./js/aba.js"></script>
-  <script src="./js/menu.js"></script>
-  <!-- 100% privacy friendly analytics -->
+  <script src="./src/js/main.js"></script>
   <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-  <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+  <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" referrerpolicy="no-referrer-when-downgrade" /></noscript>
 </body>
 
 </html>
