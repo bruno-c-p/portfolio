@@ -20,12 +20,21 @@
   <header class="pt-10">
     <nav class="bg-gray-950">
       <div class="max-w-7xl mx-auto px-4pc">
-        <div class="flex items-center justify-between h-16">
+        <div class="flex items-center justify-between">
             <a href="#">
-              <img class="w-32 md:w-40" src="./img/logo.svg">
+              <svg class="fill-blue-400 p-2 pb-4" width="48" height="81" viewBox="0 0 48 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_424_2)">
+                <path d="M12.9235 0C14.9034 0 16.782 0.447269 18.4615 1.24525C21.1492 2.50937 23.3239 4.67801 24.6015 7.3594C25.4017 9.03416 25.8458 10.9076 25.8458 12.8875V25.7695H22.1486C20.8999 25.7695 19.7936 25.1469 19.1225 24.1958C18.7341 23.6464 18.4982 22.9872 18.4603 22.2769V12.8875C18.4603 9.83769 15.9807 7.36495 12.9223 7.36495C9.86399 7.36495 7.38436 9.83769 7.38436 12.8875V33.1345H23.9994C28.7606 33.1345 33.1934 34.514 36.9229 36.8947C38.5289 37.919 40.0046 39.1321 41.3179 40.4983C42.4375 41.6615 43.4369 42.9345 44.3028 44.3007C46.6444 47.9965 48 52.3704 48 57.0672C48 61.7641 46.6444 66.138 44.3028 69.8338C43.4381 71.2 42.4386 72.473 41.3179 73.6362C40.0035 75.0024 38.5278 76.2154 36.9229 77.2398C33.1934 79.6205 28.7606 81 23.9994 81C17.55 81 11.697 78.4673 7.38436 74.3376L6.68098 73.6362C2.53973 69.3355 0 63.4988 0 57.0661V47.8611H3.69274C5.73276 47.8611 7.38547 49.5081 7.38547 51.5435V57.0661C7.38547 66.2157 14.8255 73.635 24.0006 73.635C29.2191 73.635 33.879 71.2356 36.924 67.4798C39.2334 64.6331 40.6168 61.0105 40.6168 57.0661C40.6168 53.1206 39.2334 49.4992 36.924 46.6524C33.879 42.8967 29.2202 40.4972 24.0006 40.4972H3.69274C1.6516 40.4972 0 38.8502 0 36.8159V12.8875C0 10.9076 0.444063 9.03416 1.24427 7.3594C2.52192 4.67912 4.69661 2.51048 7.38436 1.24525C9.06379 0.447269 10.9424 0 12.9235 0Z"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_424_2">
+                <rect width="48" height="81" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
             </a>
-            <div class="hidden lg:block">
-              <ul class="flex gap-6">
+            <div class="hidden md:block">
+              <ul class="flex gap-5">
                 <li><a class="p-2 block hover:text-blue-300 duration-300" href="#sobre">Sobre</a></li>
                 <li><a class="p-2 block hover:text-blue-300 duration-300" href="#experiencia">Experiência</a></li>
                 <li><a class="p-2 block hover:text-blue-300 duration-300" href="#formacao">Formação</a></li>
@@ -41,7 +50,7 @@
                 </li>
               </ul>
             </div>
-          <div class="flex lg:hidden">
+          <div class="flex md:hidden">
             <button id="menuButton" type="button" aria-label="Menu" aria-expanded="false" class="inline-flex items-center justify-center p-2 rounded-md">
               <ion-icon id="menuIcon" class="text-3xl cursor-pointer mx-2 text-blue-300 block" name="menu"></ion-icon>
             </button>
@@ -67,14 +76,14 @@
       </div>
     </nav>
   </header>
-  <main class="mx-auto max-w-7xl mt-20 px-4pc">
-    <section class="flex gap-36 items-center">
-      <img class="" src="./img/foto-banner.webp" alt="Foto de Perfil">
-      <div>
+  <main class="mx-auto max-w-7xl mt-6 md:mt-10 lg:mt-20 px-4pc">
+    <section class="flex flex-col md:flex-row md:gap-10 lg:gap-20 justify-center items-center">
+      <img class="max-w-[250px] lg:max-w-[300px] mt-6 md:mt-0" src="./img/foto-banner.webp" alt="Foto de Perfil">
+      <div class="order-first md:order-none">
         <span class="block uppercase mb-4 text-gray-500 font-bold">Olá, meu nome é</span>
-        <h1 class="font-bold text-6xl">Bruno Cardozo.</h1>
-        <span class="block font-bold text-6xl text-gray-300 mb-8">Software Enginner.</span>
-        <p class="text-gray-400">Desenvolvedor Full-Stack especializado em soluções para a web. Atualmente trabalho como desenvolvedor backend Java na <a class="text-blue-200 underline" href="https://www.wises.com.br">Wise</a>.</p>
+        <h1 class="font-bold text-4xl sm:text-5xl lg:text-6xl">Bruno Cardozo.</h1>
+        <span class="block font-bold text-4xl sm:text-5xl lg:text-6xl text-gray-300 mb-4 md:mb-8">Software Enginner.</span>
+        <p class="text-gray-400 max-w-prose">Desenvolvedor Full-Stack especializado em soluções para a web. Atualmente trabalho como desenvolvedor backend Java na <a class="text-blue-200 underline" href="https://www.wises.com.br">Wise</a>.</p>
       </div>
     </section>
     <div id="sobre" class="flex gap-36 mt-20">
