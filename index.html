@@ -24,59 +24,54 @@
 </head>
 
 <body class="bg-gray-950 text-white">
-  <nav class="bg-gray-950">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <div class="flex items-center">
-          <a href="#" class="flex-shrink-0">
-            <img class="min-w-fit" src="./img/logo.svg">
-          </a>
-          <div class="hidden md:block">
-            <div class="ml-10 flex items-baseline space-x-4 text-white">
-              <a href="#" class="text-sm font-medium text-white hover:text-gray-300">Home</a>
-              <a href="#" class="text-sm font-medium text-white hover:text-gray-300">About</a>
-              <a href="#" class="text-sm font-medium text-white hover:text-gray-300">Projects</a>
+  <header class="pt-10">
+    <nav class="bg-gray-950">
+      <div class="max-w-7xl mx-auto px-4pc">
+        <div class="flex items-center justify-between h-16">
+            <a href="#">
+              <img class="w-32 md:w-40" src="./img/logo.svg">
+            </a>
+            <div class="hidden lg:block">
+              <ul class="flex gap-6">
+                <li><a class="p-2 block hover:text-blue-300 duration-300" href="#sobre">Sobre</a></li>
+                <li><a class="p-2 block hover:text-blue-300 duration-300" href="#experiencia">Experiência</a></li>
+                <li><a class="p-2 block hover:text-blue-300 duration-300" href="#formacao">Formação</a></li>
+                <li><a class="p-2 block hover:text-blue-300 duration-300" href="#projetos">Projetos</a></li>
+                <li><a class="p-2 block hover:text-blue-300 duration-300" href="#contato">Contato</a></li>
+                <li>
+                  <a class="py-2 px-4 duration-300 flex gap-2 border-2 border-blue-200 rounded text-blue-200 items-center hover:bg-blue-950 hover:scale-105" href="./docs/curriculo.pdf" target="_blank">
+                    Currículo
+                    <svg class="stroke-current text-blue-200 pb-[2px]" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.642822 14V15.2857C0.642822 15.9677 0.91374 16.6218 1.39598 17.104C1.87821 17.5862 2.53227 17.8572 3.21425 17.8572H14.7857C15.4677 17.8572 16.1217 17.5862 16.604 17.104C17.0862 16.6218 17.3571 15.9677 17.3571 15.2857V14M5.14282 8.21431L8.99997 12.7143M8.99997 12.7143L12.8571 8.21431M8.99997 12.7143L8.99996 1.14288" stroke-width="1.71429" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
             </div>
+          <div class="flex lg:hidden">
+            <button id="menuButton" type="button" aria-label="Menu" aria-expanded="false" class="inline-flex items-center justify-center p-2 rounded-md">
+              <ion-icon id="menuIcon" class="text-3xl cursor-pointer mx-2 text-blue-300 block" name="menu"></ion-icon>
+            </button>
           </div>
         </div>
-        <div class="flex lg:hidden">
-          <button id="menuButton" type="button" aria-label="Menu" aria-expanded="false" class="inline-flex items-center justify-center p-2 rounded-md">
-            <ion-icon id="menuIcon" class="text-3xl cursor-pointer mx-2 text-blue-300 block" name="menu"></ion-icon>
-          </button>
-        </div>
       </div>
-    </div>
-    <div id="menuMobile" class="hidden lg:hidden">
-      <div class="px-2 pt-2 pd-3 sm:px-3">
-        <a href="" class="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
-        <a href="" class="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium">Sobre</a>
-        <a href="" class="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium">Contato</a>
+      <div id="menuMobile" class="hidden h-screen lg:hidden">
+        <ul class="max-w-7xl mx-auto px-4pc pt-2 flex flex-col gap-2">
+          <li><a class="p-4 uppercase font-bold text-[15px] text-center block hover:text-blue-300 hover:bg-gray-900 rounded duration-300" href="#sobre">Sobre</a></li>
+          <li><a class="p-4 uppercase font-bold text-[15px] text-center block hover:text-blue-300 hover:bg-gray-900 rounded duration-300" href="#experiencia">Experiência</a></li>
+          <li><a class="p-4 uppercase font-bold text-[15px] text-center block hover:text-blue-300 hover:bg-gray-900 rounded duration-300" href="#formacao">Formação</a></li>
+          <li><a class="p-4 uppercase font-bold text-[15px] text-center block hover:text-blue-300 hover:bg-gray-900 rounded duration-300" href="#projetos">Projetos</a></li>
+          <li><a class="p-4 uppercase font-bold text-[15px] text-center block hover:text-blue-300 hover:bg-gray-900 rounded duration-300" href="#contato">Contato</a></li>
+          <li class="mt-2">
+            <a class="py-4 px-4 duration-300 flex gap-2 justify-center border-2 border-blue-200 rounded text-blue-200 items-center" href="./docs/curriculo.pdf" target="_blank">
+              Currículo
+              <svg class="stroke-current text-blue-200 pb-[2px]" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.642822 14V15.2857C0.642822 15.9677 0.91374 16.6218 1.39598 17.104C1.87821 17.5862 2.53227 17.8572 3.21425 17.8572H14.7857C15.4677 17.8572 16.1217 17.5862 16.604 17.104C17.0862 16.6218 17.3571 15.9677 17.3571 15.2857V14M5.14282 8.21431L8.99997 12.7143M8.99997 12.7143L12.8571 8.21431M8.99997 12.7143L8.99996 1.14288" stroke-width="1.71429" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </li>
+        </ul>
       </div>
-    </div>
-  </nav>
-  <header class="mx-auto max-w-7xl pt-10 px-4pc flex justify-between items-center">
-    <a href="/">
-      <img class="min-w-fit" src="./img/logo.svg">
-    </a>
-    <nav class="flex bg-slate-950">
-      <span class="text-3xl cursor-pointer mx-2 text-blue-300 lg:hidden block">
-        <ion-icon name="menu" onclick="handleMenu(this)"></ion-icon>
-      </span>
-      <ul role="menu" id="" class="nav-menu hidden lg:flex gap-6">
-        <li class="nav-link"><a class="p-2 block hover:text-blue-300 duration-300" href="#sobre">Sobre</a></li>
-        <li class="nav-link"><a class="p-2 block hover:text-blue-300 duration-300" href="#experiencia">Experiência</a></li>
-        <li class="nav-link"><a class="p-2 block hover:text-blue-300 duration-300" href="#formacao">Formação</a></li>
-        <li class="nav-link"><a class="p-2 block hover:text-blue-300 duration-300" href="#projetos">Projetos</a></li>
-        <li class="nav-link"><a class="p-2 block hover:text-blue-300 duration-300" href="#contato">Contato</a></li>
-        <li class="nav-link">
-          <a class="py-2 px-4 duration-300 flex gap-2 border-2 border-blue-200 rounded text-blue-200 items-center hover:bg-blue-950 hover:scale-105" href="./docs/curriculo.pdf" target="_blank">
-            Currículo
-            <svg class="stroke-current text-blue-200 pb-[2px]" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0.642822 14V15.2857C0.642822 15.9677 0.91374 16.6218 1.39598 17.104C1.87821 17.5862 2.53227 17.8572 3.21425 17.8572H14.7857C15.4677 17.8572 16.1217 17.5862 16.604 17.104C17.0862 16.6218 17.3571 15.9677 17.3571 15.2857V14M5.14282 8.21431L8.99997 12.7143M8.99997 12.7143L12.8571 8.21431M8.99997 12.7143L8.99996 1.14288" stroke-width="1.71429" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </a>
-        </li>
-      </ul>
     </nav>
   </header>
   <main class="mx-auto max-w-7xl mt-20 px-4pc">
