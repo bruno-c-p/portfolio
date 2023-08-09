@@ -77,7 +77,7 @@
       </div>
     </nav>
   </header>
-  <main class="mx-auto max-w-7xl mt-6 md:mt-16 lg:mt-32 px-4pc">
+  <main class="mx-auto max-w-7xl mt-16 lg:mt-32 px-4pc">
     <section class="flex flex-col md:flex-row md:gap-10 lg:gap-20 justify-center items-center">
       <img class="max-w-[250px] lg:max-w-[300px] mt-12 md:mt-0" src="./img/foto-banner.webp" alt="Foto de Perfil">
       <div class="order-first md:order-none">
@@ -87,7 +87,7 @@
         <p class="text-gray-400 max-w-prose">Desenvolvedor Full-Stack especializado em soluções para a web. Atualmente trabalho como desenvolvedor backend Java na <a class="text-blue-200" href="https://www.wises.com.br">Wise</a>.</p>
       </div>
     </section>
-    <div id="sobre" class="flex flex-col md:flex-row md:gap-14 lg:gap-20 justify-between mt-6 md:mt-16 lg:mt-32">
+    <div id="sobre" class="flex flex-col md:flex-row md:gap-14 lg:gap-20 justify-between mt-16 lg:mt-32">
       <section class="md:w-1/2">
         <div class="flex gap-8 items-center mb-6 md:mb-8">
           <h2 class="text-gray-50 text-3xl font-bold min-w-fit">Sobre mim</h2>
@@ -108,7 +108,7 @@
           Atuando na parte de API's utilizando <strong class="not-italic font-bold text-gray-300">Java</strong>, <strong class="not-italic font-bold text-gray-300">Maven</strong>, <strong class="not-italic font-bold text-gray-300">Hibernate</strong>, <strong class="not-italic font-bold text-gray-300">PostgreSQL</strong> & <strong class="not-italic font-bold text-gray-300">Gitlab</strong>.
         </p>
       </section>
-      <section class="md:w-1/2 mt-6 md:mt-0">
+      <section class="md:w-1/2 mt-16 md:mt-0">
         <div class="flex gap-8 items-center mb-6 md:mb-8">
           <h2 class="text-gray-50 text-3xl font-bold">Tecnologias</h2>
           <div class="w-full bg-gray-800 h-[2px]"></div>
@@ -126,35 +126,89 @@
         </ul>
       </section>
     </div>
-    <section id="experiencia" class="experiencia container">
-      <h2 class="subtitulo subtitulo-linhas-laterais">Onde já trabalhei</h2>
-      <div class="experiencia__aba">
-        <ul class="experiencia__abas">
-          <li data-target="#projedata" class="ativo">Projedata</li>
-          <li data-target="#brm">Brm</li>
-        </ul>
-        <ul class="experiencia__aba-conteudos">
-          <li id="projedata" class="ativo">
-            <h3 class="experiencia__aba-conteudos--titulo">Estagiário</h3>
-            <span class="experiencia__aba-conteudos--data">Abril 2021 - Outubro 2021</span>
-            <p class="experiencia__aba-conteudos--texto"><span>/&gt;</span>Nivelamento na linguagem Java e em banco de
-              dados Oracle SQL.</p>
-            <p class="experiencia__aba-conteudos--texto"><span>/&gt;</span>Treinamento sobre Form/Report Builder & SQL
-              developer.</p>
-            <p class="experiencia__aba-conteudos--texto"><span>/&gt;</span>Trabalhando na parte de migração do sistema
-              utilizando o framework Arcturus.</p>
-          </li>
-          <li id="brm">
-            <h3 class="experiencia__aba-conteudos--titulo">Designer</h3>
-            <span class="experiencia__aba-conteudos--data">Abril 2018 - Fevereiro 2021</span>
-            <p class="experiencia__aba-conteudos--texto"><span>/&gt;</span>Responsável pelo design gráfico da empresa.
-            </p>
-            <p class="experiencia__aba-conteudos--texto"><span>/&gt;</span>Trabalhando na constante melhoria dos
-              processos de impressão.</p>
-            <p class="experiencia__aba-conteudos--texto"><span>/&gt;</span>Auxiliando na parte financeira: emissão de
-              notas, pagamentos, entre outros.</p>
-          </li>
-        </ul>
+    <section id="experiencia" class="mt-16 lg:mt-32">
+      <div class="flex gap-8 items-center mb-6 md:mb-8">
+        <div class="hidden sm:block w-full bg-gray-800 h-[2px]"></div>
+        <h2 class="text-gray-50 text-3xl font-bold min-w-fit">Onde já trabalhei</h2>
+        <div class="w-full bg-gray-800 h-[2px]"></div>
+      </div>
+      <div class="max-w-3xl mx-auto">
+        <div class="flex flex-col sm:flex-row sm:gap-10">
+          <div id="tab" class="mx-auto flex sm:flex-col min-w-full sm:min-w-[180px] gap-3 text-gray-500">
+            <button id="defaultOpen" onClick="openExperience(event, 'Wise')" class="tablinks w-full py-4 sm:px-8 h-1/3 bg-gray-900 rounded duration-300 rounded-t-none sm:rounded sm:rounded-l-none">
+              <span class="uppercase flex justify-center sm:block sm:text-right">
+                <span class="hidden sm:block">Wise</span>
+                  <svg class="block sm:hidden fill-current text-blue-400" width="36" height="36" viewBox="0 0 249 275" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M119.55 117.51C111.85 117.51 104.55 117.51 96.7701 117.51C92.4601 106.89 88.1301 96.21 83.3901 84.54C78.7101 96.1 74.4201 106.68 70.0701 117.41C62.4601 117.41 55.0101 117.41 47.2001 117.41C31.5801 78.49 15.9301 39.51 0.100098 0.08C9.7501 0.08 18.9501 0.08 28.6401 0.08C38.4401 24.43 48.3201 49 58.6501 74.66C62.4301 65.3 65.7701 57.03 69.0901 48.8C62.6101 32.6 56.2101 16.6 49.6001 0.09C59.2801 0.09 68.3401 0.09 78.0901 0.09C87.8301 24.28 97.7201 48.84 107.61 73.4C107.96 73.4 108.31 73.4 108.66 73.39C118.47 48.99 128.28 24.59 138.17 0C147.52 0 156.79 0 166.71 0C150.96 39.23 135.32 78.2 119.55 117.51Z" />
+                    <path d="M248.1 225.95C219.42 225.95 191.82 225.95 164.27 225.95C163.1 235.65 169.17 243.91 179.58 247.99C188.77 251.58 205.5 249.49 213.31 236.07C222.74 238.7 232.27 241.36 242.14 244.12C237.91 252.99 231.58 259.4 223.82 264.53C197.26 282.07 156.61 276.37 138.34 251.98C124 232.83 122.83 211.59 132.11 190.08C141.12 169.22 158.13 158.86 180.43 156.69C193.27 155.44 205.71 156.89 217.31 162.85C236.21 172.57 246.08 188.43 248.03 209.33C248.52 214.57 248.1 219.89 248.1 225.95ZM163.18 204.37C179.33 204.37 195.49 204.37 211.7 204.37C209.02 188.59 199.09 180.21 185.29 181.14C171.12 182.09 162.7 194.56 163.18 204.37Z" />
+                    <path d="M94.04 172.33C89.58 179.22 85.27 185.9 80.8 192.81C76.67 190.4 72.91 188.02 68.99 185.95C61.51 181.99 53.65 179.45 45.04 180.68C43.11 180.95 41.1 181.54 39.41 182.48C33.67 185.67 33.37 193.46 39.07 196.71C42.47 198.65 46.4 199.73 50.18 200.93C57.93 203.38 65.78 205.56 73.52 208.05C76.51 209.01 79.4 210.37 82.21 211.8C101.09 221.39 105.17 244.87 90.73 260.56C83.89 267.99 75.16 272.02 65.41 273.4C43.9 276.45 23.66 272.82 5.36001 260.56C3.58001 259.37 1.99001 257.91 0.0100098 256.33C4.10001 249.27 8.08001 242.42 12.05 235.56C18.4 238.89 24.42 242.3 30.66 245.24C37.49 248.46 44.76 250.19 52.39 249.97C54.05 249.92 55.73 249.82 57.34 249.46C62.51 248.3 65.34 245.52 65.68 241.46C66.02 237.53 64.16 234.31 59.14 232.5C50.1 229.23 40.82 226.62 31.71 223.55C27.31 222.07 22.91 220.45 18.74 218.42C5.57001 211.99 0.76001 202.06 3.70001 187.65C6.78001 172.56 16.58 163.13 30.74 159.11C51.8 153.14 71.94 155.86 90.06 169.02C91.39 169.99 92.59 171.12 94.04 172.33Z" />
+                    <path d="M224.43 117.52C215.5 117.52 207.2 117.52 198.49 117.52C198.49 87.89 198.49 58.38 198.49 28.11C207.4 35.26 216.01 42.18 224.43 48.93C224.43 71.89 224.43 94.48 224.43 117.52Z" />
+                    <path d="M200.7 0.109985C208.14 0.109985 215.57 0.109985 223.55 0.109985C223.55 6.32999 223.55 12.46 223.55 19.55C215.46 13.07 207.84 6.95999 200.22 0.849985C200.38 0.599985 200.54 0.359985 200.7 0.109985Z" />
+                  </svg>
+              </span>
+            </button>
+            <button onClick="openExperience(event, 'Projedata')" class="tablinks w-full py-4 sm:px-8 h-1/3 bg-gray-900 rounded duration-300 rounded-t-none sm:rounded sm:rounded-l-none">
+              <span class="uppercase flex justify-center sm:block sm:text-right">
+                <span class="hidden sm:block">Projedata</span>
+                <svg class="block sm:hidden fill-current text-blue-400" width="36" height="36" viewBox="0 0 264 264" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_439_11)">
+                  <path d="M144.35 27.5C155.5 18.19 166.2 9.26 177.29 0C179.99 3.26 182.52 6.07 184.78 9.09C197.09 25.56 207.71 42.99 215.14 62.26C220.62 76.47 223.91 91.12 225.36 106.3C226.69 120.27 224.93 133.8 221.57 147.28C220.78 150.45 219.12 152.66 216.54 154.39C199.49 165.76 181.38 174.65 160.91 177.96C151.29 179.52 141.7 179.5 132.17 177.36C130.9 177.07 129.67 176.63 128.48 175.83C131.67 175.6 134.88 175.56 138.04 175.11C150.41 173.34 159.89 166.56 167.78 157.32C177.44 146.01 182.19 132.88 182.46 117.96C182.78 100.04 177.9 83.44 170.27 67.52C164.06 54.56 156.21 42.61 147.19 31.42C146.25 30.26 145.44 29.02 144.35 27.5Z" />
+                  <path d="M137.07 88.06C132.47 88.26 128.77 88.14 125.17 88.63C113 90.3 103.54 96.82 95.66 105.85C85.37 117.65 80.53 131.65 80.49 147.11C80.46 158.63 82.72 169.91 86.51 180.84C92.81 198.97 102.56 215.14 114.31 230.2C115.72 232.01 117.09 233.86 118.77 236.08C107.7 245.37 96.92 254.4 85.77 263.76C82.88 260.17 80.19 257.03 77.71 253.72C64.67 236.31 53.67 217.75 46.39 197.16C42.33 185.69 39.5 173.95 38.22 161.78C36.92 149.42 37.36 137.2 39.51 125.03C40.17 121.29 41.23 117.57 42.53 114C43.1 112.43 44.48 110.88 45.89 109.92C60.54 99.9 76.08 91.64 93.48 87.49C106.23 84.44 119.11 83.68 132.03 86.6C133.44 86.91 134.81 87.39 137.07 88.06Z" />
+                  <path d="M27.37 119.2C18.14 108.15 9.2 97.46 0 86.45C1.22 85.18 2.11 84.01 3.23 83.12C24.35 66.24 47.3 52.64 73.22 44.46C87.61 39.92 102.37 37.52 117.45 37.81C127.77 38.01 138.04 38.99 147.96 42.25C150.44 43.06 152.4 44.19 153.9 46.42C165.19 63.14 173.91 80.95 177.58 100.98C179.87 113.47 179.44 127.78 174.48 139.21C176.11 130.04 175.03 122 171.48 114.65C162.14 95.36 146.46 84.4 125.34 81.39C105.49 78.57 87.05 83.89 69.25 92C55.39 98.32 42.8 106.73 30.96 116.29C29.93 117.15 28.89 117.98 27.37 119.2Z" />
+                  <path d="M88.2899 125.5C85.3299 150.64 101.89 168.55 120.44 177.45C132.65 183.3 145.57 183.66 158.6 182.12C181 179.47 200.59 169.74 218.94 157.19C224.57 153.34 229.93 149.1 235.88 144.69C245.03 155.63 254.14 166.51 263.37 177.53C254.51 185.17 245.43 191.61 236 197.56C217.69 209.11 198.23 218.12 176.96 222.5C167.71 224.4 158.2 225.13 148.78 226.03C139.59 226.91 119.98 223.5 111.1 219.81C102.75 207.99 95.4399 195.2 90.4399 181.11C85.9899 168.56 83.6799 155.7 84.5599 142.4C84.9399 136.65 85.3399 130.79 88.4199 125.61L88.2899 125.5Z" />
+                  <path d="M88.41 125.61C88.44 125.28 88.47 124.96 88.45 125.2C88.57 124.99 88.43 125.24 88.28 125.49L88.41 125.61Z" />
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_439_11">
+                  <rect width="263.37" height="263.76" fill="white"/>
+                  </clipPath>
+                  </defs>
+                </svg>
+              </span>
+            </button>
+            <button onClick="openExperience(event, 'BRM')" class="tablinks w-full py-4 sm:px-8 h-1/3 bg-gray-900 rounded duration-300 rounded-t-none sm:rounded sm:rounded-l-none">
+              <span class="uppercase flex justify-center sm:block sm:text-right">
+                <span class="hidden sm:block">BRM</span>
+                  <svg class="block sm:hidden fill-current text-blue-400" width="36" height="36" viewBox="0 0 232 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_439_17)">
+                    <path d="M80.09 37.32C88 46.94 87.39 60.07 78.86 68.79C73.46 74.31 66.7 77.07 59.16 77.17C41.18 77.4 23.2 77.26 5.22 77.23C3.62 77.23 2.03 76.99 0 76.83C4.71 50.97 9.31 25.68 13.93 0.269993C15.63 0.159993 16.77 0.0299932 17.91 0.0299932C33.72 0.0299932 49.54 -0.0900068 65.35 0.139993C69.27 0.199993 73.3 0.999993 77.07 2.15999C85.4 4.71999 89.7 12.14 88.38 20.83C87.4 27.25 85.09 33.02 80.09 37.32ZM33.74 19.39C33.14 22.79 32.59 25.95 32.08 28.84C32.79 29.41 33.04 29.79 33.3 29.79C42.42 29.86 51.54 30.15 60.65 29.79C64.12 29.65 66.73 27.27 66.83 23.33C64.58 20.54 63.41 19.49 60.71 19.45C51.93 19.29 43.15 19.39 33.74 19.39ZM28.37 48.93C27.83 52.73 27.41 55.7 26.92 59.17C36.87 59.17 45.98 59.38 55.07 59.08C59.25 58.94 60.78 56.84 61.48 52.38C58.78 49.39 58.75 49.27 55.25 49.16C50.27 49 45.28 48.98 40.3 48.94C36.5 48.91 32.71 48.93 28.37 48.93Z" />
+                    <path d="M185.58 76.92C179.07 76.92 173 76.92 166.33 76.92C169.63 58.62 172.85 40.74 176.14 22.43C170.41 22.43 165.49 22.43 159.9 22.43C156.65 40.63 153.4 58.86 150.21 76.72C147.28 77.55 146.83 75.85 146.36 74.5C143.84 67.29 141.41 60.05 138.9 52.67C140.09 51.55 141.13 50.5 142.23 49.52C151.82 40.92 155.05 29.88 153.97 17.45C153.41 11.01 149.49 6.46999 143.94 3.36999C142.35 2.47999 140.66 1.78999 138 0.519993C139.9 0.279993 140.88 0.0399933 141.86 0.0399933C165.18 0.0799933 188.49 0.249993 211.81 0.169993C228.32 0.109993 233.43 10.21 231.57 23.89C230.65 30.65 229.19 37.34 227.97 44.06C226.24 53.57 224.53 63.08 222.76 72.58C222.49 74.01 221.93 75.39 221.47 76.89C215.33 76.89 209.43 76.89 203.27 76.89C203.27 75.07 203.05 73.59 203.3 72.19C205.75 58.76 208.31 45.36 210.75 31.93C211.19 29.51 211.21 27.02 211.42 24.64C206.49 20.43 201.26 22.75 195.75 22.21C192.36 40.52 189.02 58.47 185.58 76.92Z" />
+                    <path d="M120.54 76.89C109.53 76.89 99 76.89 87.99 76.89C89.43 68.97 90.79 61.52 92.19 53.84C98.94 53.84 105.51 53.84 112.57 53.84C115.19 61.44 117.82 69.05 120.54 76.89Z" />
+                    <path d="M96.6499 32.19C97.4399 27.71 98.1299 23.83 98.9099 19.44C103.99 19.44 108.76 19.44 113.54 19.44C117.86 19.44 122.19 19.31 126.51 19.49C130.54 19.66 132.66 21.46 132.92 24.44C133.22 27.81 131.13 31.16 127.94 32.23C126.85 32.6 125.67 32.86 124.53 32.86C116.21 32.91 107.9 32.9 99.5799 32.85C98.7999 32.85 98.0199 32.51 96.6499 32.19Z" />
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_439_17">
+                    <rect width="231.94" height="77.3" fill="white"/>
+                    </clipPath>
+                    </defs>
+                  </svg>
+              </span>
+            </button>
+          </div>
+          <div class="rounded-3xl mt-4 sm:mt-0">
+            <div id="Wise" class="tabcontent hidden">
+              <h3 class="text-2xl font-bold mb-2">Trainee > Desenvolvedor</h3>
+              <span class="text-sm font-light text-gray-500 mb-4 block">Setembro 2022 - Atual</span>
+              <p class="text-gray-400 mb-2"><span class="text-blue-300 mr-1">/&gt;</span>Nivelamento na linguagem Java e em banco de dados Oracle SQL.</p>
+              <p class="text-gray-400 mb-2"><span class="text-blue-300 mr-1">/&gt;</span>Treinamento sobre Form/Report Builder & SQL developer.</p>
+              <p class="text-gray-400"><span class="text-blue-300 mr-1">/&gt;</span>Trabalhando na parte de migração do sistema utilizando o framework Arcturus.</p>
+            </div>
+            <div id="Projedata" class="tabcontent hidden">
+              <h3 class="text-2xl font-bold mb-2">Estagiário > Desenvolvedor</h3>
+              <span class="text-sm font-light text-gray-500 mb-4 block">Abril 2021 - Dezembro 2021</span>
+              <p class="text-gray-400 mb-2"><span class="text-blue-300 mr-1">/&gt;</span>Nivelamento na linguagem Java e em banco de dados Oracle SQL.</p>
+              <p class="text-gray-400 mb-2"><span class="text-blue-300 mr-1">/&gt;</span>Treinamento sobre Form/Report Builder & SQL developer.</p>
+              <p class="text-gray-400"><span class="text-blue-300 mr-1">/&gt;</span>Trabalhando na parte de migração do sistema utilizando o framework Arcturus (Java & SQL).</p>
+            </div>
+            <div id="BRM" class="tabcontent hidden">
+              <h3 class="text-2xl font-bold mb-2">Designer</h3>
+              <span class="text-sm font-light text-gray-500 mb-4 block">Abril 2018 - Fevereiro 2021</span>
+              <p class="text-gray-400 mb-2"><span class="text-blue-300 mr-1">/&gt;</span>Responsável pelo design gráfico da empresa.</p>
+              <p class="text-gray-400 mb-2"><span class="text-blue-300 mr-1">/&gt;</span>Trabalhando na constante melhoria dos processos de impressão.</p>
+              <p class="text-gray-400"><span class="text-blue-300 mr-1">/&gt;</span>Auxiliando na parte financeira: emissão de notas, pagamentos, entre outros.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <div class="formacao-cursos container">

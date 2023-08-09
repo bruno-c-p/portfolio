@@ -1,3 +1,4 @@
+document.getElementById("defaultOpen").click();
 const menuButton = document.querySelector("#menuButton");
 const menuMobile = document.querySelector("#menuMobile");
 
@@ -11,22 +12,34 @@ function handleIcon() {
   menuIcon.name = menuIcon.name === "menu" ? "close" : "menu";
 }
 
-const abas = document.querySelectorAll(".experiencia__abas li")
-const conteudos = document.querySelectorAll(".experiencia__aba-conteudos li")
+function openExperience(event, companyName) {
+  const tabcontent = document.getElementsByClassName("tabcontent");
+  const tablinks = document.getElementsByClassName("tablinks");
 
-abas.forEach((item) => {
-  item.addEventListener("click", function () {
-    const conteudo = document.querySelector(this.dataset.target)
+  for (let i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].classList.add("hidden");
+  }
 
-    abas.forEach((i) => {
-      i.classList.remove("ativo")
-    })
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].classList.remove(
+      "bg-blue-950",
+      "font-bold",
+      "text-blue-400",
+      "border-b-4",
+      "sm:border-l-4",
+      "sm:border-b-0",
+      "border-blue-400"
+    );
+  }
 
-    conteudos.forEach((i) => {
-      i.classList.remove("ativo")
-    })
-
-    conteudo.classList.add("ativo")
-    this.classList.add("ativo")
-  })
-})
+  document.getElementById(companyName).classList.remove("hidden");
+  event.currentTarget.classList.add(
+    "bg-blue-950",
+    "font-bold",
+    "text-blue-400",
+    "border-b-4",
+    "sm:border-l-4",
+    "sm:border-b-0",
+    "border-blue-400"
+  );
+}
