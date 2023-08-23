@@ -10,7 +10,7 @@ export default {
         '4pc': '4%',
       },
       fontFamily: {
-        sans: ["'Figtree'", "sans-serif"],
+        sans: ["'Red Hat Display'", "sans-serif"],
       },
     },
   },

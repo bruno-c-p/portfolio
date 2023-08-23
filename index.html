@@ -7,13 +7,11 @@
   <meta name="description" content="Portfólio do software developer Bruno Cardozo Pereira">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="./icons/favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnhttps://nerdcave.com/tailwind-cheat-sheetect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=red-hat-display@700,400,500,600&display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link rel="stylesheet" href="./src/index.css">
+  <script defer type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script defer nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <title>Bruno Cardozo | Dev</title>
 </head>
 
@@ -22,7 +20,7 @@
     <nav class="bg-gray-950 py-2 backdrop-filter lg:backdrop-blur-lg lg:bg-opacity-30">
       <div class="max-w-7xl mx-auto px-4pc">
         <div class="flex items-center justify-between">
-            <a href="#">
+            <a href="/" aria-label="Return to home">
               <svg class="fill-blue-400 p-2 pb-4" width="48" height="81" viewBox="0 0 48 81" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_424_2)">
                 <path d="M12.9235 0C14.9034 0 16.782 0.447269 18.4615 1.24525C21.1492 2.50937 23.3239 4.67801 24.6015 7.3594C25.4017 9.03416 25.8458 10.9076 25.8458 12.8875V25.7695H22.1486C20.8999 25.7695 19.7936 25.1469 19.1225 24.1958C18.7341 23.6464 18.4982 22.9872 18.4603 22.2769V12.8875C18.4603 9.83769 15.9807 7.36495 12.9223 7.36495C9.86399 7.36495 7.38436 9.83769 7.38436 12.8875V33.1345H23.9994C28.7606 33.1345 33.1934 34.514 36.9229 36.8947C38.5289 37.919 40.0046 39.1321 41.3179 40.4983C42.4375 41.6615 43.4369 42.9345 44.3028 44.3007C46.6444 47.9965 48 52.3704 48 57.0672C48 61.7641 46.6444 66.138 44.3028 69.8338C43.4381 71.2 42.4386 72.473 41.3179 73.6362C40.0035 75.0024 38.5278 76.2154 36.9229 77.2398C33.1934 79.6205 28.7606 81 23.9994 81C17.55 81 11.697 78.4673 7.38436 74.3376L6.68098 73.6362C2.53973 69.3355 0 63.4988 0 57.0661V47.8611H3.69274C5.73276 47.8611 7.38547 49.5081 7.38547 51.5435V57.0661C7.38547 66.2157 14.8255 73.635 24.0006 73.635C29.2191 73.635 33.879 71.2356 36.924 67.4798C39.2334 64.6331 40.6168 61.0105 40.6168 57.0661C40.6168 53.1206 39.2334 49.4992 36.924 46.6524C33.879 42.8967 29.2202 40.4972 24.0006 40.4972H3.69274C1.6516 40.4972 0 38.8502 0 36.8159V12.8875C0 10.9076 0.444063 9.03416 1.24427 7.3594C2.52192 4.67912 4.69661 2.51048 7.38436 1.24525C9.06379 0.447269 10.9424 0 12.9235 0Z"/>
@@ -77,17 +75,17 @@
       </div>
     </nav>
   </header>
-  <main class="mx-auto max-w-7xl mt-16 lg:mt-32 px-4pc">
-    <section class="flex flex-col md:flex-row md:gap-10 lg:gap-20 justify-center items-center">
-      <img class="max-w-[250px] lg:max-w-[300px] mt-12 md:mt-0" src="./img/foto-banner.webp" alt="Foto de Perfil">
+  <main class="mx-auto max-w-7xl px-4pc">
+    <section class="flex flex-col mt-16 lg:mt-32 md:flex-row md:gap-10 lg:gap-20 justify-center items-center">
+      <img width="250" height="276" class="max-w-[250px] lg:max-w-[300px] mt-12 md:mt-0" src="./img/foto-banner.webp" alt="Foto de Perfil">
       <div class="order-first md:order-none">
-        <span class="block uppercase mb-4 text-gray-500 font-bold">Olá, meu nome é</span>
+        <span class="block uppercase mb-4 text-gray-400 font-bold">Olá, meu nome é</span>
         <h1 class="font-bold text-4xl sm:text-5xl lg:text-6xl">Bruno Cardozo.</h1>
         <span class="block font-bold text-4xl sm:text-5xl lg:text-6xl text-gray-300 mb-4 md:mb-8">Software Enginner.</span>
-        <p class="text-gray-400 max-w-prose">Desenvolvedor Full-Stack especializado em soluções para a web. Atualmente trabalho como desenvolvedor backend Java na <a class="text-blue-200" href="https://www.wises.com.br">Wise</a>.</p>
+        <p class="text-gray-400 max-w-prose">Desenvolvedor Full-Stack especializado em soluções para a web. Atualmente trabalho como desenvolvedor backend Java na <a class="text-blue-200 hover:underline" href="https://www.wises.com.br">Wise</a>.</p>
       </div>
     </section>
-    <div id="sobre" class="flex flex-col md:flex-row md:gap-14 lg:gap-20 justify-between mt-16 lg:mt-32">
+    <div id="sobre" class="flex flex-col md:flex-row md:gap-14 lg:gap-20 justify-between pt-16 lg:pt-32">
       <section class="md:w-1/2">
         <div class="flex gap-8 items-center mb-6 md:mb-8">
           <h2 class="text-gray-50 text-3xl font-bold min-w-fit">Sobre mim</h2>
@@ -100,11 +98,11 @@
           e desde então, venho trilhando um caminho de crescimento constante.
         </p>
         <p class="text-gray-400 max-w-prose mb-4">
-          Minha jornada na área de tecnologia começou em 2021 quando trabalhei em uma <a class="text-blue-200" href="https://www.projedata.com.br">empresa de ERP</a>,
+          Minha jornada na área de tecnologia começou em 2021 quando trabalhei em uma <a class="text-blue-200 hover:underline" href="https://www.projedata.com.br">empresa de ERP</a>,
           onde contribuí na migração de sistemas desktop para a web, utilizando <strong class="text-gray-300">Java</strong> e <strong class="text-gray-300">SQL</strong>.
         </p>
         <p class="text-gray-400 max-w-prose">
-          Hoje, estou focado em evoluir minha carreira como desenvolvedor na <a class="text-blue-200" href="https://www.wises.com.br">Wise</a>.
+          Hoje, estou focado em evoluir minha carreira como desenvolvedor na <a class="text-blue-200 hover:underline" href="https://www.wises.com.br">Wise</a>.
           Atuando na parte de API's utilizando <strong class="not-italic font-bold text-gray-300">Java</strong>, <strong class="not-italic font-bold text-gray-300">Maven</strong>, <strong class="not-italic font-bold text-gray-300">Hibernate</strong>, <strong class="not-italic font-bold text-gray-300">PostgreSQL</strong> & <strong class="not-italic font-bold text-gray-300">Gitlab</strong>.
         </p>
       </section>
@@ -126,7 +124,7 @@
         </ul>
       </section>
     </div>
-    <section id="experiencia" class="mt-16 lg:mt-32">
+    <section id="experiencia" class="pt-16 lg:pt-32">
       <div class="flex gap-8 items-center mb-6 md:mb-8">
         <div class="hidden sm:block w-full bg-gray-800 h-[2px]"></div>
         <h2 class="text-gray-50 text-3xl font-bold min-w-fit">Onde já trabalhei</h2>
@@ -134,7 +132,7 @@
       </div>
       <div class="max-w-3xl mx-auto">
         <div class="flex flex-col sm:flex-row sm:gap-10">
-          <div id="tab" class="mx-auto flex sm:flex-col min-w-full sm:min-w-[180px] gap-3 text-gray-500">
+          <div id="tab" class="mx-auto flex sm:flex-col min-w-full sm:min-w-[180px] gap-3 text-gray-400">
             <button id="defaultOpen" onClick="openExperience(event, 'Wise')" class="tablinks w-full py-4 sm:px-8 h-1/3 bg-gray-900 hover:bg-gray-800 rounded duration-300 rounded-t-none sm:rounded sm:rounded-l-none">
               <span class="uppercase flex justify-center sm:block sm:text-right">
                 <span class="hidden sm:block">Wise</span>
@@ -188,44 +186,44 @@
           <div class="rounded-3xl mt-4 sm:mt-0">
             <div id="Wise" class="tabcontent hidden">
               <h3 class="text-2xl font-bold mb-2">Trainee > Desenvolvedor <a target="_blank" href="https://www.wises.com.br" class="inline-block group transition duration-300 ml-1 font-bold text-blue-400">@Wise<span class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-blue-400"></span></a></h3>
-              <span class="text-sm font-light text-gray-500 mb-4 block">Setembro 2022 - Atual</span>
-              <p class="text-gray-400 mb-2"><span class="text-blue-300 mr-1">/&gt;</span>Nivelamento na linguagem Java e em banco de dados Oracle SQL.</p>
-              <p class="text-gray-400 mb-2"><span class="text-blue-300 mr-1">/&gt;</span>Treinamento sobre Form/Report Builder & SQL developer.</p>
-              <p class="text-gray-400"><span class="text-blue-300 mr-1">/&gt;</span>Trabalhando na parte de migração do sistema utilizando o framework Arcturus.</p>
+              <span class="text-sm font-light text-gray-400 mb-4 block">Setembro 2022 - Atual</span>
+              <p class="text-blue-100 mb-2"><span class="text-blue-300 mr-1">/&gt;</span>Nivelamento na linguagem Java e em banco de dados Oracle SQL.</p>
+              <p class="text-blue-100 mb-2"><span class="text-blue-300 mr-1">/&gt;</span>Treinamento sobre Form/Report Builder & SQL developer.</p>
+              <p class="text-blue-100"><span class="text-blue-300 mr-1">/&gt;</span>Trabalhando na parte de migração do sistema utilizando o framework Arcturus.</p>
             </div>
             <div id="Projedata" class="tabcontent hidden">
               <h3 class="text-2xl font-bold mb-2">Estagiário > Desenvolvedor <a target="_blank" href="https://www.projedata.com.br" class="inline-block group transition duration-300 ml-1 font-bold text-blue-400">@Projedata<span class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-blue-400"></span></a></h3>
-              <span class="text-sm font-light text-gray-500 mb-4 block">Abril 2021 - Dezembro 2021</span>
-              <p class="text-gray-400 mb-2"><span class="text-blue-300 mr-1">/&gt;</span>Nivelamento na linguagem Java e em banco de dados Oracle SQL.</p>
-              <p class="text-gray-400 mb-2"><span class="text-blue-300 mr-1">/&gt;</span>Treinamento sobre Form/Report Builder & SQL developer.</p>
-              <p class="text-gray-400"><span class="text-blue-300 mr-1">/&gt;</span>Trabalhando na parte de migração do sistema utilizando o framework Arcturus (Java & SQL).</p>
+              <span class="text-sm font-light text-gray-400 mb-4 block">Abril 2021 - Dezembro 2021</span>
+              <p class="text-blue-100 mb-2"><span class="text-blue-300 mr-1">/&gt;</span>Nivelamento na linguagem Java e em banco de dados Oracle SQL.</p>
+              <p class="text-blue-100 mb-2"><span class="text-blue-300 mr-1">/&gt;</span>Treinamento sobre Form/Report Builder & SQL developer.</p>
+              <p class="text-blue-100"><span class="text-blue-300 mr-1">/&gt;</span>Trabalhando na parte de migração do sistema utilizando o framework Arcturus (Java & SQL).</p>
             </div>
             <div id="BRM" class="tabcontent hidden">
               <h3 class="text-2xl font-bold mb-2">Designer <a target="_blank" href="https://www.google.com/search?q=brm&sourceid=chrome&ie=UTF-8#rlimm=3789662483416777317" class="inline-block group transition duration-300 ml-1 font-bold text-blue-400">@Brm<span class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-blue-400"></span></a></h3>
-              <span class="text-sm font-light text-gray-500 mb-4 block">Abril 2018 - Fevereiro 2021</span>
-              <p class="text-gray-400 mb-2"><span class="text-blue-300 mr-1">/&gt;</span>Responsável pelo design gráfico da empresa.</p>
-              <p class="text-gray-400 mb-2"><span class="text-blue-300 mr-1">/&gt;</span>Trabalhando na constante melhoria dos processos de impressão.</p>
-              <p class="text-gray-400"><span class="text-blue-300 mr-1">/&gt;</span>Auxiliando na parte financeira: emissão de notas, pagamentos, entre outros.</p>
+              <span class="text-sm font-light text-gray-400 mb-4 block">Abril 2018 - Fevereiro 2021</span>
+              <p class="text-blue-100 mb-2"><span class="text-blue-300 mr-1">/&gt;</span>Responsável pelo design gráfico da empresa.</p>
+              <p class="text-blue-100 mb-2"><span class="text-blue-300 mr-1">/&gt;</span>Trabalhando na constante melhoria dos processos de impressão.</p>
+              <p class="text-blue-100"><span class="text-blue-300 mr-1">/&gt;</span>Auxiliando na parte financeira: emissão de notas, pagamentos, entre outros.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <div class="flex flex-col md:flex-row md:gap-10 lg:gap-20 justify-between mt-16 lg:mt-32">
-      <section id="formacao" class="flex flex-col gap-8 md:w-1/2">
+    <div class="flex flex-col md:flex-row md:gap-10 lg:gap-20 justify-between">
+      <section id="formacao" class="flex flex-col gap-8 md:w-1/2 pt-16 lg:pt-32">
         <div>
           <div class="flex gap-8 items-center mb-4">
             <h2 class="text-gray-50 text-3xl font-bold min-w-fit">Formação</h2>
             <div class="w-full bg-gray-800 h-[2px]"></div>
           </div>
           <p class="text-gray-400 max-w-[50ch]">
-            Estou na 6ª fase cursando bacharel em <strong class="not-italic font-bold text-gray-300">Sistemas de Informação</strong> pela <a target="_blank" class="text-blue-200" href="https://unibave.net/">UNIBAVE</a>.
+            Estou na 8ª fase cursando bacharel em <strong class="not-italic font-bold text-gray-300">Sistemas de Informação</strong> pela <a target="_blank" class="text-blue-200 hover:underline" href="https://unibave.net/">UNIBAVE</a>.
             Além disso me mantenho sempre atualizado com cursos intensivos online.
           </p>
         </div>
         <div>
           <div class="flex gap-4 items-center mb-4">
-            <ion-icon class="text-2xl cursor-pointer text-blue-400 block" name="language-outline"></ion-icon>
+            <ion-icon class="text-2xl text-blue-400 block" name="language-outline"></ion-icon>
             <h3 class="uppercase mt-1">Idiomas</h3>
           </div>
           <div class="flex flex-col gap-2">
@@ -234,41 +232,36 @@
           </div>
         </div>
       </section>
-      <section class="cursos mt-16 md:mt-0 md:w-1/2">
+      <section class="cursos mt-16 md:mt-0 md:w-1/2 pt-16 lg:pt-32">
         <div class="flex gap-8 items-center mb-4">
           <h2 class="text-gray-50 text-3xl font-bold min-w-fit">Cursos</h2>
           <div class="w-full bg-gray-800 h-[2px]"></div>
         </div>
         <ul class="flex flex-col gap-4 text-gray-400">
-          <li class="flex gap-2">
-            <ion-icon class="text-2xl cursor-pointer text-blue-400 block" name="book-outline"></ion-icon>
-            <p class="flex-1">Explorer - <a href="https://www.rocketseat.com.br/explorer" class="text-blue-200">Rocketseat</a></p>
+          <li class="flex gap-3">
+            <ion-icon class="text-2xl text-blue-400 block" name="book-outline"></ion-icon>
+            <p class="flex-1">Explorer - <a href="https://www.rocketseat.com.br/explorer" class="text-blue-200 hover:underline">Rocketseat</a></p>
             <p class="font-bold">60h</p>
           </li>
-          <li class="flex gap-2">
-            <ion-icon class="text-2xl cursor-pointer text-blue-400 block" name="book-outline"></ion-icon>
-            <p class="flex-1">Ignite - <a href="https://www.rocketseat.com.br/ignite" class="text-blue-200">Rocketseat</a></p>
+          <li class="flex gap-3">
+            <ion-icon class="text-2xl text-blue-400 block" name="book-outline"></ion-icon>
+            <p class="flex-1">Ignite - <a href="https://www.rocketseat.com.br/ignite" class="text-blue-200 hover:underline">Rocketseat</a></p>
             <p class="font-bold">200h</p>
           </li>
-          <li class="flex gap-2">
-            <ion-icon class="text-2xl cursor-pointer text-blue-400 block" name="book-outline"></ion-icon>
-            <p class="flex-1">Formação Desenvolvedor Moderno - <a href="https://devsuperior.com.br" class="text-blue-200">DevSuperior</a></p>
+          <li class="flex gap-3">
+            <ion-icon class="text-2xl text-blue-400 block" name="book-outline"></ion-icon>
+            <p class="flex-1">Formação Desenvolvedor Moderno - <a href="https://devsuperior.com.br" class="text-blue-200 hover:underline">DevSuperior</a></p>
             <p class="font-bold">160h</p>
           </li>
-          <li class="flex gap-2">
-            <ion-icon class="text-2xl cursor-pointer text-blue-400 block" name="book-outline"></ion-icon>
-            <p class="flex-1">Fullstack Angular & Spring - <a href="https://lp.algaworks.com/fsas-fs-pv/" class="text-blue-200">Algaworks</a></p>
+          <li class="flex gap-3">
+            <ion-icon class="text-2xl text-blue-400 block" name="book-outline"></ion-icon>
+            <p class="flex-1">Fullstack Angular & Spring - <a href="https://lp.algaworks.com/fsas-fs-pv/" class="text-blue-200 hover:underline">Algaworks</a></p>
             <p class="font-bold">120h</p>
-          </li>
-          <li class="flex gap-2">
-            <ion-icon class="text-2xl cursor-pointer text-blue-400 block" name="book-outline"></ion-icon>
-            <p class="flex-1">UI Design para Iniciantes <span>- Origamid</span></p>
-            <p class="font-bold">30h</p>
           </li>
         </ul>
       </section>
     </div>
-    <section class="mt-16 lg:mt-32">
+    <section id="projetos" class="pt-16 lg:mt-32">
       <div class="flex gap-8 items-center mb-6 md:mb-8">
         <div class="hidden sm:block w-full bg-gray-800 h-[2px]"></div>
         <h2 class="text-gray-50 text-3xl font-bold min-w-fit">Meus projetos</h2>
@@ -278,14 +271,14 @@
         <div class="group p-4 bg-gray-900 transition duration-300 rounded hover:-translate-y-2 cursor-pointer flex flex-col justify-between h-full">
           <div class="flex justify-between">
             <div>
-              <ion-icon class="text-4xl cursor-pointer text-blue-300 block group-hover:text-blue-400" name="folder-outline"></ion-icon>
+              <ion-icon class="text-4xl duration-300 cursor-pointer text-blue-300 block group-hover:text-blue-400" name="folder-outline"></ion-icon>
             </div>
             <div class="flex gap-2">
               <a target="_blank" href="https://github.com/bruno-c-p/github-user-search">
-                <ion-icon class="text-xl cursor-pointer text-gray-300 block hover:text-blue-400 p-2" name="logo-github"></ion-icon>
+                <ion-icon class="text-xl duration-300 cursor-pointer text-gray-300 block hover:text-blue-400 p-2" name="logo-github"></ion-icon>
               </a>
               <a target="_blank" href="https://github.com/bruno-c-p/github-user-search">
-                <ion-icon class="text-xl cursor-pointer text-gray-300 block hover:text-blue-400 p-2" name="open-outline"></ion-icon>
+                <ion-icon class="text-xl duration-300 cursor-pointer text-gray-300 block hover:text-blue-400 p-2" name="open-outline"></ion-icon>
               </a>
             </div>
           </div>
@@ -313,17 +306,20 @@
           Entre em contato comigo e marcamos uma conversa 👋
         </p>
         <ul class="flex flex-col uppercase gap-4 md:w-1/2 font-bold">
-          <li class="flex md:justify-end items-center text-lg sm:text-xl md:text-3xl gap-4 underline">
-            <a class="text-gray-200" href="mailto:bruno.cardozo.pereira@gmail.com">Email</a>
-            <ion-icon class="pb-1" name="open-outline"></ion-icon>
+          <li class="group text-lg sm:text-xl md:text-3xl underline">
+            <a target="_blank" class="w-full flex md:justify-end items-center gap-4 text-gray-200 text-end group-hover:text-blue-400 duration-300" href="mailto:bruno.cardozo.pereira@gmail.com">Email
+              <ion-icon class="pb-1" name="open-outline"></ion-icon>
+            </a>
           </li>
-          <li class="flex md:justify-end items-center text-lg sm:text-xl md:text-3xl gap-4 underline">
-            <a class="text-gray-200" href="https://github.com/bruno-c-p">Github</a>
-            <ion-icon class="pb-1" name="open-outline"></ion-icon>
+          <li class="group text-lg sm:text-xl md:text-3xl underline">
+            <a target="_blank" class="w-full flex md:justify-end items-center gap-4 text-gray-200 text-end group-hover:text-blue-400 duration-300" href="https://github.com/bruno-c-p">Github
+              <ion-icon class="pb-1" name="open-outline"></ion-icon>
+            </a>
           </li>
-          <li class="flex md:justify-end items-center text-lg sm:text-xl md:text-3xl gap-4 underline">
-            <a class="text-gray-200" href="https://www.linkedin.com/in/bruno-cardozo-pereira/">Linkedin</a>
-            <ion-icon class="pb-1" name="open-outline"></ion-icon>
+          <li class="group text-lg sm:text-xl md:text-3xl underline">
+            <a target="_blank" class="w-full flex md:justify-end items-center gap-4 text-gray-200 text-end group-hover:text-blue-400 duration-300" href="https://www.linkedin.com/in/bruno-cardozo-pereira/">Linkedin
+              <ion-icon class="pb-1" name="open-outline"></ion-icon>
+            </a>
           </li>
         </ul>
         </div>
