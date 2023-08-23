@@ -1,3 +1,5 @@
+import './style.css'
+
 document.getElementById("defaultOpen").click();
 const menuButton = document.querySelector("#menuButton");
 const menuMobile = document.querySelector("#menuMobile");
