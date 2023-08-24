@@ -1,8 +1,15 @@
-import './style.css'
+import '/style.css';
 
-document.getElementById("defaultOpen").click();
+document.addEventListener("DOMContentLoaded", () => document.getElementById("defaultOpen").click());
+
+const linksMenuMobile = document.querySelectorAll(".link-menu-mobile");
 const menuButton = document.querySelector("#menuButton");
 const menuMobile = document.querySelector("#menuMobile");
+
+linksMenuMobile.forEach(link => link.addEventListener("click", () => {
+  handleIcon();
+  menuMobile.classList.toggle("hidden");
+}));
 
 menuButton.addEventListener("click", () => {
   handleIcon();
@@ -14,16 +21,32 @@ function handleIcon() {
   menuIcon.name = menuIcon.name === "menu" ? "close" : "menu";
 }
 
-function openExperience(event, companyName) {
-  const tabcontent = document.getElementsByClassName("tabcontent");
-  const tablinks = document.getElementsByClassName("tablinks");
+const buttons = document.querySelectorAll('.tablinks');
 
-  for (let i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].classList.add("hidden");
-  }
-
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].classList.remove(
+buttons.forEach(button => {
+  button.addEventListener("click", function(event) {
+    const companyName = event.currentTarget.getAttribute('data-company');
+    const tabcontent = document.getElementsByClassName("tabcontent");
+    const tablinks = document.getElementsByClassName("tablinks");
+  
+    for (let i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].classList.add("hidden");
+    }
+  
+    for (let i = 0; i < tablinks.length; i++) {
+      tablinks[i].classList.remove(
+        "bg-blue-950",
+        "font-bold",
+        "text-blue-400",
+        "border-b-4",
+        "sm:border-l-4",
+        "sm:border-b-0",
+        "border-blue-400"
+      );
+    }
+  
+    document.getElementById(companyName).classList.remove("hidden");
+    event.currentTarget.classList.add(
       "bg-blue-950",
       "font-bold",
       "text-blue-400",
@@ -32,16 +55,5 @@ function openExperience(event, companyName) {
       "sm:border-b-0",
       "border-blue-400"
     );
-  }
-
-  document.getElementById(companyName).classList.remove("hidden");
-  event.currentTarget.classList.add(
-    "bg-blue-950",
-    "font-bold",
-    "text-blue-400",
-    "border-b-4",
-    "sm:border-l-4",
-    "sm:border-b-0",
-    "border-blue-400"
-  );
-}
+  });
+})
