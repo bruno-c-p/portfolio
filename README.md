@@ -20,7 +20,7 @@ The project is still in development, and the upcoming updates will focus on the 
 
 Before you begin, make sure you have met the following requirements:
 
-* You have installed the latest version of `node`.
+* You have installed the latest version of [node](https://nodejs.org/en/download).
 
 ## 🚀 Installing the Portfolio
 
