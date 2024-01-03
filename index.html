@@ -6,98 +6,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Portfólio do software developer Bruno Cardozo Pereira">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gabarito&family=Young+Serif&display=swap" rel="stylesheet">
   <title>Bruno Cardozo | Dev</title>
 </head>
 
-<body class="bg-gray-950 text-white">
-  <header class="sticky w-full top-0 z-10">
-    <nav class="bg-gray-950 py-2 backdrop-filter lg:backdrop-blur-lg lg:bg-opacity-30">
-      <div class="max-w-7xl mx-auto px-4pc">
-        <div class="flex items-center justify-between">
-          <a href="/" aria-label="Return to home">
-            <svg class="fill-blue-400 p-2 pb-4" width="48" height="81" viewBox="0 0 48 81" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <g clip-path="url(#clip0_424_2)">
-                <path
-                  d="M12.9235 0C14.9034 0 16.782 0.447269 18.4615 1.24525C21.1492 2.50937 23.3239 4.67801 24.6015 7.3594C25.4017 9.03416 25.8458 10.9076 25.8458 12.8875V25.7695H22.1486C20.8999 25.7695 19.7936 25.1469 19.1225 24.1958C18.7341 23.6464 18.4982 22.9872 18.4603 22.2769V12.8875C18.4603 9.83769 15.9807 7.36495 12.9223 7.36495C9.86399 7.36495 7.38436 9.83769 7.38436 12.8875V33.1345H23.9994C28.7606 33.1345 33.1934 34.514 36.9229 36.8947C38.5289 37.919 40.0046 39.1321 41.3179 40.4983C42.4375 41.6615 43.4369 42.9345 44.3028 44.3007C46.6444 47.9965 48 52.3704 48 57.0672C48 61.7641 46.6444 66.138 44.3028 69.8338C43.4381 71.2 42.4386 72.473 41.3179 73.6362C40.0035 75.0024 38.5278 76.2154 36.9229 77.2398C33.1934 79.6205 28.7606 81 23.9994 81C17.55 81 11.697 78.4673 7.38436 74.3376L6.68098 73.6362C2.53973 69.3355 0 63.4988 0 57.0661V47.8611H3.69274C5.73276 47.8611 7.38547 49.5081 7.38547 51.5435V57.0661C7.38547 66.2157 14.8255 73.635 24.0006 73.635C29.2191 73.635 33.879 71.2356 36.924 67.4798C39.2334 64.6331 40.6168 61.0105 40.6168 57.0661C40.6168 53.1206 39.2334 49.4992 36.924 46.6524C33.879 42.8967 29.2202 40.4972 24.0006 40.4972H3.69274C1.6516 40.4972 0 38.8502 0 36.8159V12.8875C0 10.9076 0.444063 9.03416 1.24427 7.3594C2.52192 4.67912 4.69661 2.51048 7.38436 1.24525C9.06379 0.447269 10.9424 0 12.9235 0Z" />
-              </g>
-              <defs>
-                <clipPath id="clip0_424_2">
-                  <rect width="48" height="81" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
-          </a>
-          <div class="hidden md:block">
-            <ul class="flex gap-5">
-              <li><a class="p-2 text-gray-100 block hover:text-blue-300 duration-300" href="#sobre">Sobre</a></li>
-              <li><a class="p-2 text-gray-100 block hover:text-blue-300 duration-300"
-                  href="#experiencia">Experiência</a></li>
-              <li><a class="p-2 text-gray-100 block hover:text-blue-300 duration-300" href="#formacao">Formação</a></li>
-              <li><a class="p-2 text-gray-100 block hover:text-blue-300 duration-300" href="#projetos">Projetos</a></li>
-              <li><a class="p-2 text-gray-100 block hover:text-blue-300 duration-300" href="#contato">Contato</a></li>
-              <li>
-                <a class="py-2 px-4 duration-300 flex gap-2 border-2 border-blue-200 rounded text-blue-200 items-center hover:bg-blue-950 hover:scale-105"
-                  href="/docs/curriculo.pdf" target="_blank">
-                  Currículo
-                  <svg class="stroke-current text-blue-200 pb-[2px]" width="18" height="19" viewBox="0 0 18 19"
-                    fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M0.642822 14V15.2857C0.642822 15.9677 0.91374 16.6218 1.39598 17.104C1.87821 17.5862 2.53227 17.8572 3.21425 17.8572H14.7857C15.4677 17.8572 16.1217 17.5862 16.604 17.104C17.0862 16.6218 17.3571 15.9677 17.3571 15.2857V14M5.14282 8.21431L8.99997 12.7143M8.99997 12.7143L12.8571 8.21431M8.99997 12.7143L8.99996 1.14288"
-                      stroke-width="1.71429" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="flex md:hidden">
-            <button id="menuButton" type="button" aria-label="Menu" aria-expanded="false"
-              class="inline-flex items-center justify-center p-2 rounded-md">
-              <ion-icon id="menuIcon" class="text-3xl cursor-pointer mx-2 text-blue-300 block" name="menu"></ion-icon>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div id="menuMobile" class="hidden h-screen lg:hidden">
-        <ul class="max-w-7xl mx-auto px-4pc pt-2 flex flex-col gap-2">
-          <li><a
-              class="link-menu-mobile p-4 uppercase font-bold text-[15px] text-center block hover:text-blue-300 hover:bg-gray-900 rounded duration-300"
-              href="#sobre">Sobre</a></li>
-          <li><a
-              class="link-menu-mobile p-4 uppercase font-bold text-[15px] text-center block hover:text-blue-300 hover:bg-gray-900 rounded duration-300"
-              href="#experiencia">Experiência</a></li>
-          <li><a
-              class="link-menu-mobile p-4 uppercase font-bold text-[15px] text-center block hover:text-blue-300 hover:bg-gray-900 rounded duration-300"
-              href="#formacao">Formação</a></li>
-          <li><a
-              class="link-menu-mobile p-4 uppercase font-bold text-[15px] text-center block hover:text-blue-300 hover:bg-gray-900 rounded duration-300"
-              href="#projetos">Projetos</a></li>
-          <li><a
-              class="link-menu-mobile p-4 uppercase font-bold text-[15px] text-center block hover:text-blue-300 hover:bg-gray-900 rounded duration-300"
-              href="#contato">Contato</a></li>
-          <li class="mt-2">
-            <a class="py-4 px-4 duration-300 flex gap-2 justify-center border-2 border-blue-200 rounded text-blue-200 items-center"
-              href="/docs/curriculo.pdf" target="_blank">
-              Currículo
-              <svg class="stroke-current text-blue-200 pb-[2px]" width="18" height="19" viewBox="0 0 18 19" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M0.642822 14V15.2857C0.642822 15.9677 0.91374 16.6218 1.39598 17.104C1.87821 17.5862 2.53227 17.8572 3.21425 17.8572H14.7857C15.4677 17.8572 16.1217 17.5862 16.604 17.104C17.0862 16.6218 17.3571 15.9677 17.3571 15.2857V14M5.14282 8.21431L8.99997 12.7143M8.99997 12.7143L12.8571 8.21431M8.99997 12.7143L8.99996 1.14288"
-                  stroke-width="1.71429" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <main class="mx-auto max-w-7xl px-4pc">
-    <section class="flex flex-col mt-16 lg:mt-32 md:flex-row md:gap-10 lg:gap-20 justify-center items-center">
-      <img width="250" height="276" class="max-w-[250px] lg:max-w-[300px] mt-12 md:mt-0" src="img/foto-banner.webp"
+<body class="w-full h-full m-0 p-0 bg-dark-bg">
+  <div
+    class="before:fixed before:top-0 before:left-0 before:w-screen before:h-screen before:content-[''] before:opacity-[0.02] before:z-50 before:pointer-events-none before:bg-[url('noise.gif')]">
+  </div>
+  <main class="mx-auto max-w-5xl px-4pc">
+    <section class="w-full h-screen flex flex-col items-center justify-center invisible">
+      <div></div>
+      <div></div>
+    </section>
+    <!-- <section class="flex flex-col mt-16 lg:mt-32 md:flex-row md:gap-10 lg:gap-20 justify-center items-center">
+      <img width="250" height="276" class="max-w-[250px] lg:max-w-[300px] mt-12 md:mt-0" src="foto-banner.webp"
         alt="Foto de Perfil">
       <div class="order-first md:order-none">
         <span class="block uppercase mb-4 text-gray-400 font-bold">Olá, meu nome é</span>
@@ -108,7 +34,7 @@
           trabalho como desenvolvedor backend Java na <a class="text-blue-200 hover:underline"
             href="https://www.wises.com.br">Wise</a>.</p>
       </div>
-    </section>
+    </section> -->
     <div id="sobre" class="flex flex-col md:flex-row md:gap-14 lg:gap-20 justify-between pt-16 lg:pt-32">
       <section class="md:w-1/2">
         <div class="flex gap-8 items-center mb-6 md:mb-8">
