@@ -2,7 +2,7 @@
 export default {
   content: [
     "./index.html",
-    "./*.{js,ts,jsx,tsx}",
+    "./*.js",
   ],
   theme: {
     extend: {
@@ -10,7 +10,8 @@ export default {
         '4pc': '4%',
       },
       fontFamily: {
-        sans: ["'Red Hat Display'", "sans-serif"],
+        sans: ["'Gabarito'", "sans-serif"],
+        serif: ["'Young Serif'", "serif"],
       },
     },
   },
