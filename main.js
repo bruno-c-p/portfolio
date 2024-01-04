@@ -15,7 +15,7 @@ gsap.utils.toArray('.gsap-container').forEach((container, index) => {
 gsap.utils.toArray('.socials li').forEach((social, index) => {
   gsap.from(social, {
     opacity: 0,
-    delay: .5 + index * .1,
+    delay: 1.2 + index * .1,
     y: 20,
     ease: Expo.easeInOut
   })
@@ -24,7 +24,7 @@ gsap.utils.toArray('.socials li').forEach((social, index) => {
 gsap.utils.toArray('.stack li').forEach((stack, index) => {
   gsap.from(stack, {
     opacity: 0,
-    delay: .5 + index * .1,
+    delay: .4 + index * .1,
     x: -20,
     ease: Expo.easeInOut
   })
@@ -40,6 +40,13 @@ gsap.from(".message", 1, {
 gsap.from(".name", 1, {
   opacity: 0,
   delay: .1,
-  y: 20,
+  x: -30,
+  ease: Expo.easeInOut
+})
+
+gsap.from(".job", 1, {
+  opacity: 0,
+  delay: .2,
+  x: -30,
   ease: Expo.easeInOut
 })
