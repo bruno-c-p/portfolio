@@ -7,34 +7,48 @@
   <meta name="description" content="Portfólio do software developer Bruno Cardozo Pereira">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gabarito&family=Young+Serif&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;700&family=Young+Serif&display=swap"
+    rel="stylesheet">
   <title>Bruno Cardozo | Dev</title>
 </head>
 
-<body class="w-full h-full m-0 p-0 bg-dark-bg">
+<body class="w-full h-full m-0 p-0 bg-dark-gray antialiased font-normal">
   <div
     class="before:fixed before:top-0 before:left-0 before:w-screen before:h-screen before:content-[''] before:opacity-[0.02] before:z-50 before:pointer-events-none before:bg-[url('noise.gif')]">
   </div>
-  <main class="mx-auto max-w-5xl px-4pc">
-    <section class="w-full h-screen flex flex-col items-center justify-center invisible">
-      <div></div>
-      <div></div>
-    </section>
-    <!-- <section class="flex flex-col mt-16 lg:mt-32 md:flex-row md:gap-10 lg:gap-20 justify-center items-center">
-      <img width="250" height="276" class="max-w-[250px] lg:max-w-[300px] mt-12 md:mt-0" src="foto-banner.webp"
-        alt="Foto de Perfil">
-      <div class="order-first md:order-none">
-        <span class="block uppercase mb-4 text-gray-400 font-bold">Olá, meu nome é</span>
-        <h1 class="font-bold font-serif text-4xl sm:text-5xl lg:text-6xl">Bruno Cardozo.</h1>
-        <span class="block font-bold text-4xl sm:text-5xl lg:text-6xl text-gray-300 mb-4 md:mb-8">Software
-          Enginner.</span>
-        <p class="text-gray-400 max-w-prose">Desenvolvedor Full-Stack especializado em soluções para a web. Atualmente
-          trabalho como desenvolvedor backend Java na <a class="text-blue-200 hover:underline"
-            href="https://www.wises.com.br">Wise</a>.</p>
+  <main class="mx-auto max-w-[1060px] px-4pc">
+    <section class="gsap-container w-full h-screen flex gap-20 flex-col items-center justify-center invisible">
+      <div class="w-full flex justify-start items-center gap-4">
+        <img width="112" height="112" class="w-28 h-28" src="profile.webp" alt="Foto de Perfil">
+        <div>
+          <h1 class="text-white font-serif text-4xl">Bruno Cardozo</h1>
+          <h2 class="text-lg text-secondary-gray">
+            Software Developer @ <a class="text-primary-yellow underline" href="https://www.wises.com.br">Wise</a>
+          </h2>
+          <ul class="flex gap-2 mt-2">
+            <li class="bg-tertiary-gray text-white-gray text-sm px-2 py-[2px]">
+              <a href="https://github.com/bruno-c-p?tab=repositories&q=&type=public&language=go&sort=">Go</a>
+            </li>
+            <li class="bg-tertiary-gray text-white-gray text-sm px-2 py-[2px]">
+              <a href="https://github.com/bruno-c-p?tab=repositories&q=&type=public&language=java&sort=">Java</a>
+            </li>
+            <li class="bg-tertiary-gray text-white-gray text-sm px-2 py-[2px]">Spring</li>
+            <li class="bg-tertiary-gray text-white-gray text-sm px-2 py-[2px]">PostgreSQL</li>
+            <li class="bg-tertiary-gray text-white-gray text-sm px-2 py-[2px]">Typescript</li>
+            <li class="bg-tertiary-gray text-white-gray text-sm px-2 py-[2px]">Nest</li>
+            <li class="bg-tertiary-gray text-white-gray text-sm px-2 py-[2px]">Angular</li>
+            <li class="bg-tertiary-gray text-white-gray text-sm px-2 py-[2px]">Docker</li>
+          </ul>
+        </div>
       </div>
-    </section> -->
+      <p class="text-4xl text-primary-gray">I’m a developer, learner and teacher based out of
+        <span class="text-primary-green">Brazil <sup class="text-secondary-green">🇧🇷</sup></span>. I build scalable,
+        resilient systems of any size, emphasizing <span class="text-primary-yellow">quickly⚡</span>project deliveries.
+      </p>
+    </section>
     <div id="sobre" class="flex flex-col md:flex-row md:gap-14 lg:gap-20 justify-between pt-16 lg:pt-32">
       <section class="md:w-1/2">
         <div class="flex gap-8 items-center mb-6 md:mb-8">
@@ -59,8 +73,7 @@
             class="text-gray-300">Java</strong> e <strong class="text-gray-300">SQL</strong>.
         </p>
         <p class="text-gray-400 max-w-prose">
-          Hoje, estou focado em evoluir minha carreira como desenvolvedor na <a class="text-blue-200 hover:underline"
-            href="https://www.wises.com.br">Wise</a>.
+          Hoje, estou focado em evoluir minha carreira como desenvolvedor na
           Atuando na parte de API's utilizando <strong class="not-italic font-bold text-gray-300">Java</strong>, <strong
             class="not-italic font-bold text-gray-300">Maven</strong>, <strong
             class="not-italic font-bold text-gray-300">Hibernate</strong>, <strong
@@ -416,7 +429,23 @@
   <footer class="px-4pc mx-auto max-w-7xl mt-16">
     <p class="py-10 border-t-2 border-gray-800 text-gray-400">© Bruno Cardozo Pereira 2022.</p>
   </footer>
-  <script type="module" src="main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    const containers = gsap.utils.toArray('.gsap-container');
+    containers.forEach((container, index) => {
+      gsap.to(container, {
+        autoAlpha: 1,
+        ease: 'power1.in',
+        scrollTrigger: {
+          trigger: container,
+          pin: true,
+          scrub: index === 0 ? false : true,
+        }
+      })
+    })
+  </script>
 </body>
 
 </html>
