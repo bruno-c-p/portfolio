@@ -1,11 +1,11 @@
 # My Dev Portfolio
 
-![image](https://github.com/bruno-c-p/bruno-c-p.github.io/assets/62653989/67a68efa-cd17-4427-b2ac-dc1486ac5b75)
+![image](https://github.com/bruno-c-p/bruno-c-p.github.io/assets/62653989/02687cd5-bfd1-4a02-b494-81667337c63f)
 
-> This project showcases my work and skills, and it's a website built with <strong>HTML</strong>, <strong>Javascript</strong>, <strong>TailwindCSS</strong>, and powered by <strong>Vite</strong>.
-> It's a work in progress, and I have some ideas for its future. Here's a brief overview:
 
-### Figma
+> This project showcases my work and skills, and it's a website built with <strong>HTML</strong>, <strong>Javascript</strong>, <strong>GSAP</strong>, <strong>TailwindCSS</strong>, and powered by <strong>Vite</strong>.
+
+## 🖌️ Figma
 [Project Link](https://www.figma.com/file/3rSc6Oj9NlrpE7ruYOSc05/BRUNOCP---PORTFOLIO?type=design&mode=design&t=S9s9AiCIn1IKDvCj-1)<br><br>
 
 ## 💻 Prerequisites
