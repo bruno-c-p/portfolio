@@ -1,4 +1,6 @@
-gsap.registerPlugin(ScrollTrigger);
+import './style.css'
+
+gsap.registerPlugin(ScrollTrigger)
 
 gsap.utils.toArray('.gsap-container').forEach((container, index) => {
   gsap.to(container, {
