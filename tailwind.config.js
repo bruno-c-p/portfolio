@@ -2,7 +2,7 @@
 export default {
   content: [
     "./index.html",
-    "./*.{js,ts,jsx,tsx}",
+    "./*.js",
   ],
   theme: {
     extend: {
@@ -10,7 +10,23 @@ export default {
         '4pc': '4%',
       },
       fontFamily: {
-        sans: ["'Red Hat Display'", "sans-serif"],
+        sans: ["'Gabarito'", "sans-serif"],
+        serif: ["'Young Serif'", "serif"],
+      },
+      colors: {
+        'dark-gray': '#1B1E28',
+        'primary-green': '#5DE4C7',
+        'secondary-green': '#5FB3A1',
+        'primary-yellow': '#FFFAC2',
+        'primary-gray': '#A6ACCD',
+        'secondary-gray': '#A4AACB',
+        'tertiary-gray': '#303340',
+        'white-gray': '#E4F0FB',
+        'senary': '#737373',
+        'septenary': '#595959',
+        'octonary': '#404040',
+        'nonary': '#262626',
+        'denary': '#0D0D0D',
       },
     },
   },
