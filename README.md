@@ -8,14 +8,6 @@
 ### Figma
 [Project Link](https://www.figma.com/file/3rSc6Oj9NlrpE7ruYOSc05/BRUNOCP---PORTFOLIO?type=design&mode=design&t=S9s9AiCIn1IKDvCj-1)<br><br>
 
-### Adjustments and Improvements
-
-The project is still in development, and the upcoming updates will focus on the following tasks:
-
-- [ ] Language switch (PT-BR/EN)
-- [ ] Theme switch (Dark/Light)
-- [ ] Projects via Github API
-
 ## 💻 Prerequisites
 
 Before you begin, make sure you have met the following requirements:
