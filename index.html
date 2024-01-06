@@ -20,15 +20,19 @@
     class="before:fixed before:top-0 before:left-0 before:w-screen before:h-screen before:content-[''] before:opacity-[0.02] before:z-50 before:pointer-events-none before:bg-[url('noise.gif')]">
   </div>
   <main class="mx-auto max-w-[1060px] px-4pc">
-    <section class="gsap-container w-full h-screen flex gap-20 flex-col items-center justify-center invisible">
-      <div class="w-full flex justify-start items-center gap-4">
-        <img width="112" height="112" class="w-28 h-28" src="profile.webp" alt="Foto de Perfil">
+    <section
+      class="gsap-container w-full h-screen flex gap-6 sm:gap-8 md:gap-12 lg:gap-20 flex-col items-center justify-center invisible">
+      <div class="w-full flex flex-col md:flex-row justify-start md:items-center gap-4">
+        <div class="h-full min-w-28 w-28 overflow-hidden">
+          <img width="112" height="112" class="w-full h-full object-cover" src="profile.webp" alt="Foto de Perfil">
+        </div>
         <div>
-          <h1 class="name text-white font-serif text-4xl">Bruno Cardozo</h1>
-          <h2 class="job text-lg text-secondary-gray">
-            Software Developer @ <a class="text-primary-yellow underline" href="https://www.wises.com.br">Wise</a>
+          <h1 class="name text-white font-serif text-xl sm:text-3xl md:text-4xl">Bruno Cardozo</h1>
+          <h2 class="job text-base md:text-lg text-secondary-gray">
+            Software Developer @ <a target="_blank" class="text-primary-yellow underline"
+              href="https://www.wises.com.br">Wise</a>
           </h2>
-          <ul class="stack flex gap-2 mt-2">
+          <ul class="stack flex flex-wrap gap-2 mt-2">
             <li class="">
               <a target="_blank"
                 class="px-2 py-[2px] block bg-tertiary-gray text-white-gray text-sm hover:bg-[#08AFD8] transition ease-in"
@@ -88,13 +92,15 @@
           </ul>
         </div>
       </div>
-      <p class="message text-4xl text-primary-gray">I’m a developer, learner and teacher based out of
+      <p class="message text-lg sm:text-2xl md:text-3xl lg:text-4xl text-primary-gray">I’m a developer, learner and
+        teacher
+        based out of
         <span class="text-primary-green">Brazil <sup class="text-secondary-green">🇧🇷</sup></span>. I build scalable,
         resilient systems of any size, emphasizing <span class="text-primary-yellow">quickly⚡</span>project deliveries.
       </p>
       <ul class="socials flex w-full gap-6">
         <li>
-          <a href="https://github.com/bruno-c-p">
+          <a target="_blank" href="https://github.com/bruno-c-p">
             <svg width="32" height="32" class="fill-white">
               <g clip-path="url(#a)">
                 <path
@@ -110,7 +116,7 @@
           </a>
         </li>
         <li>
-          <a href="https://github.com/bruno-c-p">
+          <a target="_blank" href="https://github.com/bruno-c-p">
             <svg width="32" height="32" viewBox="0 0 32 32" class="fill-white">
               <g clip-path="url(#clip0_656_12)">
                 <path
@@ -125,6 +131,17 @@
           </a>
         </li>
       </ul>
+    </section>
+    <section class="gsap-container w-full h-screen flex gap-20 flex-col items-center justify-center">
+      <div class="w-full">
+        <div class="max-w-max p-5 border flex flex-col gap-4">
+          <div class="flex flex-col">
+            <h1 class=" font-serif text-2xl text-white">Bruno Cardozo Pereira</h1>
+            <h2 class="text-lg text-white-gray">Software Developer</h2>
+          </div>
+          <img class="max-w-full h-auto border" loading="lazy" src="about.webp" alt="">
+        </div>
+      </div>
     </section>
   </main>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
