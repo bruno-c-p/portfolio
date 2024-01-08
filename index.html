@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="pt-br">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -17,7 +17,8 @@
 
 <body class="w-full h-full m-0 p-0 bg-dark-gray antialiased font-normal">
   <main class="mx-auto max-w-[1060px] px-4pc">
-    <section class="w-full min-h-dvh flex gap-6 sm:gap-8 md:gap-12 lg:gap-20 flex-col items-center justify-center">
+    <section id="home"
+      class="section w-full min-h-dvh flex gap-6 sm:gap-8 md:gap-12 lg:gap-20 flex-col items-center justify-center">
       <div class="w-full flex flex-col md:flex-row justify-start md:items-center gap-4">
         <div class="h-full min-w-28 w-28 overflow-hidden">
           <img width="112" height="112" class="profile w-full h-full object-cover" src="profile.webp"
@@ -129,7 +130,7 @@
         </li>
       </ul>
     </section>
-    <section class="about w-full min-h-dvh flex items-center justify-between">
+    <section id="about" class="section about w-full min-h-dvh flex items-center justify-between">
       <div class="flex gap-8">
         <div class="w-1/2">
           <h1 class="about-title text-white text-4xl font-serif">About</h1>
@@ -202,18 +203,18 @@
             <h2 class="personal-info-title text-white text-4xl font-serif">Education</h2>
             <ul class="text-lg pt-4">
               <li class="personal-info-item text-white-gray opacity-70 flex border-t border-primary-gray py-3">
-                <ul class="flex-1 ">
+                <ul class=" flex-1">
                   <li>Bachelor in Information Systems</li>
                   <li><strong class="text-primary-gray font-normal">UNIBAVE</strong></li>
                 </ul>
-                <span class="text-primary-gray flex-1 text-right">2020 - 2023</span>
+                <span class="flex-1 text-right">2020 - 2023</span>
               </li>
               <li class="personal-info-item text-white-gray opacity-70 flex border-t border-primary-gray py-3">
                 <ul class="flex-1 ">
-                  <li>Ingnite NodeJS</li>
+                  <li>Ignite NodeJS</li>
                   <li><strong class="text-primary-gray font-normal">Rocketseat</strong></li>
                 </ul>
-                <span class="text-primary-gray flex-1 text-right">2023</span>
+                <span class=" flex-1 text-right">2023</span>
               </li>
             </ul>
           </div>
@@ -221,9 +222,56 @@
       </div>
     </section>
   </main>
+  <footer class="menu fixed bottom-0 left-0 w-full">
+    <div class="w-full container mx-auto max-w-[1060px] px-4pc pb-12">
+      <nav class="w-full bg-dark-gray">
+        <ul class="w-full flex gap-x-1 text-center">
+          <li
+            class="active text-white-gray flex-1 flex justify-center border border-white-gray border-opacity-70 rounded-tl-lg rounded-bl-lg">
+            <ion-icon class="block sm:hidden px-3 py-3 opacity-70 " name="home"></ion-icon>
+            <a href="#home" class="nav__link hidden sm:block sm:px-2 md:px-6 py-3 opacity-70">
+              Home
+            </a>
+          </li>
+          <li class="text-white-gray flex-1 flex justify-center border border-white-gray border-opacity-70">
+            <ion-icon class="block sm:hidden px-3 py-3 opacity-70 border-white-gray border-opacity-70"
+              name="person"></ion-icon>
+            <a href="#about"
+              class="nav__link hidden sm:block sm:px-2 md:px-6 py-3 opacity-70 border-white-gray border-opacity-70">
+              About
+            </a>
+          </li>
+          <li class="text-white-gray flex-1 flex justify-center border border-white-gray border-opacity-70">
+            <ion-icon class="block sm:hidden px-3 py-3 opacity-70" name="book"></ion-icon>
+            <a href="#"
+              class="nav__link hidden sm:block sm:px-2 md:px-6 py-3 opacity-70 border-white-gray border-opacity-70">
+              Experience
+            </a>
+          </li>
+          <li class="text-white-gray flex-1 flex justify-center border border-white-gray border-opacity-70">
+            <ion-icon class="block sm:hidden px-3 py-3 opacity-70 border-white-gray border-opacity-70"
+              name="briefcase"></ion-icon>
+            <a href="#"
+              class="nav__link hidden sm:block sm:px-2 md:px-6 py-3 opacity-70 border-white-gray border-opacity-70">
+              Working On
+            </a>
+          </li>
+          <li
+            class="text-white-gray flex-1 flex justify-center border border-white-gray border-opacity-70 rounded-tr-lg rounded-br-lg">
+            <ion-icon class="block sm:hidden px-3 py-3 opacity-70" name="headset"></ion-icon>
+            <a href="#" class="nav__link hidden sm:block sm:px-2 md:px-6 py-3 opacity-70">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script type="module" src="main.js"></script>
 </body>
 

@@ -37,3 +37,8 @@ html.lenis {
 ::-webkit-scrollbar-thumb:hover {
     background-color: #A6ACCD; 
 }
+
+.active {
+  color: #5DE4C7;
+  border: 1px solid #5DE4C7;
+}
