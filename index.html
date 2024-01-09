@@ -203,13 +203,78 @@
         </div>
       </div>
     </section>
+    <section id="projects" class="section">
+      <h1 class="font-serif text-4xl text-white">Projects</h1>
+      <div class="gallery flex">
+        <div class="left hidden sm:block w-1/2">
+          <div class="m-auto w-4/5">
+            <div class="desktopContentSection min-h-dvh flex flex-col gap-4 justify-center">
+              <h2 class="text-3xl text-primary-yellow font-serif">World Cup 2022 Sweepstakes</h2>
+              <p class="text-lg text-white-gray opacity-70">Web application built with Angular and Spring for use as a
+                2022 World Cup betting pool</p>
+              <div class="flex gap-4 pt-4">
+                <a class="text-primary-green underline block py-2 pr-2"
+                  href="https://github.com/bruno-c-p/bolao-copa-do-mundo-frontend">Frontend</a>
+                <a class="text-primary-green underline block p-2"
+                  href="https://github.com/bruno-c-p/bolao-copa-do-mundo-api">Backend</a>
+              </div>
+            </div>
+            <div class="desktopContentSection min-h-dvh flex flex-col gap-4 justify-center">
+              <h2 class="text-3xl text-primary-yellow font-serif">Portfolio</h2>
+              <p class="text-lg text-white-gray opacity-70">My own portfolio built with HTML, JS, TailwindCSS and GSAP
+              </p>
+              <div class="flex gap-4 pt-4">
+                <a class="text-primary-green underline block py-2 pr-2"
+                  href="https://github.com/bruno-c-p/bolao-copa-do-mundo-frontend">Source Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right w-1/2 h-dvh flex flex-col justify-center">
+          <div class="mobileContent sm:hidden w-[80vw]">
+            <div class="mobilePhoto w-[80vw] h-[80vw] red">
+              <img src="about.webp" class="w-full object-contain" alt="">
+            </div>
+            <h2>Red</h2>
+            <p>Red is a color often associated with strong emotions such as passion, love, and anger. It's a bold and
+              attention-grabbing color that can evoke feelings of excitement, warmth, and energy.</p>
+            <div class="mobilePhoto w-[80vw] h-[80vw] green"></div>
+            <h2>Green</h2>
+            <p>Green is a color that is often associated with nature, growth, and harmony. It is a calming and relaxing
+              color that can evoke feelings of balance, stability, and freshness. In color psychology, green is said to
+              represent balance and stability, making it a popular choice for branding and marketing in the health and
+              wellness industry. </p>
+            <div class="mobilePhoto w-[80vw] h-[80vw] pink"></div>
+            <h2>Pink</h2>
+            <p>Pink is a color that is often associated with femininity, romance, and sweetness. It is a softer and more
+              delicate shade of red that can evoke feelings of warmth, love, and nurturing. In the world of branding and
+              marketing, pink is often used to target a female audience or to promote products that are associated with
+              beauty, love, or romance.</p>
+            <div class="mobilePhoto w-[80vw] h-[80vw] blue"></div>
+            <h2>Blue</h2>
+            <p>Blue is a color that is often associated with calmness, trust, and reliability. It is a peaceful and
+              serene color that can evoke feelings of stability, security, and professionalism. In color psychology,
+              blue is said to represent loyalty and trust, making it a popular choice for branding and marketing in the
+              finance and technology industries.</p>
+          </div>
+          <div class="desktopPhotos w-full h-[calc(100vh-30%)] rounded-sm relative overflow-hidden shadow-sm">
+            <div class="desktopPhoto absolute w-full h-full">
+              <img src="bolao.png" loading="lazy" class="w-full" alt="">
+            </div>
+            <div class="desktopPhoto absolute w-full h-full">
+              <img src="portfolio.png" loading="lazy" class="w-full" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   <footer class="menu fixed bottom-0 left-0 w-full">
-    <div class="w-full container mx-auto max-w-[1060px] px-4pc pb-12">
-      <nav class="w-full bg-dark-gray">
+    <div class="w-full container mx-auto max-w-[1060px] px-4pc pb-10">
+      <nav class="w-full">
         <ul class="w-full flex gap-x-1 text-center">
           <li
-            class="active text-white-gray flex-1 flex justify-center items-center border border-white-gray border-opacity-70 rounded-tl-lg rounded-bl-lg">
+            class="active bg-dark-gray text-white-gray flex-1 flex justify-center items-center border border-white-gray border-opacity-70 rounded-tl-lg rounded-bl-lg">
             <a href="#home" class="nav__link block sm:hidden justify-center w-full py-2 opacity-70">
               <ion-icon class="opacity-70 mt-1" name="home"></ion-icon>
             </a>
@@ -218,7 +283,7 @@
             </a>
           </li>
           <li
-            class="text-white-gray flex-1 flex justify-center items-center border border-white-gray border-opacity-70">
+            class="bg-dark-gray text-white-gray flex-1 flex justify-center items-center border border-white-gray border-opacity-70">
             <a href="#about" class="nav__link block sm:hidden justify-center w-full py-2 opacity-70">
               <ion-icon class="opacity-70 mt-1" name="person"></ion-icon>
             </a>
@@ -228,7 +293,7 @@
             </a>
           </li>
           <li
-            class="text-white-gray flex-1 flex justify-center items-center border border-white-gray border-opacity-70">
+            class="bg-dark-gray text-white-gray flex-1 flex justify-center items-center border border-white-gray border-opacity-70">
             <a href="#" class="nav__link block sm:hidden justify-center w-full py-2 opacity-70">
               <ion-icon class="opacity-70 mt-1" name="book"></ion-icon>
             </a>
@@ -237,16 +302,17 @@
             </a>
           </li>
           <li
-            class="text-white-gray flex-1 flex justify-center items-center border border-white-gray border-opacity-70">
-            <a href="#" class="nav__link block sm:hidden justify-center w-full py-2 opacity-70">
+            class="bg-dark-gray text-white-gray flex-1 flex justify-center items-center border border-white-gray border-opacity-70">
+            <a href="#projects" class="nav__link block sm:hidden justify-center w-full py-2 opacity-70">
               <ion-icon class="opacity-70 mt-1" name="briefcase"></ion-icon>
             </a>
-            <a href="#" class="nav__link hidden sm:block w-full py-3 opacity-70 border-white-gray border-opacity-70">
-              Working On
+            <a href="#projects"
+              class="nav__link hidden sm:block w-full py-3 opacity-70 border-white-gray border-opacity-70">
+              Projects
             </a>
           </li>
           <li
-            class="text-white-gray flex-1 flex justify-center items-center border border-white-gray border-opacity-70 rounded-tr-lg rounded-br-lg">
+            class="bg-dark-gray text-white-gray flex-1 flex justify-center items-center border border-white-gray border-opacity-70 rounded-tr-lg rounded-br-lg">
             <a href="#" class="nav__link block sm:hidden justify-center w-full py-2 opacity-70">
               <ion-icon class="opacity-70 mt-1" name="headset"></ion-icon>
             </a>
@@ -258,8 +324,8 @@
       </nav>
     </div>
   </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
