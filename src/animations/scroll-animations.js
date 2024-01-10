@@ -1,6 +1,6 @@
-import { debounce } from './debounce'
+import { debounce } from '../debounce'
 
-export function setupScrollAnimations() {
+export function setupMenuAnimations() {
   const $navLinks = document.querySelectorAll('.nav__link')
   const $sections = document.querySelectorAll('.section')
   let currentSection = 'home'

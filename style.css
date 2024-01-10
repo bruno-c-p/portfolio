@@ -49,7 +49,7 @@ html.lenis {
 }
 
 /* defines styles for screens up to 599px wide */
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 640px) {
 	.left {
 		display:none;
 	}
