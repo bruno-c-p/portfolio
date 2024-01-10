@@ -10,7 +10,7 @@ setupMenuAnimations()
 
 gsap.registerPlugin(ScrollTrigger)
 
-gsap.from('.menu', 1, {
+gsap.from('#menu', 1, {
   opacity: 0,
   delay: 1,
   ease: Expo.easeIn

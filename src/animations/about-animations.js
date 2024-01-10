@@ -1,7 +1,7 @@
 export function setupAboutAnimations() {
-  gsap.from(".about", 1, {
+  gsap.from("#about-text", 1, {
     scrollTrigger: {
-      trigger: '.about',
+      trigger: '#about-text',
       start: 'top center'
     },
     x: -30,
@@ -9,9 +9,9 @@ export function setupAboutAnimations() {
     delay: .1,
   })
 
-  gsap.from(".about-title", 1, {
+  gsap.from("#about-text h1", 1, {
     scrollTrigger: {
-      trigger: '.about',
+      trigger: '#about-text',
       start: 'top center'
     },
     x: -30,
@@ -19,20 +19,10 @@ export function setupAboutAnimations() {
     delay: .1,
   })
 
-  gsap.from(".personal-info-title", 1, {
-    scrollTrigger: {
-      trigger: '.about',
-      start: 'top center'
-    },
-    x: -30,
-    opacity: 0,
-    delay: .1,
-  })
-
-  gsap.utils.toArray('.about-text p').forEach((about, index) => {
+  gsap.utils.toArray('#about-text > div > p').forEach((about, index) => {
     gsap.from(about, {
       scrollTrigger: {
-        trigger: '.about',
+        trigger: '#about-text',
         start: 'top center'
       },
       opacity: 0,
@@ -42,10 +32,20 @@ export function setupAboutAnimations() {
     })
   })
 
-  gsap.utils.toArray('.personal-info-item ').forEach((info, index) => {
+  gsap.from("#personal-info h2", 1, {
+    scrollTrigger: {
+      trigger: '#personal-info',
+      start: 'top center'
+    },
+    x: -30,
+    opacity: 0,
+    delay: .1,
+  })
+
+  gsap.utils.toArray('#personal-info ul li').forEach((info, index) => {
     gsap.from(info, {
       scrollTrigger: {
-        trigger: '.about',
+        trigger: '#personal-info',
         start: 'top center'
       },
       opacity: 0,
