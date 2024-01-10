@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -18,16 +18,15 @@
 <body class="w-full h-full m-0 p-0 bg-dark-gray antialiased font-normal">
   <main class="mx-auto max-w-[1060px] px-4pc">
     <section id="home"
-      class="section w-full min-h-dvh flex gap-6 sm:gap-8 md:gap-12 lg:gap-20 flex-col items-center justify-center">
+      class="w-full min-h-dvh flex gap-6 sm:gap-8 md:gap-12 lg:gap-20 flex-col items-center justify-center">
       <div class="w-full flex flex-col md:flex-row justify-start md:items-center gap-4">
         <div class="h-full min-w-28 w-28 overflow-hidden">
-          <img width="112" height="112" class="profile w-full h-full object-cover" src="profile.webp"
-            alt="Foto de Perfil">
+          <img width="112" height="112" class="w-full h-full object-cover" src="profile.webp" alt="Foto de Perfil">
         </div>
         <div>
-          <h1 class="name text-white font-serif text-xl sm:text-3xl md:text-4xl">Bruno Cardozo</h1>
+          <h1 class="text-white font-serif text-xl sm:text-3xl md:text-4xl">Bruno Cardozo</h1>
           <h2 class="job text-base md:text-lg text-secondary-gray">
-            Software Developer @ <a target="_blank" class="text-primary-yellow underline"
+            Software Developer @ <a target="_blank" class="text-primary-yellow hover:text-primary-green underline"
               href="https://www.wises.com.br">Wise</a>
           </h2>
           <ul class="stack flex flex-wrap gap-2 mt-2">
@@ -90,13 +89,13 @@
           </ul>
         </div>
       </div>
-      <p class="message text-lg sm:text-2xl md:text-3xl lg:text-4xl text-primary-gray">I'm a developer, learner and
+      <p class="text-lg sm:text-2xl md:text-3xl lg:text-4xl text-primary-gray">I'm a developer, learner and
         teacher
         based out of
         <span class="text-primary-green">Brazil <sup class="text-secondary-green">🇧🇷</sup></span>. I build scalable,
         resilient systems of any size, emphasizing <span class="text-primary-yellow">quickly⚡</span>project deliveries.
       </p>
-      <ul class="socials flex w-full gap-6">
+      <ul class="flex w-full gap-6">
         <li>
           <a target="_blank" href="https://github.com/bruno-c-p">
             <ion-icon class="text-primary-gray transition hover:text-white ease-in text-3xl"
@@ -104,23 +103,20 @@
           </a>
         </li>
         <li>
-          <a target="_blank" href="https://github.com/bruno-c-p">
+          <a target="_blank" href="https://www.linkedin.com/in/bruno-cardozo-pereira/">
             <ion-icon class="text-primary-gray transition hover:text-[#0077B5] ease-in text-3xl"
               name="logo-linkedin"></ion-icon>
           </a>
         </li>
       </ul>
     </section>
-    <section id="about" class="section about w-full min-h-dvh flex items-center justify-between">
-      <div class="flex flex-col md:flex-row gap-8">
-        <div class="md:w-1/2">
-          <h1 class="about-title text-white text-4xl font-serif">About</h1>
-          <div class="about-text pt-4 flex flex-col gap-2 text-lg">
+    <section id="about" class="flex">
+      <div class="w-full min-h-dvh flex flex-col md:flex-row items-center justify-between gap-8">
+        <div id="about-text" class="min-h-dvh flex flex-col justify-center md:w-1/2">
+          <h1 class="text-white text-3xl font-serif">About</h1>
+          <div class="pt-4 flex flex-col gap-2 text-lg">
             <p class="text-white-gray opacity-70 max-w-prose">Throughout my career as a software developer, I have
-              focused on
-              backend
-              development,
-              primarily using
+              focused on backend development, primarily using
               <span class="text-secondary-green">Java</span> and
               <span class="text-secondary-green">Spring</span>. I have also acquired frontend
               skills in <span class="text-secondary-green">TypeScript</span>, working
@@ -155,34 +151,32 @@
             </p>
           </div>
         </div>
-        <div class="md:w-1/2 flex flex-col">
+        <div id="personal-info" class="min-h-dvh flex flex-col justify-center gap-8 md:gap-0 w-full md:w-1/2">
+          <h2 class="personal-info-title text-white text-3xl font-serif">Personal Info</h2>
+          <ul class="text-lg pt-4">
+            <li class="personal-info-item text-white-gray opacity-70 flex border-t border-primary-gray py-3">
+              <span class="text-primary-gray flex-1">Name</span>
+              <span class="flex-1 text-right">Bruno Cardozo Pereira</span>
+            </li>
+            <li class="personal-info-item text-white-gray opacity-70 flex border-t border-primary-gray py-3">
+              <span class="text-primary-gray flex-1">Age</span>
+              <span class="flex-1 text-right">21</span>
+            </li>
+            <li class="personal-info-item text-white-gray opacity-70 flex border-t border-primary-gray py-3">
+              <span class="text-primary-gray flex-1">Location</span>
+              <span class="flex-1 text-right">São Ludgero, SC - <strong
+                  class="text-primary-green font-normal">Brazil</strong></span>
+            </li>
+            <li class="personal-info-item text-white-gray opacity-70 flex border-t border-primary-gray py-3">
+              <span class="text-primary-gray flex-1">Languages</span>
+              <ul class="flex-1 text-right">
+                <li>Portuguese <strong class="text-primary-green font-normal">native</strong></li>
+                <li>English <strong class="text-primary-green font-normal">technical</strong></li>
+              </ul>
+            </li>
+          </ul>
           <div>
-            <h2 class="personal-info-title text-white text-4xl font-serif">Personal Info</h2>
-            <ul class="text-lg pt-4">
-              <li class="personal-info-item text-white-gray opacity-70 flex border-t border-primary-gray py-3">
-                <span class="text-primary-gray flex-1">Name</span>
-                <span class="flex-1 text-right">Bruno Cardozo Pereira</span>
-              </li>
-              <li class="personal-info-item text-white-gray opacity-70 flex border-t border-primary-gray py-3">
-                <span class="text-primary-gray flex-1">Age</span>
-                <span class="flex-1 text-right">21</span>
-              </li>
-              <li class="personal-info-item text-white-gray opacity-70 flex border-t border-primary-gray py-3">
-                <span class="text-primary-gray flex-1">Location</span>
-                <span class="flex-1 text-right">São Ludgero, SC - <strong
-                    class="text-primary-green font-normal">Brazil</strong></span>
-              </li>
-              <li class="personal-info-item text-white-gray opacity-70 flex border-t border-primary-gray py-3">
-                <span class="text-primary-gray flex-1">Languages</span>
-                <ul class="flex-1 text-right">
-                  <li>Portuguese <strong class="text-primary-green font-normal">native</strong></li>
-                  <li>English <strong class="text-primary-green font-normal">technical</strong></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 class="personal-info-title text-white text-4xl font-serif">Education</h2>
+            <h2 class="personal-info-title text-white text-3xl font-serif">Education</h2>
             <ul class="text-lg pt-4">
               <li class="personal-info-item text-white-gray opacity-70 flex border-t border-primary-gray py-3">
                 <ul class=" flex-1">
@@ -203,54 +197,179 @@
         </div>
       </div>
     </section>
+    <section id="experience" class="w-full min-h-dvh flex gap-8 flex-col">
+      <h1 class="font-serif text-4xl text-white pt-4">Tech Experience</h1>
+      <div class="w-full flex flex-col md:flex-row justify-start md:items-center gap-4">
+        <div class="h-full min-w-28 w-28 overflow-hidden">
+          <img width="112" height="112" class="w-full h-full object-cover" src="wise-logo.webp" alt="">
+        </div>
+        <div>
+          <h1 class="text-white font-serif md:text-2xl">Wise</h1>
+          <h2 class="job text-base md:text-lg text-primary-yellow">Trainee -> Software developer</h2>
+          <h2 class="job text-secondary-gray">2022 - Present - 1y 2 mo</h2>
+          <ul class="exp-stack flex flex-wrap gap-2 mt-2">
+            <li class="px-2 py-[2px] block bg-tertiary-gray text-white-gray text-sm transition ease-in">Java 8</li>
+            <li class="px-2 py-[2px] block bg-tertiary-gray text-white-gray text-sm transition ease-in">Maven</li>
+            <li class="px-2 py-[2px] block bg-tertiary-gray text-white-gray text-sm transition ease-in">REST</li>
+            <li class="px-2 py-[2px] block bg-tertiary-gray text-white-gray text-sm transition ease-in">AngularJS</li>
+            <li class="px-2 py-[2px] block bg-tertiary-gray text-white-gray text-sm transition ease-in">PostgreSQL</li>
+            <li class="px-2 py-[2px] block bg-tertiary-gray text-white-gray text-sm transition ease-in">Git</li>
+          </ul>
+        </div>
+      </div>
+      <div class="w-full flex flex-col md:flex-row justify-start md:items-center gap-4">
+        <div class="h-full min-w-28 w-28 overflow-hidden">
+          <img width="112" height="112" class="w-full h-full object-cover" src="projedata-logo.webp" alt="">
+        </div>
+        <div>
+          <h1 class="text-white font-serif md:text-2xl">Projedata</h1>
+          <h2 class="job text-base md:text-lg text-primary-yellow">Trainee -> Software developer</h2>
+          <h2 class="job text-secondary-gray">2021 - 2021 - 9 mo</h2>
+          <ul class="exp-stack flex flex-wrap gap-2 mt-2">
+            <li class="px-2 py-[2px] block bg-tertiary-gray text-white-gray text-sm transition ease-in">Java 8</li>
+            <li class="px-2 py-[2px] block bg-tertiary-gray text-white-gray text-sm transition ease-in">OracleSQL</li>
+            <li class="px-2 py-[2px] block bg-tertiary-gray text-white-gray text-sm transition ease-in">PL/SQL</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="projects">
+      <h1 class="font-serif text-4xl text-white pt-4">Projects</h1>
+      <div class="gallery flex">
+        <div class="left hidden sm:block w-1/2">
+          <div class="m-auto w-4/5">
+            <div class="desktopContentSection min-h-dvh flex flex-col gap-4 justify-center">
+              <h2 class="text-3xl text-primary-yellow font-serif">World Cup 2022 Sweepstakes</h2>
+              <p class="text-lg text-white-gray opacity-70">Web application built with Angular and Spring for use as a
+                2022 World Cup betting pool</p>
+              <div class="flex gap-4 pt-4">
+                <a class="text-primary-green underline block py-2 pr-2"
+                  href="https://github.com/bruno-c-p/bolao-copa-do-mundo-frontend">Frontend</a>
+                <a class="text-primary-green underline block p-2"
+                  href="https://github.com/bruno-c-p/bolao-copa-do-mundo-api">Backend</a>
+              </div>
+            </div>
+            <div class="desktopContentSection min-h-dvh flex flex-col gap-4 justify-center">
+              <h2 class="text-3xl text-primary-yellow font-serif">Portfolio</h2>
+              <p class="text-lg text-white-gray opacity-70">My own portfolio built with HTML, JS, TailwindCSS and GSAP
+              </p>
+              <div class="flex gap-4 pt-4">
+                <a class="text-primary-green underline block py-2 pr-2"
+                  href="https://github.com/bruno-c-p/bolao-copa-do-mundo-frontend">Source Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right w-1/2 h-dvh flex flex-col justify-center">
+          <div class="mobileContent sm:hidden w-[80vw]">
+            <div class="pt-8">
+              <div class="mobilePhoto w-[80vw] h-[80vw]">
+                <img src="bolao.png" class="w-full object-contain" alt="">
+              </div>
+              <h2 class="pt-4 text-2xl text-primary-yellow font-serif">World Cup 2022 Sweepstakes</h2>
+              <p class="pt-2 text-lg text-white-gray opacity-70">Web application built with Angular and Spring for use
+                as
+                a
+                2022 World Cup betting pool</p>
+              <div class="flex gap-4 pt-4">
+                <a class="text-primary-green underline block py-2 pr-2"
+                  href="https://github.com/bruno-c-p/bolao-copa-do-mundo-frontend">Frontend</a>
+                <a class="text-primary-green underline block p-2"
+                  href="https://github.com/bruno-c-p/bolao-copa-do-mundo-api">Backend</a>
+              </div>
+            </div>
+            <div class="pt-8">
+              <div class="mobilePhoto w-[80vw] h-[80vw]">
+                <img src="bolao.png" class="w-full object-contain" alt="">
+              </div>
+              <h2 class="pt-4 text-2xl text-primary-yellow font-serif">Portfolio</h2>
+              <p class="pt-2 text-lg text-white-gray opacity-70">My own portfolio built with HTML, JS, TailwindCSS and
+                GSAP
+              </p>
+              <div class="flex gap-4 pt-4">
+                <a class="text-primary-green underline block py-2 pr-2"
+                  href="https://github.com/bruno-c-p/bolao-copa-do-mundo-frontend">Source Code</a>
+              </div>
+            </div>
+          </div>
+          <div class="desktopPhotos hidden sm:block w-full h-[calc(100vh-30%)] relative overflow-hidden">
+            <div class="desktopPhoto absolute top-[15%] w-full h-full">
+              <img src="bolao.png" loading="lazy" class="w-full" alt="">
+            </div>
+            <div class="desktopPhoto absolute top-[15%] w-full h-full">
+              <img src="portfolio.png" loading="lazy" class="w-full" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="min-h-dvh flex gap-4 flex-col items-center justify-center">
+      <div class="flex flex-col gap-4 max-w-lg">
+        <h1 class="text-white font-serif text-3xl sm:text-4xl md:text-5xl">Have a project in mind?</h1>
+        <div class="flex flex-col gap-4 text-white-gray opacity-70 ">
+          <p>Send some details about your project to <a class="text-primary-yellow underline"
+              href="mailto:brunocp.fx@gmail.com">brunocp.fx@gmail.com</a></p>
+          <p>I can help designing or building a website, building a reliable and maintainable software.</p>
+          <p>Currently based in São Ludgero, Brasil - available for <strong
+              class="font-normal text-primary-yellow">remote-friendly
+              work only</strong>.</p>
+        </div>
+      </div>
+      <div class="w-full max-w-lg flex flex-col gap-4 sm:flex-row justify-between pt-4 text-white-gray">
+        <a class="underline hover:text-primary-green transition ease-in"
+          href="https://www.linkedin.com/in/bruno-cardozo-pereira/">Linkedin</a>
+        <a class="underline hover:text-primary-green transition ease-in"
+          href="https://www.linkedin.com/in/bruno-cardozo-pereira/">Github</a>
+        <span>©2024 to ∞ Bruno Cardozo</span>
+      </div>
+    </section>
   </main>
-  <footer class="menu fixed bottom-0 left-0 w-full">
-    <div class="w-full container mx-auto max-w-[1060px] px-4pc pb-12">
-      <nav class="w-full bg-dark-gray">
+  <footer id="menu" class="fixed bottom-0 left-0 w-full">
+    <div class="w-full container mx-auto max-w-[1060px] px-4pc pb-10">
+      <nav class="w-full">
         <ul class="w-full flex gap-x-1 text-center">
           <li
-            class="active text-white-gray flex-1 flex justify-center items-center border border-white-gray border-opacity-70 rounded-tl-lg rounded-bl-lg">
-            <a href="#home" class="nav__link block sm:hidden justify-center w-full py-2 opacity-70">
+            class="active bg-dark-gray hover:bg-tertiary-gray transition ease-in text-white-gray flex-1 flex justify-center items-center border border-white-gray border-opacity-70 rounded-tl-lg rounded-bl-lg">
+            <a href="#home" class="block sm:hidden justify-center w-full py-2 opacity-70">
               <ion-icon class="opacity-70 mt-1" name="home"></ion-icon>
             </a>
-            <a href="#home" class="nav__link hidden sm:block w-full py-3 opacity-70">
+            <a href="#home" class="hidden sm:block w-full py-3 opacity-70">
               Home
             </a>
           </li>
           <li
-            class="text-white-gray flex-1 flex justify-center items-center border border-white-gray border-opacity-70">
-            <a href="#about" class="nav__link block sm:hidden justify-center w-full py-2 opacity-70">
+            class="bg-dark-gray text-white-gray hover:bg-tertiary-gray transition ease-in flex-1 flex justify-center items-center border border-white-gray border-opacity-70">
+            <a href="#about" class="block sm:hidden justify-center w-full py-2 opacity-70">
               <ion-icon class="opacity-70 mt-1" name="person"></ion-icon>
             </a>
-            <a href="#about"
-              class="nav__link hidden sm:block w-full py-3 opacity-70 border-white-gray border-opacity-70">
+            <a href="#about" class="hidden sm:block w-full py-3 opacity-70 border-white-gray border-opacity-70">
               About
             </a>
           </li>
           <li
-            class="text-white-gray flex-1 flex justify-center items-center border border-white-gray border-opacity-70">
-            <a href="#" class="nav__link block sm:hidden justify-center w-full py-2 opacity-70">
+            class="bg-dark-gray text-white-gray hover:bg-tertiary-gray transition ease-in flex-1 flex justify-center items-center border border-white-gray border-opacity-70">
+            <a href="#experience" class="block sm:hidden justify-center w-full py-2 opacity-70">
               <ion-icon class="opacity-70 mt-1" name="book"></ion-icon>
             </a>
-            <a href="#" class="nav__link hidden sm:block w-full py-3 opacity-70 border-white-gray border-opacity-70">
+            <a href="#experience" class="hidden sm:block w-full py-3 opacity-70 border-white-gray border-opacity-70">
               Experience
             </a>
           </li>
           <li
-            class="text-white-gray flex-1 flex justify-center items-center border border-white-gray border-opacity-70">
-            <a href="#" class="nav__link block sm:hidden justify-center w-full py-2 opacity-70">
+            class="bg-dark-gray text-white-gray hover:bg-tertiary-gray transition ease-in flex-1 flex justify-center items-center border border-white-gray border-opacity-70">
+            <a href="#projects" class="block sm:hidden justify-center w-full py-2 opacity-70">
               <ion-icon class="opacity-70 mt-1" name="briefcase"></ion-icon>
             </a>
-            <a href="#" class="nav__link hidden sm:block w-full py-3 opacity-70 border-white-gray border-opacity-70">
-              Working On
+            <a href="#projects" class="hidden sm:block w-full py-3 opacity-70 border-white-gray border-opacity-70">
+              Projects
             </a>
           </li>
           <li
-            class="text-white-gray flex-1 flex justify-center items-center border border-white-gray border-opacity-70 rounded-tr-lg rounded-br-lg">
-            <a href="#" class="nav__link block sm:hidden justify-center w-full py-2 opacity-70">
+            class="bg-dark-gray text-white-gray hover:bg-tertiary-gray transition ease-in flex-1 flex justify-center items-center border border-white-gray border-opacity-70 rounded-tr-lg rounded-br-lg">
+            <a href="#contact" class="block sm:hidden justify-center w-full py-2 opacity-70">
               <ion-icon class="opacity-70 mt-1" name="headset"></ion-icon>
             </a>
-            <a href="#" class="nav__link hidden sm:block w-full py-3 opacity-70">
+            <a href="#contact" class="hidden sm:block w-full py-3 opacity-70">
               Contact
             </a>
           </li>
@@ -258,8 +377,8 @@
       </nav>
     </div>
   </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

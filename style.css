@@ -22,6 +22,11 @@ html.lenis {
   pointer-events: none;
 }
 
+::selection {
+  color: #5DE4C7;
+  background: #303340;
+}
+
 ::-webkit-scrollbar {
     width: 10px; 
 }
@@ -42,3 +47,19 @@ html.lenis {
   color: #5DE4C7;
   border: 1px solid #5DE4C7;
 }
+
+@media screen and (max-width: 640px) {
+	
+	.right {
+		height:auto;
+		width:100%;
+		align-items:center;	
+	}	
+	
+	.mobileContent {
+		display:block;
+	}
+	
+
+}
+
