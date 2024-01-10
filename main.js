@@ -5,6 +5,7 @@ import { setupAboutAnimations } from './src/animations/about-animations'
 import { setupHomeAnimations } from './src/animations/home-animations'
 import { setupProjectsAnimations } from './src/animations/projects-animations'
 import { setupContactAnimations } from './src/animations/contact-animations'
+import { setupExperienceAnimations } from './src/animations/experience-animations'
 
 setupMenuAnimations()
 
@@ -18,6 +19,7 @@ gsap.from('#menu', 1, {
 
 setupHomeAnimations()
 setupAboutAnimations()
+setupExperienceAnimations()
 setupProjectsAnimations()
 setupContactAnimations()
 setupLenis()
