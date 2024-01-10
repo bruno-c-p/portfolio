@@ -48,21 +48,13 @@ html.lenis {
   border: 1px solid #5DE4C7;
 }
 
-/* defines styles for screens up to 599px wide */
 @media screen and (max-width: 640px) {
-	.left {
-		display:none;
-	}
 	
 	.right {
 		height:auto;
 		width:100%;
 		align-items:center;	
 	}	
-	
-	.desktopPhotos {
-		display:none;
-	}
 	
 	.mobileContent {
 		display:block;
