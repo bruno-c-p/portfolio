@@ -5,7 +5,9 @@ export function setupExperienceAnimations() {
     ease: Expo.easeInOut,
     scrollTrigger: {
       trigger: '#experience',
-      start: 'top center'
+      start: 'top center',
+      repeat: -1,
+      toggleActions: 'restart none restart reset',
     },
   })
 
@@ -16,7 +18,9 @@ export function setupExperienceAnimations() {
     ease: Expo.easeInOut,
     scrollTrigger: {
       trigger: '#experience',
-      start: 'top center'
+      start: 'top center',
+      repeat: -1,
+      toggleActions: 'restart none restart reset',
     },
   })
 
@@ -27,7 +31,9 @@ export function setupExperienceAnimations() {
     ease: Expo.easeInOut,
     scrollTrigger: {
       trigger: '#experience',
-      start: 'top center'
+      start: 'top center',
+      repeat: -1,
+      toggleActions: 'restart none restart reset',
     },
   })
 
@@ -38,7 +44,9 @@ export function setupExperienceAnimations() {
     ease: Expo.easeInOut,
     scrollTrigger: {
       trigger: '#experience',
-      start: 'top center'
+      start: 'top center',
+      repeat: -1,
+      toggleActions: 'restart none restart reset',
     },
   })
 }

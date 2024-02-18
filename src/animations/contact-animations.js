@@ -6,7 +6,9 @@ export function setupContactAnimations() {
     ease: Expo.easeInOut,
     scrollTrigger: {
       trigger: '#contact',
-      start: 'top center'
+      start: 'top center',
+      repeat: -1,
+      toggleActions: 'restart none restart reset',
     },
   })
 
@@ -18,7 +20,9 @@ export function setupContactAnimations() {
       ease: Expo.easeInOut,
       scrollTrigger: {
         trigger: '#contact',
-        start: 'top center'
+        start: 'top center',
+        repeat: -1,
+        toggleActions: 'restart none restart reset'
       },
     })
   })
@@ -31,7 +35,9 @@ export function setupContactAnimations() {
       ease: Expo.easeInOut,
       scrollTrigger: {
         trigger: '#contact',
-        start: 'top center'
+        start: 'top center',
+        repeat: -1,
+        toggleActions: 'restart none restart reset',
       },
     })
   })
@@ -42,7 +48,9 @@ export function setupContactAnimations() {
     ease: Expo.easeInOut,
     scrollTrigger: {
       trigger: '#contact',
-      start: 'top center'
+      start: 'top center',
+      repeat: -1,
+      toggleActions: 'restart none restart reset',
     },
   })
 }

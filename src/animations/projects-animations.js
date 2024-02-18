@@ -11,7 +11,9 @@ export function setupProjectsAnimations() {
       trigger: ".gallery",
       start: "top top",
       end: "bottom bottom",
-      pin: ".right"
+      pin: ".right",
+      repeat: -1,
+      toggleActions: 'restart none restart reset',
     })
     details.forEach((detail, index) => {
       let headline = detail.querySelector("h2")
@@ -25,6 +27,8 @@ export function setupProjectsAnimations() {
         animation: animation,
         scrub: true,
         markers: false,
+        repeat: -1,
+        toggleActions: 'restart none restart reset',
       })
     })
   })

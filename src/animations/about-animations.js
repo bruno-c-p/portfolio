@@ -2,7 +2,9 @@ export function setupAboutAnimations() {
   gsap.from("#about-text", 1, {
     scrollTrigger: {
       trigger: '#about-text',
-      start: 'top center'
+      start: 'top center',
+      repeat: -1,
+      toggleActions: 'restart none restart reset',
     },
     x: -30,
     opacity: 0,
@@ -12,7 +14,9 @@ export function setupAboutAnimations() {
   gsap.from("#about-text h1", 1, {
     scrollTrigger: {
       trigger: '#about-text',
-      start: 'top center'
+      start: 'top center',
+      repeat: -1,
+      toggleActions: 'restart none restart reset',
     },
     x: -30,
     opacity: 0,
@@ -23,7 +27,9 @@ export function setupAboutAnimations() {
     gsap.from(about, {
       scrollTrigger: {
         trigger: '#about-text',
-        start: 'top center'
+        start: 'top center',
+        repeat: -1,
+        toggleActions: 'restart none restart reset'
       },
       opacity: 0,
       delay: .4 + index * .3,
@@ -35,7 +41,9 @@ export function setupAboutAnimations() {
   gsap.from("#personal-info h2", 1, {
     scrollTrigger: {
       trigger: '#personal-info',
-      start: 'top center'
+      start: 'top center',
+      repeat: -1,
+      toggleActions: 'restart none restart reset',
     },
     x: -30,
     opacity: 0,
@@ -46,7 +54,9 @@ export function setupAboutAnimations() {
     gsap.from(info, {
       scrollTrigger: {
         trigger: '#personal-info',
-        start: 'top center'
+        start: 'top center',
+        repeat: -1,
+        toggleActions: 'restart none restart reset',
       },
       opacity: 0,
       delay: .4 + index * .1,
