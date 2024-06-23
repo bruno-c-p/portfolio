@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 html.lenis {
   height: auto;
 }
@@ -23,43 +19,39 @@ html.lenis {
 }
 
 ::selection {
-  color: #5DE4C7;
+  color: #5de4c7;
   background: #303340;
 }
 
 ::-webkit-scrollbar {
-    width: 10px; 
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #303340; 
+  background-color: #303340;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #767C9D; 
+  background-color: #767c9d;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #A6ACCD; 
+  background-color: #a6accd;
 }
 
 .active {
-  color: #5DE4C7;
-  border: 1px solid #5DE4C7;
+  color: #5de4c7;
+  border: 1px solid #5de4c7;
 }
 
 @media screen and (max-width: 640px) {
-	
-	.right {
-		height:auto;
-		width:100%;
-		align-items:center;	
-	}	
-	
-	.mobileContent {
-		display:block;
-	}
-	
+  .right {
+    height: auto;
+    width: 100%;
+    align-items: center;
+  }
 
+  .mobileContent {
+    display: block;
+  }
 }
-
