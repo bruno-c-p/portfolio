@@ -28,19 +28,19 @@ html.lenis {
 }
 
 ::-webkit-scrollbar {
-    width: 10px; 
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #303340; 
+  background-color: #303340;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #767C9D; 
+  background-color: #767C9D;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #A6ACCD; 
+  background-color: #A6ACCD;
 }
 
 .active {
@@ -49,17 +49,16 @@ html.lenis {
 }
 
 @media screen and (max-width: 640px) {
-	
-	.right {
-		height:auto;
-		width:100%;
-		align-items:center;	
-	}	
-	
-	.mobileContent {
-		display:block;
-	}
-	
+
+  .right {
+    height: auto;
+    width: 100%;
+    align-items: center;
+  }
+
+  .mobileContent {
+    display: block;
+  }
+
 
 }
-
