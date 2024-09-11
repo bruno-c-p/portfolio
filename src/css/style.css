@@ -1,3 +1,5 @@
+@import url('./reset.css');
+
 @font-face {
   font-family: 'Getai';
   src: url('../fonts/DTGetaiGroteskDisplay-Black.ttf') format('truetype'),
@@ -6,6 +8,17 @@
   font-style: normal;
 }
 
-* {
-  font-family: 'Getai';
+body {
+  background-color: #0E333F;
+  overflow: hidden;
+}
+
+h1 {
+  font-family: 'Getai', sans-serif;
+  color: #37C6FC;
+  white-space: nowrap;
+  font-size: calc(100vw / 4.267);
+  width: 100vw;
+  position: relative;
+  left: -2vw;
 }
