@@ -1,8 +1,17 @@
 :root {
     --font: "Gabarito", sans-serif;
-    --color-primary: #FCF5E1;
+    --color-primary: #DEDCCB;
     --color-secondary: #0E333F;
     --color-accent: #37C6FC;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 body {

@@ -1,0 +1,29 @@
+footer {
+    font-weight: 600;
+    color: var(--color-primary);
+    padding: 128px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-nav ul {
+    display: flex;
+    gap: 24px;
+    text-transform: uppercase;
+}
+
+@media (width < 768px) {
+    footer {
+        flex-direction: column-reverse;
+        gap: 32px;
+    }
+}
+
+@media (width < 480px) {
+    .footer-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+}
