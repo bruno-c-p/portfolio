@@ -2,11 +2,6 @@
     margin-top: 128px;
 }
 
-#contact h2 {
-    color: var(--color-white);
-    margin-bottom: 32px;
-}
-
 #contact p {
     color: var(--color-primary);
 }

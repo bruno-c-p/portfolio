@@ -25,6 +25,11 @@ body {
     padding: 0 4%;
 }
 
+.text-link {
+    text-decoration: underline;
+    color: var(--color-accent);
+}
+
 .text-bold {
     font-weight: bold;
 }
@@ -42,6 +47,8 @@ body {
     font-size: clamp(3rem, 6vw, 4rem);
     text-transform: uppercase;
     letter-spacing: -0.03rem;
+    color: var(--color-white);
+    margin-bottom: 32px;
 }
 
 /* h1 {
