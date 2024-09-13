@@ -1,0 +1,26 @@
+:root {
+    --font: "Gabarito", sans-serif;
+    --color-primary: #FCF5E1;
+    --color-secondary: #0E333F;
+    --color-accent: #37C6FC;
+}
+
+body {
+    color: var(--color-primary);
+    font-family: var(--font);
+    background-color: var(--color-secondary);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+.accent-color {
+    color: var(--color-accent);
+}
+
+h2 {
+    font-size: 7rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: -0.03rem;
+}

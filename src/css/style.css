@@ -1,24 +1,3 @@
 @import url('./reset.css');
-
-@font-face {
-  font-family: 'Getai';
-  src: url('../fonts/DTGetaiGroteskDisplay-Black.ttf') format('truetype'),
-    url('../fonts/DTGetaiGroteskDisplay-Black.otf') format('opentype');
-  font-weight: 900;
-  font-style: normal;
-}
-
-body {
-  background-color: #0E333F;
-  overflow: hidden;
-}
-
-h1 {
-  font-family: 'Getai', sans-serif;
-  color: #37C6FC;
-  white-space: nowrap;
-  font-size: calc(100vw / 4.267);
-  width: 100vw;
-  position: relative;
-  left: -2vw;
-}
+@import url('./global.css');
+@import url('./header.css');
