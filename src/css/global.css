@@ -3,6 +3,7 @@
     --color-primary: #DEDCCB;
     --color-secondary: #0E333F;
     --color-accent: #37C6FC;
+    --color-white: #fff;
 }
 
 a {
@@ -24,13 +25,28 @@ body {
     padding: 0 4%;
 }
 
+.text-bold {
+    font-weight: bold;
+}
+
 .accent-color {
     color: var(--color-accent);
 }
 
-h2 {
+.text-white {
+    color: var(--color-white);
+}
+
+.section-title {
+    font-weight: 900;
+    font-size: clamp(3rem, 6vw, 4rem);
+    text-transform: uppercase;
+    letter-spacing: -0.03rem;
+}
+
+/* h1 {
     font-size: 7rem;
     text-transform: uppercase;
     font-weight: 900;
     letter-spacing: -0.03rem;
-}
+} */
