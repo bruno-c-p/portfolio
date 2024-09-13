@@ -25,6 +25,10 @@ body {
     padding: 0 4%;
 }
 
+p {
+    line-height: 160%;
+}
+
 .text-link {
     text-decoration: underline;
     color: var(--color-accent);
@@ -38,8 +42,13 @@ body {
     color: var(--color-accent);
 }
 
-.text-white {
+.highlight-text {
     color: var(--color-white);
+    font-weight: 600;
+}
+
+.section {
+    padding-top: clamp(48px, 10vw, 128px);
 }
 
 .section-title {
