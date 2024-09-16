@@ -1,0 +1,1 @@
+footer{align-items:center;color:var(--color-primary);display:flex;font-weight:600;justify-content:space-between;padding-bottom:48px}.footer-nav ul{display:flex;gap:24px;text-transform:uppercase}@media (width < 768px){footer{flex-direction:column-reverse;gap:32px}}@media (width < 480px){.footer-nav ul{align-items:center;flex-direction:column;gap:24px}}
