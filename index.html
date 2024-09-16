@@ -34,9 +34,14 @@
       rel="stylesheet"
     />
     <link rel="icon" type="image/x-icon" href="./src/assets/favicon.ico" />
-    <link rel="stylesheet" href="./src/css/style.css" />
+    <link
+      rel="preload"
+      href="./src/css/style.css"
+      as="style"
+      onload="this.rel='stylesheet'"
+    />
 
-    <title>Bruno Cardozo - Software Enginner</title>
+    <title>Bruno Cardozo - Software Engineer</title>
 
     <!-- Google tag (gtag.js) -->
     <script
@@ -54,7 +59,7 @@
   </head>
 
   <body>
-    <header>
+    <header id="home">
       <img class="logo" src="./src/assets/svg/logo.svg" alt="" />
       <nav class="header-nav">
         <ul>
@@ -91,8 +96,47 @@
       </nav>
     </header>
     <main>
-      <!-- <h2 class="accent-color">Bruno Cardozo</h2> -->
-      <!-- <h1>Backend Software Enginner <span>+3y</span></h1> -->
+      <section class="section" id="hero">
+        <div class="hero-profile">
+          <img
+            class="hero-img"
+            src="./src/assets/img/profile.webp"
+            alt="A young man with short, dark hair and a trimmed beard, wearing a black shirt, looking straight at the camera with a neutral expression."
+          />
+          <div class="hero-profile-info">
+            <h2 class="accent-color hero-title">Bruno Cardozo</h2>
+            <h1 class="accent-color hero-description">
+              Backend Software Engineer +3Y
+            </h1>
+          </div>
+        </div>
+        <div class="hero-info">
+          <nav class="hero-info-nav">
+            <ul>
+              <li>
+                <a href="#about">About</a>
+              </li>
+              <li>
+                <a href="#experience">Experience</a>
+              </li>
+              <li>
+                <a href="#education">Education</a>
+              </li>
+              <li>
+                <a href="#projects">Projects</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
+          <p class="hero-info-text">
+            I'm a software engineer with a passion for solving
+            <span class="accent-color">real problems</span>, creating practical
+            solutions that generate value.
+          </p>
+        </div>
+      </section>
       <section class="section" id="about" aria-labelledby="about-title">
         <h2 id="about-title" class="section-title">About</h2>
         <div class="about-texts">
@@ -101,7 +145,7 @@
             <strong class="highlight-text">no BS developer</strong>.
           </p>
           <p>
-            Software enginner with over
+            Software engineer with over
             <em class="accent-color">3 years of experience</em>, specializing in
             <em class="accent-color">backend development</em> with
             <em class="accent-color">Java</em> and
