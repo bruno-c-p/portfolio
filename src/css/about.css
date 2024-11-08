@@ -75,6 +75,25 @@
     color: var(--color-secondary);
 }
 
+.about__link:hover {
+    transition: .3s;
+    transition-timing-function: ease-in-out;
+    color: var(--color-primary);
+    transform: translateX(5px);
+}
+
+.about__link:hover ion-icon {
+    transition: .3s;
+    transition-timing-function: ease-in-out;
+    color: var(--color-primary);
+}
+
+.about__link:hover .about__link--text {
+    transition: .3s;
+    transition-timing-function: ease-in-out;
+    color: var(--color-primary);
+}
+
 @media screen and (max-width: 800px) {
     .about {
         flex-direction: column;

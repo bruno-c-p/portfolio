@@ -121,6 +121,14 @@ img {
     background-color: #f23054;
 }
 
+@media screen and (max-width: 1160px) {
+
+    main,
+    footer {
+        border: none;
+    }
+}
+
 @media screen and (max-width: 500px) {
     .outer-circle {
         min-width: 40px;
