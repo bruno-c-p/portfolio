@@ -247,6 +247,16 @@
       </ul>
     </nav>
   </footer>
+  <script src="https://unpkg.com/lenis@1.1.16/dist/lenis.min.js"></script> 
+  <script>
+    const lenis = new Lenis({
+      autoRaf: true,
+    });
+
+    lenis.on('scroll', (e) => {
+      console.log(e);
+    });
+  </script>  
 </body>
 
 </html>
