@@ -3,5 +3,5 @@
     font-size: clamp(1rem, 3vw, 1.125rem);
     color: var(--color-secondary);
     text-align: end;
-    padding: clamp(15%, 10vw, 64px) clamp(4%, 6vw, 50px);
+    padding: 32px;
 }
