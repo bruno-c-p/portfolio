@@ -1,9 +1,0 @@
-#contact p {
-    color: var(--color-primary);
-}
-
-.contact-texts {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-}

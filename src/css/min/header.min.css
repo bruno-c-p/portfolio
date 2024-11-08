@@ -1,1 +1,0 @@
-header{align-items:center;display:flex;justify-content:space-between;padding:24px 0}.logo{height:50px}.header-nav ul{display:flex;font-size:clamp(1rem,3vw,1.5rem);font-weight:700;gap:24px;text-transform:uppercase}@media (width < 350px){.header-nav__separator{display:none}}
