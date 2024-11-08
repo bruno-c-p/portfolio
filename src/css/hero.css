@@ -14,14 +14,14 @@
 .hero__description {
     margin-top: 24px;
     color: var(--color-secondary);
-    font-size: 1.125rem;
+    font-size: clamp(1rem, 3vw, 1.125rem);
 }
 
 .hero__icons {
     margin-top: 20px;
     display: flex;
     gap: 16px;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 5vw, 2rem);
     color: var(--color-white);
 }
 

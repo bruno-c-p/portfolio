@@ -1,7 +1,7 @@
 .footer__text {
     font-weight: 700;
-    font-size: 1.125rem;
+    font-size: clamp(1rem, 3vw, 1.125rem);
     color: var(--color-secondary);
     text-align: end;
-    padding: 64px 64px;
+    padding: clamp(15%, 10vw, 64px) clamp(4%, 6vw, 50px);
 }

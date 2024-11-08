@@ -48,7 +48,7 @@ footer {
 }
 
 section {
-    padding: 128px 100px;
+    padding: clamp(15%, 10vw, 128px) clamp(4%, 6vw, 100px);
     border-bottom: 1px solid var(--color-secondary);
 }
 
@@ -66,8 +66,13 @@ mark {
     background-color: transparent;
 }
 
+img {
+    display: block;
+    width: 100%;
+}
+
 .title {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 800;
 }
 
@@ -114,4 +119,18 @@ mark {
 
 .circle-pink {
     background-color: #f23054;
+}
+
+@media screen and (max-width: 500px) {
+    .outer-circle {
+        min-width: 40px;
+        min-height: 40px;
+        max-width: 40px;
+        max-height: 40px;
+    }
+
+    .inner-circle {
+        width: 24px;
+        height: 24px;
+    }
 }

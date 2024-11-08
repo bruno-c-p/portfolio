@@ -76,3 +76,24 @@
 .info__date {
     color: var(--color-secondary);
 }
+
+@media screen and (max-width: 500px) {
+    .item__content {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        width: 100%;
+    }
+
+    .work-education {
+        grid-template-columns: 1fr;
+    }
+
+    .info__header {
+        flex-direction: column;
+    }
+
+    .info__date {
+        margin-top: 4px;
+    }
+}
