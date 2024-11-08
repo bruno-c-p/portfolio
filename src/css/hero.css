@@ -1,0 +1,32 @@
+.hero {
+    max-width: 560px;
+}
+
+.hero__img {
+    height: 100px;
+    width: 100px;
+}
+
+.hero__title {
+    margin-top: 32px;
+}
+
+.hero__description {
+    margin-top: 24px;
+    color: var(--color-secondary);
+    font-size: 1.125rem;
+}
+
+.hero__icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 16px;
+    font-size: 2rem;
+    color: var(--color-white);
+}
+
+.hero__icons ion-icon:hover {
+    transition: .3s;
+    transition-timing-function: ease-in-out;
+    color: var(--color-icons);
+}

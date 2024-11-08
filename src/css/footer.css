@@ -1,0 +1,7 @@
+.footer__text {
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--color-secondary);
+    text-align: end;
+    padding: 64px 64px;
+}

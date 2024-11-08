@@ -4,10 +4,13 @@
 <head>
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="Bruno Cardozo - Software Developer" />
-  <meta property="og:description" content="Focused on solving real problems and creating practical solutions. Backend developer with over 3 years of experience in Java, Spring Boot, and UI development with Typescript and Angular." />
+  <meta property="og:description"
+    content="Focused on solving real problems and creating practical solutions. Backend developer with over 3 years of experience in Java, Spring Boot, and UI development with Typescript and Angular." />
   <meta property="og:url" content="https://www.brunocardozo.com.br" />
-  <meta name="keywords" content="Bruno Cardozo, Backend Software Developer, Java Developer, Spring Boot, REST API, Angular, Typescript, AWS, Docker, CI/CD, Microservices, RabbitMQ, SQS, SNS" />
-  <meta name="description" content="Bruno Cardozo - Software Engineer with over 3 years of experience specializing in backend development with Java, Spring Boot, and UI development with Typescript and Angular." />
+  <meta name="keywords"
+    content="Bruno Cardozo, Backend Software Developer, Java Developer, Spring Boot, REST API, Angular, Typescript, AWS, Docker, CI/CD, Microservices, RabbitMQ, SQS, SNS" />
+  <meta name="description"
+    content="Bruno Cardozo - Software Engineer with over 3 years of experience specializing in backend development with Java, Spring Boot, and UI development with Typescript and Angular." />
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,240 +26,197 @@
 
 <body>
   <main>
-    <section class="section" id="hero">
-      <div class="hero-profile">
-        <img class="hero-img" src="./src/assets/img/profile.webp"
-          alt="A young man with short, dark hair and a trimmed beard, wearing a black shirt, looking straight at the camera with a neutral expression." />
-        <div class="hero-profile-info">
-          <h2 class="accent-color hero-title">Bruno Cardozo</h2>
-          <h1 class="accent-color hero-description">
-            Backend Software Engineer +3Y
-          </h1>
+    <section id="hero">
+      <div class="hero">
+        <img class="hero__img rounded" src="./src/assets/img/profile.webp" width="100" height="100"
+          alt="A man with a beard, showcasing his facial hair prominently. It appears to be a portrait taken indoors, highlighting his features such as the forehead, eyebrows, and chin. The background seems to consist of a wall, adding depth to the selfie-style photograph.">
+        <h2 class="hero__title title">Software developer, designer and tech entusiast.</h2>
+        <p class="hero__description">I'm a software engineer and entrepreneur based in Brazil, passionate about solving
+          real problems and creating practical solutions that generate value.</p>
+        <div class="hero__icons">
+          <a target="_blank" href="https://github.com/bruno-c-p">
+            <ion-icon name="logo-github"></ion-icon>
+          </a>
+          <a target="_blank" href="https://www.linkedin.com/in/bruno-cardozo-pereira/">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
         </div>
       </div>
-      <div class="hero-info">
-        <nav class="hero-info-nav">
-          <ul>
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#experience">Experience</a>
-            </li>
-            <li>
-              <a href="#education">Education</a>
-            </li>
-            <li>
-              <a href="#projects">Projects</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-          </ul>
-        </nav>
-        <p class="hero-info-text">
-          I'm a software engineer with a passion for solving
-          <span class="accent-color">real problems</span>, creating practical
-          solutions that generate value.
-        </p>
+    </section>
+    <section class="about">
+      <div class="about__info">
+        <h1 class="about__title title">I'm Bruno Cardozo, a problem-solver based in Brazil.</h1>
+        <p class="about__content">Software engineer with over <strong class="about__content--highlight">4 years of experience</strong>, specializing in <strong class="about__content--highlight">backend development</strong>
+          with <strong class="about__content--highlight">Java</strong> and <strong class="about__content--highlight">Spring Boot</strong>.</p>
+        <p class="about__content">I have a <strong class="about__content--highlight">bachelor's degree in Information Systems</strong> and over 2 years of experience
+          teaching programming to beginners. My main expertise is in <strong class="about__content--highlight">Java</strong> using <strong class="about__content--highlight">Spring Boot</strong> to develop <strong class="about__content--highlight">APIs</strong>,
+          and synchronous and asynchronous integration (<strong class="about__content--highlight">SNS</strong>, <strong class="about__content--highlight">SQS</strong>, <strong class="about__content--highlight">RabbitMQ</strong>) between systems.</p>
+      </div>
+      <div class="about__image-container">
+        <div class="about__img-container">
+          <img class="about__img" src="./src/assets/img/profile.webp" width="380" height="380"
+          alt="Bruno Cardozo profile picture">
+        </div>
+        <div class="about__social">
+          <div class="about__icons">
+            <a class="about__link" target="_blank" href="https://github.com/bruno-c-p">
+              <ion-icon name="logo-github"></ion-icon>
+              <strong class="about__link--text">Follow on Github</strong>
+            </a>
+            <a class="about__link" target="_blank" href="https://github.com/bruno-c-p">
+              <ion-icon name="logo-linkedin"></ion-icon>
+              <strong class="about__link--text">Follow on Linkedin</strong>
+            </a>
+            <hr class="about__separator">
+            <a class="about__link" target="_blank" href="mailto:dev@brunocardozo.com.br">
+              <ion-icon name="mail"></ion-icon>
+              <strong class="about__link--text">dev@brunocardozo.com.br</strong>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
-    <section class="section" id="about" aria-labelledby="about-title">
-      <h2 id="about-title" class="section-title">About</h2>
-      <div class="about-texts">
-        <p>
-          Straight to the point,
-          <strong class="highlight-text">no BS developer</strong>.
-        </p>
-        <p>
-          Software engineer with over
-          <em class="accent-color">3 years of experience</em>, specializing in
-          <em class="accent-color">backend development</em> with
-          <em class="accent-color">Java</em> and
-          <em class="accent-color">Spring Boot</em>.
-        </p>
-        <p>
-          I have a
-          <a class="text-link"
-            href="https://drive.google.com/file/d/1c-MN6rjg8RjX2OG3jdIOqmFrl4FbgZ5n/view?usp=sharing">bachelor's degree
-            in Information Systems</a>
-          and over 2 years of experience teaching programming to beginners.
-        </p>
-        <p>
-          My main expertise is in <em class="accent-color">Java</em> 8, 11, 17
-          using <em class="accent-color">Spring Boot</em> to develop
-          <em class="accent-color">APIs</em>, and synchronous and asynchronous
-          integration (<em class="accent-color">SNS</em>,
-          <em class="accent-color">SQS</em>,
-          <em class="accent-color">RabbitMQ</em>) between systems.
-        </p>
+    <section class="project">
+      <div class="project__header">
+        <h2 class="project__title title">Work I've done to make a meaningful impact.</h2>
+        <p class="project__description">I've worked on a range of projects, primarily for companies and local businesses. These are the ones I'm proudest to have developed.</p>
+      </div>
+      <div class="projects">
+        <div class="projects__card">
+          <div class="outer-circle rounded">
+            <div class="inner-circle rounded circle-red"></div>
+          </div>
+          <h3 class="card__title">Marquebela</h3>
+          <p class="card__description">Agenda helps beauty salons manage bookings seamlessly, from scheduling to client reminders. Built with flexibility for stylists and staff. </p>
+        </div>
+        <div class="projects__card">
+          <div class="outer-circle rounded">
+            <div class="inner-circle rounded circle-purple"></div>
+          </div>
+          <h3 class="card__title">Nosso Bem</h3>
+          <p class="card__description">An app that brings condominium residents together to enjoy group-buying deals on services and products, optimizing savings and convenience for communities.</p>
+        </div>
+        <div class="projects__card">
+          <div class="outer-circle rounded">
+            <div class="inner-circle rounded circle-yellow"></div>
+          </div>
+          <h3 class="card__title">Epitro</h3>
+          <p class="card__description">Manage and calculate commissions for various roles within a single platform, ensuring clarity and accuracy for workers and managers alike.</p>
+        </div>
       </div>
     </section>
-    <section class="section" id="experience" aria-labelledby="experience-title">
-      <h2 id="experience-title" class="section-title">Experience</h2>
-      <ul class="experience-list">
-        <li class="experience">
-          <img class="experience-img" src="./src/assets/img/wise-logo.webp" alt="" />
-          <div class="experience-details">
-            <div class="experience-info">
-              <h3>Software Engineer</h3>
-              <a class="text-link" href="https://www.wises.com.br/">Wise</a>
-              <span>2022 - Present</span>
+    <section class="work-education">
+      <div class="work-education__card">
+        <div class="work-education__header">
+          <ion-icon name="business"></ion-icon>
+          <h2 class="work-education__title">Work</h2>
+        </div>
+        <div class="work-education__list">
+          <div class="list__item">
+            <div class="item__content">
+              <div class="outer-circle rounded">
+                <div class="inner-circle rounded circle-yellow"></div>
+              </div>
+              <div class="item__info">
+                <div class="info__header">
+                  <h3 class="info__title">Software Developer</h3>
+                  <mark class="info__date">2022 - Present</mark>
+                </div>
+                <mark class="info__description">Wise</mark>
+              </div>
             </div>
-            <ul class="experience-tech-list">
-              <li>Java</li>
-              <li>Maven</li>
-              <li>REST APIs</li>
-              <li>Hibernate</li>
-              <li>PostgreSQL</li>
-              <li>AWS</li>
-              <li>SNS</li>
-              <li>SQS</li>
-              <li>CI/CD</li>
-              <li>Git</li>
-              <li>MVC</li>
-            </ul>
           </div>
-        </li>
-        <li class="experience">
-          <img class="experience-img" src="./src/assets/img/logo.webp" alt="" />
-          <div class="experience-details">
-            <div class="experience-info">
-              <h3>Software Engineer</h3>
-              <a class="text-link" href="">Wise</a>
-              <span>2022 - Present</span>
+          <div class="list__item">
+            <div class="item__content">
+              <div class="outer-circle rounded">
+                <div class="inner-circle rounded circle-green"></div>
+              </div>
+              <div class="item__info">
+                <div class="info__header">
+                  <h3 class="info__title">Programming Instructor</h3>
+                  <mark class="info__date">2023 - 2024</mark>
+                </div>
+                <mark class="info__description">UNIBAVE</mark>
+              </div>
             </div>
-            <ul class="experience-tech-list">
-              <li>Java</li>
-              <li>Spring Boot</li>
-              <li>JUnit</li>
-              <li>Typescript</li>
-              <li>Angular</li>
-              <li>REST APIs</li>
-              <li>Hibernate</li>
-              <li>PostgreSQL</li>
-              <li>AWS</li>
-              <li>SNS</li>
-              <li>SQS</li>
-              <li>CI/CD</li>
-              <li>Git</li>
-              <li>RabbitMQ</li>
-              <li>Docker</li>
-            </ul>
           </div>
-        </li>
-        <li class="experience">
-          <img class="experience-img" src="./src/assets/img/unibave-logo.webp" alt="" />
-          <div class="experience-details">
-            <div class="experience-info">
-              <h3>Programming Instructor</h3>
-              <a class="text-link" href="">Unibave</a>
-              <span>May 2023 - Aug 2023 | May 2024 - Aug 2024</span>
+          <div class="list__item">
+            <div class="item__content">
+              <div class="outer-circle rounded">
+                <div class="inner-circle rounded circle-blue"></div>
+              </div>
+              <div class="item__info">
+                <div class="info__header">
+                  <h3 class="info__title">Software Developer</h3>
+                  <mark class="info__date">2021</mark>
+                </div>
+                <mark class="info__description">Projedata</mark>
+              </div>
             </div>
-            <ul class="experience-tech-list">
-              <li>Java</li>
-              <li>PostgreSQL</li>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Javascript</li>
-              <li>Git</li>
-            </ul>
           </div>
-        </li>
-        <li class="experience">
-          <img class="experience-img" src="./src/assets/img/projedata-logo.webp" alt="" />
-          <div class="experience-details">
-            <div class="experience-info">
-              <h3>Software Engineer</h3>
-              <a class="text-link" href="https://www.projedata.com.br/">Projedata</a>
-              <span>April 2021 - Dec 2021</span>
-            </div>
-            <ul class="experience-tech-list">
-              <li>Java</li>
-              <li>PL/SQL</li>
-              <li>OracleSQL</li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </section>
-    <section class="section" id="education" aria-labelledby="education-title">
-      <h2 id="education-title" class="section-title">Education</h2>
-      <div class="education-description">
-        <h3>Bachelor of Science</h3>
-        <p>
-          Major in Information Systems at
-          <a class="text-link" href="https://unibave.net/">Centro Universitário Barriga Verde (UNIBAVE).</a>
-        </p>
+        </div>
       </div>
-      <div class="education-description">
-        <h3>Extracurricular</h3>
-        <p>
-          Finalist at
-          <a class="text-link" href="https://projetoreuni.com.br/">REUNI Challenge</a>
-          2023: The Largest University Entrepreneurship Competition in Brazil.
-        </p>
-        <p>
-          Programming instructor for first-year university students (2022 -
-          2023)
-        </p>
-      </div>
-    </section>
-    <section class="section" id="projects" aria-labelledby="projects-title">
-      <h2 id="projects-title" class="section-title">Projects</h2>
-      <h2>TBD</h2>
-    </section>
-    <section class="section" id="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title" class="section-title">Contact</h2>
-      <div class="contact-texts">
-        <p>
-          <strong class="text-bold">Have a project in mind?</strong> Send some
-          details about your project to
-          <a class="text-link" href="mailto:dev@brunocardozo.com.br">dev@brunocardozo.com.br</a>
-        </p>
-        <p>
-          I can help designing, building a website or building a reliable and
-          maintainable software.
-        </p>
-        <p>
-          Currently based in São Ludgero, Brasil -
-          <strong class="highlight-text">available for remote-friendly work only</strong>.
-        </p>
+      <div class="work-education__card">
+        <div class="work-education__header">
+          <ion-icon name="book"></ion-icon>
+          <h2 class="work-education__title">Education & Extracurricular</h2>
+        </div>
+        <div class="work-education__list">
+          <div class="list__item">
+            <div class="item__content">
+              <div class="outer-circle rounded">
+                <div class="inner-circle rounded circle-green"></div>
+              </div>
+              <div class="item__info">
+                <div class="info__header">
+                  <h3 class="info__title">Bachelor of Science</h3>
+                  <mark class="info__date">2020 - 2023</mark>
+                </div>
+                <mark class="info__description">Major in Information Systems</mark>
+              </div>
+            </div>
+          </div>
+          <div class="list__item">
+            <div class="item__content">
+              <div class="outer-circle rounded">
+                <div class="inner-circle rounded circle-pink"></div>
+              </div>
+              <div class="item__info">
+                <div class="info__header">
+                  <h3 class="info__title">Finalist at REUNI Challenge</h3>
+                  <mark class="info__date">2023</mark>
+                </div>
+                <mark class="info__description">The Largest University Entrepreneurship Competition in Brazil.</mark>
+              </div>
+            </div>
+          </div>
+          <div class="list__item">
+            <div class="item__content">
+              <div class="outer-circle rounded">
+                <div class="inner-circle rounded circle-green"></div>
+              </div>
+              <div class="item__info">
+                <div class="info__header">
+                  <h3 class="info__title">Programming Instructor</h3>
+                  <mark class="info__date">2022 - 2023</mark>
+                </div>
+                <mark class="info__description">First-year university students</mark>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
-  <footer class="section">
-    <span>©2024 to ∞ Bruno Cardozo</span>
-    <nav class="footer-nav">
-      <ul>
-        <li>
-          <a href="#home">Home</a>
-        </li>
-        <li>
-          <a href="#about">About</a>
-        </li>
-        <li>
-          <a href="#experience">Experience</a>
-        </li>
-        <li>
-          <a href="#projects">Projects</a>
-        </li>
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
-      </ul>
-    </nav>
+  <footer class="footer">
+    <p class="footer__text">©2024 Bruno Cardozo. All rights reserved.</p>
   </footer>
-  <script src="https://unpkg.com/lenis@1.1.16/dist/lenis.min.js"></script> 
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.16/dist/lenis.min.js"></script>
   <script>
-    const lenis = new Lenis({
-      autoRaf: true,
-    });
-
-    lenis.on('scroll', (e) => {
-      console.log(e);
-    });
-  </script>  
+    const lenis = new Lenis({ autoRaf: true });
+  </script>
 </body>
 
 </html>
