@@ -1,29 +1,7 @@
-footer {
-    font-weight: 600;
-    color: var(--color-primary);
-    padding-bottom: 48px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer-nav ul {
-    display: flex;
-    gap: 24px;
-    text-transform: uppercase;
-}
-
-@media (width < 768px) {
-    footer {
-        flex-direction: column-reverse;
-        gap: 32px;
-    }
-}
-
-@media (width < 480px) {
-    .footer-nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 24px;
-    }
+.footer__text {
+    font-weight: 700;
+    font-size: clamp(1rem, 3vw, 1.125rem);
+    color: var(--color-secondary);
+    text-align: end;
+    padding: 32px;
 }

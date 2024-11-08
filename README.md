@@ -1,11 +1,26 @@
-# My Dev Portfolio
+<h1 align="center" style="font-weight: bold;">Portfolio 💻</h1>
 
-> This project showcases my work and skills, and it's a website built with <strong>HTML</strong>, <strong>CSS</strong>.
+<p align="center">
+ <a href="#tech">Technologies</a>
+</p>
 
-## 🖌️ Figma
+<p align="center">
+    <b>Personal portfolio showcasing my skills, previous projects, and technologies I specialize in. It highlights the work I've done and the solutions I've built, demonstrating my expertise as a software developer.</b>
+</p>
 
-[Project Link](https://www.figma.com/design/3rSc6Oj9NlrpE7ruYOSc05/Portfolio?node-id=812-16&t=vTiaiX40mtXF3BHW-1)<br><br>
+<p align="center">
+     <a href="https://brunocardozo.com.br">📱 Visit this Project</a>
+</p>
 
-## 📝 License
+<h2 id="layout">🎨 Layout</h2>
 
-This project is under license. See the [LICENSE](LICENSE.md) file for more details.
+<p align="center">
+    <img src="./src/assets/img/readme-showcase-1.png" width="400px">
+    <img src="./src/assets/img/readme-showcase-2.png" width="400px">
+</p>
+
+<h2 id="technologies">💻 Technologies</h2>
+
+- HTML
+- CSS
+- Javascript
