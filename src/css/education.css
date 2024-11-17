@@ -13,13 +13,51 @@
     gap: 16px;
 }
 
+.education__card:nth-child(even):hover .education__icon {
+    color: var(--color-white);
+}
+
+.education__card:nth-child(even):hover .education__circle--outer {
+    background-color: var(--color-reuni);
+    border-color: transparent;
+}
+
+.education__card:nth-child(even):hover {
+    border-color: var(--color-reuni);
+}
+
+.education__card:nth-child(even):hover .education__role {
+    color: var(--color-reuni);
+}
+
+.education__card:nth-child(even):hover .education__role {
+    color: var(--color-reuni);
+}
+
+.education__card:nth-child(odd):hover .education__icon {
+    color: var(--color-white);
+}
+
+.education__card:nth-child(odd):hover {
+    border-color: var(--color-unibave);
+}
+
+.education__card:nth-child(odd):hover .education__role {
+    color: var(--color-unibave);
+}
+
+.education__card:nth-child(odd):hover .education__circle--outer {
+    background-color: var(--color-unibave);
+    border-color: transparent;
+}
+
 .education__card .education__icon {
     font-size: 1.5rem;
-    color: #f23054;
+    color: var(--color-reuni)
 }
 
 .education__card:nth-child(odd) .education__icon {
-    color: #9fcd4e;
+    color: var(--color-unibave);
 }
 
 .education__info-wrapper {
@@ -34,6 +72,7 @@
 
 .education__role {
     font-size: clamp(1rem, 6vw, 1.25rem);
+    font-weight: 500;
 }
 
 .education__timespan,

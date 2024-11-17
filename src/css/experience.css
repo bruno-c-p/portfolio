@@ -13,6 +13,23 @@
     padding: 24px;
 }
 
+.experience__card:hover {
+    background-color: var(--color-line);
+    padding: 24px;
+}
+
+.experience__card:hover.experience__card--wise .experience__circle--inner {
+    background-color: var(--color-wise);
+}
+
+.experience__card:hover.experience__card--unibave .experience__circle--inner {
+    background-color: var(--color-unibave);
+}
+
+.experience__card:hover.experience__card--projedata .experience__circle--inner {
+    background-color: var(--color-projedata);
+}
+
 .experience__card--wise .experience__circle--outer {
     background: radial-gradient(circle, rgba(30, 94, 228, 0) 0%, rgba(30, 94, 228, 1) 100%);
 }

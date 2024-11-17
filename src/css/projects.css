@@ -26,15 +26,50 @@
     line-height: 170%;
 }
 
-.projects__circle--outer {
-    background-color: var(--color-line);
-    border: 1px solid var(--color-secondary);
-}
-
 .projects__card--marquebela .inner-circle {
-    background-color: #fdeced;
+    background-color: var(--color-marquebela-bg);
 }
 
 .projects__card--nossobem .inner-circle {
-    background-color: #ff613e;
+    background-color: var(--color-nossobem);
+}
+
+/**/
+
+.projects__card:hover.projects__card--marquebela {
+    background-color: var(--color-marquebela-bg);
+}
+
+.projects__card:hover.projects__card--marquebela .inner-circle,
+.projects__card:hover.projects__card--marquebela .projects__circle--outer {
+    background-color: var(--color-marquebela-text);
+    border: 1px solid transparent;
+}
+
+.projects__card:hover.projects__card--marquebela .projects__card-title {
+    color: var(--color-marquebela-text);
+}
+
+.projects__card:hover.projects__card--marquebela .projects__card-description {
+    color: var(--color-background);
+}
+
+/**/
+
+.projects__card:hover.projects__card--nossobem {
+    background-color: var(--color-white);
+}
+
+.projects__card:hover.projects__card--nossobem .inner-circle,
+.projects__card:hover.projects__card--nossobem .projects__circle--outer {
+    background-color: var(--color-nossobem);
+    border: 1px solid transparent;
+}
+
+.projects__card:hover.projects__card--nossobem .projects__card-title {
+    color: var(--color-nossobem);
+}
+
+.projects__card:hover.projects__card--nossobem .projects__card-description {
+    color: var(--color-background);
 }

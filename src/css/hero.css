@@ -16,7 +16,7 @@
 }
 
 .hero__icon:hover {
-    transition: .3s;
     transition-timing-function: ease-in-out;
     color: var(--color-icons);
+    transform: translateY(-4px);
 }

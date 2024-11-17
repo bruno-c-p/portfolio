@@ -31,6 +31,17 @@ html.lenis body {
     --color-line: #27272c;
     --color-white: #fff;
     --color-black: #000;
+    --color-wise: #1e5ee4;
+    --color-unibave: #9fcd4e;
+    --color-projedata: #384cff;
+    --color-marquebela-bg: #fdeced;
+    --color-marquebela-text: #2f3b7d;
+    --color-nossobem: #ff613e;
+    --color-reuni: #f23054;
+}
+
+* {
+    transition: .3s;
 }
 
 body {
@@ -109,6 +120,11 @@ img {
 .inner-circle {
     width: 32px;
     height: 32px;
+}
+
+.default-border-circle {
+    background-color: var(--color-line);
+    border: 1px solid var(--color-secondary);
 }
 
 @media screen and (max-width: 1160px) {
