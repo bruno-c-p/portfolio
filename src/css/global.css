@@ -62,7 +62,7 @@ a {
 p,
 mark,
 strong {
-    line-height: 140%;
+    line-height: 150%;
 }
 
 mark {
@@ -80,6 +80,18 @@ img {
     font-weight: 800;
 }
 
+.subtitle {
+    margin-top: 24px;
+    font-family: var(--font);
+    font-size: clamp(1rem, 3vw, 1.125rem);
+    color: var(--color-secondary);
+}
+
+.title,
+.subtitle {
+    max-width: 460px;
+}
+
 .rounded {
     border-radius: 50%;
 }
@@ -89,8 +101,6 @@ img {
     min-height: 50px;
     max-width: 50px;
     max-height: 50px;
-    color: var(--color-tertiary);
-    border: 1px solid var(--color-secondary);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,30 +109,6 @@ img {
 .inner-circle {
     width: 32px;
     height: 32px;
-}
-
-.circle-red {
-    background-color: #ff666a;
-}
-
-.circle-purple {
-    background-color: #6241ff;
-}
-
-.circle-yellow {
-    background-color: #ffff66;
-}
-
-.circle-green {
-    background-color: #9fcd4e;
-}
-
-.circle-blue {
-    background-color: #384cff;
-}
-
-.circle-pink {
-    background-color: #f23054;
 }
 
 @media screen and (max-width: 1160px) {

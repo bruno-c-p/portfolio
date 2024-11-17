@@ -1,0 +1,52 @@
+.education__list {
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.education__card {
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--color-line);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.education__card .education__icon {
+    font-size: 1.5rem;
+    color: #f23054;
+}
+
+.education__card:nth-child(odd) .education__icon {
+    color: #9fcd4e;
+}
+
+.education__info-wrapper {
+    width: 100%;
+}
+
+.education__info-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.education__role {
+    font-size: clamp(1rem, 6vw, 1.25rem);
+}
+
+.education__timespan,
+.education__description {
+    color: var(--color-secondary);
+}
+
+.education__timespan {
+    display: inline-block;
+    margin-left: auto;
+    font-size: 0.875rem;
+}
+
+.education__description {
+    margin-top: 4px;
+}

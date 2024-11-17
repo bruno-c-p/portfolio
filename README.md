@@ -9,14 +9,8 @@
 </p>
 
 <p align="center">
-     <a href="https://brunocardozo.com.br">📱 Visit this Project</a>
-</p>
-
-<h2 id="layout">🎨 Layout</h2>
-
-<p align="center">
-    <img src="./src/assets/img/readme-showcase-1.png" width="400px">
-    <img src="./src/assets/img/readme-showcase-2.png" width="400px">
+     <a href="https://brunocardozo.com.br">📱 Visit this Project</a><br>
+     <a href="https://www.figma.com/design/3rSc6Oj9NlrpE7ruYOSc05/Portfolio?node-id=812-16&t=c7WFxYFA981kT7pC-1">🎨 Figma</a>
 </p>
 
 <h2 id="technologies">💻 Technologies</h2>
@@ -24,3 +18,7 @@
 - HTML
 - CSS
 - Javascript
+
+<h2 id="patterns">⌨️ Patterns</h2>
+
+- BEMCSS

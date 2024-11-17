@@ -1,7 +1,9 @@
 .footer__text {
+    display: inline-block;
     font-weight: 400;
     font-size: 1rem;
     color: var(--color-secondary);
     text-align: start;
     padding: 32px;
+    padding-left: clamp(4%, 6vw, 100px);
 }

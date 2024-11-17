@@ -1,14 +1,4 @@
-.project__header {
-    width: 50%;
-}
-
-.project__description {
-    margin-top: 24px;
-    font-size: clamp(1rem, 3vw, 1.125rem);
-    color: var(--color-secondary);
-}
-
-.projects {
+.projects__list {
     margin-top: 64px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -23,25 +13,28 @@
     border-radius: var(--border-radius);
 }
 
-.card__title {
+.projects__card-title {
     margin-top: 20px;
     font-weight: 600;
     font-size: clamp(1.125rem, 6vw, 1.5rem);
     color: var(--color-primary);
 }
 
-.card__description {
+.projects__card-description {
     color: var(--color-secondary);
     margin-top: 12px;
     line-height: 170%;
 }
 
-@media screen and (max-width: 800px) {
-    .project__header {
-        width: 100%;
-    }
+.projects__circle--outer {
+    background-color: var(--color-line);
+    border: 1px solid var(--color-secondary);
+}
 
-    .project__description {
-        max-width: 60ch;
-    }
+.projects__card--marquebela .inner-circle {
+    background-color: #fdeced;
+}
+
+.projects__card--nossobem .inner-circle {
+    background-color: #ff613e;
 }
