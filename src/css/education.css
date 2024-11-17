@@ -8,8 +8,9 @@
 .education__card {
     padding-bottom: 24px;
     border-bottom: 2px solid var(--color-line);
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    align-items: start;
     gap: 16px;
 }
 
@@ -67,11 +68,11 @@
 .education__info-header {
     display: flex;
     justify-content: space-between;
-    gap: 32px;
+    gap: clamp(16px, 5vw, 32px);
 }
 
 .education__role {
-    font-size: clamp(1rem, 6vw, 1.25rem);
+    font-size: clamp(1rem, 5vw, 1.25rem);
     font-weight: 500;
 }
 
@@ -88,4 +89,10 @@
 
 .education__description {
     margin-top: 4px;
+}
+
+@media screen and (max-width: 600px) {
+    .education__card {
+        grid-template-columns: 1fr;
+    }
 }
