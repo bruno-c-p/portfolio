@@ -20,7 +20,8 @@ html.lenis body {
 }
 
 :root {
-    --font: "Darker Grotesque", sans-serif;
+    --font: "Outfit", sans-serif;
+    --font-title: "Darker Grotesque", sans-serif;
     --border-radius: 4px;
     --color-background: #18181b;
     --color-primary: #f4f4f5;
@@ -58,7 +59,9 @@ a {
     color: inherit;
 }
 
-p {
+p,
+mark,
+strong {
     line-height: 140%;
 }
 
@@ -72,6 +75,7 @@ img {
 }
 
 .title {
+    font-family: var(--font-title);
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 800;
 }

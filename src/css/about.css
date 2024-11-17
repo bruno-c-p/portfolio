@@ -40,7 +40,8 @@
 }
 
 .about__content--highlight {
-    font-weight: 700;
+    font-weight: 500;
+    color: var(--color-primary);
 }
 
 .about__social {
@@ -71,7 +72,7 @@
 }
 
 .about__link--text {
-    font-weight: 700;
+    font-weight: 500;
     color: var(--color-secondary);
 }
 
