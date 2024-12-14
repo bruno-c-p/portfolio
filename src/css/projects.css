@@ -1,75 +1,75 @@
 .projects__list {
-    margin-top: 64px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 32px;
-    justify-content: space-between;
-    align-items: stretch;
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+  justify-content: space-between;
+  align-items: stretch;
 }
 
 .projects__card {
-    padding: 18px;
-    background-color: var(--color-line);
-    border-radius: var(--border-radius);
+  padding: 18px;
+  background-color: var(--color-line);
+  border-radius: var(--border-radius);
 }
 
 .projects__card-title {
-    margin-top: 20px;
-    font-weight: 600;
-    font-size: clamp(1.125rem, 6vw, 1.5rem);
-    color: var(--color-primary);
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: clamp(1.125rem, 6vw, 1.5rem);
+  color: var(--color-primary);
 }
 
 .projects__card-description {
-    color: var(--color-secondary);
-    margin-top: 12px;
-    line-height: 170%;
+  color: var(--color-secondary);
+  margin-top: 12px;
+  line-height: 170%;
 }
 
 .projects__card--marquebela .inner-circle {
-    background-color: var(--color-marquebela-bg);
+  background-color: var(--color-marquebela-bg);
 }
 
 .projects__card--nossobem .inner-circle {
-    background-color: var(--color-nossobem);
+  background-color: var(--color-nossobem);
 }
 
 /**/
 
 .projects__card:hover.projects__card--marquebela {
-    background-color: var(--color-marquebela-bg);
+  background-color: var(--color-marquebela-bg);
 }
 
 .projects__card:hover.projects__card--marquebela .inner-circle,
 .projects__card:hover.projects__card--marquebela .projects__circle--outer {
-    background-color: var(--color-marquebela-text);
-    border: 1px solid transparent;
+  background-color: var(--color-marquebela-text);
+  border: 1px solid transparent;
 }
 
 .projects__card:hover.projects__card--marquebela .projects__card-title {
-    color: var(--color-marquebela-text);
+  color: var(--color-marquebela-text);
 }
 
 .projects__card:hover.projects__card--marquebela .projects__card-description {
-    color: var(--color-background);
+  color: var(--color-background);
 }
 
 /**/
 
 .projects__card:hover.projects__card--nossobem {
-    background-color: var(--color-white);
+  background-color: var(--color-white);
 }
 
 .projects__card:hover.projects__card--nossobem .inner-circle,
 .projects__card:hover.projects__card--nossobem .projects__circle--outer {
-    background-color: var(--color-nossobem);
-    border: 1px solid transparent;
+  background-color: var(--color-nossobem);
+  border: 1px solid transparent;
 }
 
 .projects__card:hover.projects__card--nossobem .projects__card-title {
-    color: var(--color-nossobem);
+  color: var(--color-nossobem);
 }
 
 .projects__card:hover.projects__card--nossobem .projects__card-description {
-    color: var(--color-background);
+  color: var(--color-background);
 }

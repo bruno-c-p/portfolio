@@ -1,150 +1,152 @@
 html.lenis,
 html.lenis body {
-    height: auto;
+  height: auto;
 }
 
 .lenis.lenis-smooth {
-    scroll-behavior: auto !important;
+  scroll-behavior: auto !important;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {
-    overscroll-behavior: contain;
+  overscroll-behavior: contain;
 }
 
 .lenis.lenis-stopped {
-    overflow: clip;
+  overflow: clip;
 }
 
 .lenis.lenis-smooth iframe {
-    pointer-events: none;
-}
-
-:root {
-    --font: "Outfit", sans-serif;
-    --font-title: "Darker Grotesque", sans-serif;
-    --border-radius: 4px;
-    --color-background: #18181b;
-    --color-primary: #f4f4f5;
-    --color-secondary: #a1a1aa;
-    --color-tertiary: #1b1b1f;
-    --color-icons: #71717a;
-    --color-line: #27272c;
-    --color-white: #fff;
-    --color-black: #000;
-    --color-wise: #1e5ee4;
-    --color-unibave: #9fcd4e;
-    --color-projedata: #384cff;
-    --color-marquebela-bg: #fdeced;
-    --color-marquebela-text: #2f3b7d;
-    --color-nossobem: #ff613e;
-    --color-reuni: #f23054;
+  pointer-events: none;
 }
 
 * {
-    transition: .3s;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+:root {
+  --font: "Outfit", sans-serif;
+  --font-title: "Darker Grotesque", sans-serif;
+  --border-radius: 4px;
+  --color-background: #18181b;
+  --color-primary: #f4f4f5;
+  --color-secondary: #a1a1aa;
+  --color-tertiary: #1b1b1f;
+  --color-icons: #71717a;
+  --color-line: #27272c;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-wise: #1e5ee4;
+  --color-unibave: #9fcd4e;
+  --color-projedata: #384cff;
+  --color-marquebela-bg: #fdeced;
+  --color-marquebela-text: #2f3b7d;
+  --color-nossobem: #ff613e;
+  --color-reuni: #f23054;
 }
 
 body {
-    font-family: var(--font);
-    background-color: var(--color-black);
-    color: var(--color-primary);
+  font-family: var(--font);
+  background-color: var(--color-black);
+  color: var(--color-primary);
 }
 
 main,
 footer {
-    background-color: var(--color-background);
-    max-width: 1160px;
-    margin: 0 auto;
-    border-left: 1px solid var(--color-secondary);
-    border-right: 1px solid var(--color-secondary);
+  background-color: var(--color-background);
+  max-width: 1160px;
+  margin: 0 auto;
+  border-left: 1px solid var(--color-secondary);
+  border-right: 1px solid var(--color-secondary);
 }
 
 section {
-    padding: clamp(15%, 10vw, 128px) clamp(4%, 6vw, 100px);
-    border-bottom: 1px solid var(--color-secondary);
+  padding: clamp(15%, 10vw, 128px) clamp(4%, 6vw, 100px);
+  border-bottom: 1px solid var(--color-secondary);
 }
 
 a {
-    text-decoration: none;
-    display: block;
-    color: inherit;
+  text-decoration: none;
+  display: block;
+  color: inherit;
 }
 
 p,
 mark,
 strong {
-    line-height: 150%;
+  line-height: 150%;
 }
 
 mark {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 img {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 }
 
 .title {
-    font-family: var(--font-title);
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 800;
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
 }
 
 .subtitle {
-    margin-top: 24px;
-    font-family: var(--font);
-    font-size: clamp(1rem, 3vw, 1.125rem);
-    color: var(--color-secondary);
+  margin-top: 24px;
+  font-family: var(--font);
+  font-size: clamp(1rem, 3vw, 1.125rem);
+  color: var(--color-secondary);
 }
 
 .title,
 .subtitle {
-    max-width: 460px;
+  max-width: 460px;
 }
 
 .rounded {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 .outer-circle {
-    min-width: 50px;
-    min-height: 50px;
-    max-width: 50px;
-    max-height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  min-width: 50px;
+  min-height: 50px;
+  max-width: 50px;
+  max-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .inner-circle {
-    width: 32px;
-    height: 32px;
+  width: 32px;
+  height: 32px;
 }
 
 .default-border-circle {
-    background-color: var(--color-line);
-    border: 1px solid var(--color-secondary);
+  background-color: var(--color-line);
+  border: 1px solid var(--color-secondary);
 }
 
 @media screen and (max-width: 1160px) {
-
-    main,
-    footer {
-        border: none;
-    }
+  main,
+  footer {
+    border: none;
+  }
 }
 
 @media screen and (max-width: 500px) {
-    .outer-circle {
-        min-width: 40px;
-        min-height: 40px;
-        max-width: 40px;
-        max-height: 40px;
-    }
+  .outer-circle {
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+  }
 
-    .inner-circle {
-        width: 24px;
-        height: 24px;
-    }
+  .inner-circle {
+    width: 24px;
+    height: 24px;
+  }
 }

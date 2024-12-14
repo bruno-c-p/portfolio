@@ -1,98 +1,98 @@
 .education__list {
-    margin-top: 64px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .education__card {
-    padding-bottom: 24px;
-    border-bottom: 2px solid var(--color-line);
-    display: grid;
-    grid-template-columns: 50px 1fr;
-    align-items: start;
-    gap: 16px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid var(--color-line);
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  align-items: start;
+  gap: 16px;
 }
 
 .education__card:nth-child(even):hover .education__icon {
-    color: var(--color-white);
+  color: var(--color-white);
 }
 
 .education__card:nth-child(even):hover .education__circle--outer {
-    background-color: var(--color-reuni);
-    border-color: transparent;
+  background-color: var(--color-reuni);
+  border-color: transparent;
 }
 
 .education__card:nth-child(even):hover {
-    border-color: var(--color-reuni);
+  border-color: var(--color-reuni);
 }
 
 .education__card:nth-child(even):hover .education__role {
-    color: var(--color-reuni);
+  color: var(--color-reuni);
 }
 
 .education__card:nth-child(even):hover .education__role {
-    color: var(--color-reuni);
+  color: var(--color-reuni);
 }
 
 .education__card:nth-child(odd):hover .education__icon {
-    color: var(--color-white);
+  color: var(--color-white);
 }
 
 .education__card:nth-child(odd):hover {
-    border-color: var(--color-unibave);
+  border-color: var(--color-unibave);
 }
 
 .education__card:nth-child(odd):hover .education__role {
-    color: var(--color-unibave);
+  color: var(--color-unibave);
 }
 
 .education__card:nth-child(odd):hover .education__circle--outer {
-    background-color: var(--color-unibave);
-    border-color: transparent;
+  background-color: var(--color-unibave);
+  border-color: transparent;
 }
 
 .education__card .education__icon {
-    font-size: 1.5rem;
-    color: var(--color-reuni)
+  font-size: 1.5rem;
+  color: var(--color-reuni);
 }
 
 .education__card:nth-child(odd) .education__icon {
-    color: var(--color-unibave);
+  color: var(--color-unibave);
 }
 
 .education__info-wrapper {
-    width: 100%;
+  width: 100%;
 }
 
 .education__info-header {
-    display: flex;
-    justify-content: space-between;
-    gap: clamp(16px, 5vw, 32px);
+  display: flex;
+  justify-content: space-between;
+  gap: clamp(16px, 5vw, 32px);
 }
 
 .education__role {
-    font-size: clamp(1rem, 5vw, 1.25rem);
-    font-weight: 500;
+  font-size: clamp(1rem, 5vw, 1.25rem);
+  font-weight: 500;
 }
 
 .education__timespan,
 .education__description {
-    color: var(--color-secondary);
+  color: var(--color-secondary);
 }
 
 .education__timespan {
-    display: inline-block;
-    margin-left: auto;
-    font-size: 0.875rem;
+  display: inline-block;
+  margin-left: auto;
+  font-size: 0.875rem;
 }
 
 .education__description {
-    margin-top: 4px;
+  margin-top: 4px;
 }
 
 @media screen and (max-width: 600px) {
-    .education__card {
-        grid-template-columns: 1fr;
-    }
+  .education__card {
+    grid-template-columns: 1fr;
+  }
 }

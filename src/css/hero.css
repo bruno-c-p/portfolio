@@ -1,22 +1,22 @@
 .hero__img {
-    height: 100px;
-    width: 100px;
-    margin-bottom: 32px;
+  height: 100px;
+  width: 100px;
+  margin-bottom: 32px;
 }
 
 .hero__icon {
-    margin-top: 24px;
-    display: inline-block;
-    font-size: clamp(1.5rem, 5vw, 2rem);
-    color: var(--color-white);
+  margin-top: 24px;
+  display: inline-block;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  color: var(--color-white);
 }
 
-.hero__icon+.hero__icon {
-    margin-left: 16px;
+.hero__icon + .hero__icon {
+  margin-left: 16px;
 }
 
 .hero__icon:hover {
-    transition-timing-function: ease-in-out;
-    color: var(--color-icons);
-    transform: translateY(-4px);
+  transition-timing-function: ease-in-out;
+  color: var(--color-icons);
+  transform: translateY(-4px);
 }
