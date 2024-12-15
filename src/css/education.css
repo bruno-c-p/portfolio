@@ -1,98 +1,56 @@
-.education__list {
+#education-intro {
+  max-width: 430px;
+  p {
+    margin-top: 24px;
+  }
+}
+
+#education-list {
   margin-top: 64px;
+  list-style-type: none;
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
 
-.education__card {
-  padding-bottom: 24px;
-  border-bottom: 2px solid var(--color-line);
-  display: grid;
-  grid-template-columns: 50px 1fr;
-  align-items: start;
-  gap: 16px;
-}
-
-.education__card:nth-child(even):hover .education__icon {
-  color: var(--color-white);
-}
-
-.education__card:nth-child(even):hover .education__circle--outer {
-  background-color: var(--color-reuni);
-  border-color: transparent;
-}
-
-.education__card:nth-child(even):hover {
-  border-color: var(--color-reuni);
-}
-
-.education__card:nth-child(even):hover .education__role {
-  color: var(--color-reuni);
-}
-
-.education__card:nth-child(even):hover .education__role {
-  color: var(--color-reuni);
-}
-
-.education__card:nth-child(odd):hover .education__icon {
-  color: var(--color-white);
-}
-
-.education__card:nth-child(odd):hover {
-  border-color: var(--color-unibave);
-}
-
-.education__card:nth-child(odd):hover .education__role {
-  color: var(--color-unibave);
-}
-
-.education__card:nth-child(odd):hover .education__circle--outer {
-  background-color: var(--color-unibave);
-  border-color: transparent;
-}
-
-.education__card .education__icon {
-  font-size: 1.5rem;
-  color: var(--color-reuni);
-}
-
-.education__card:nth-child(odd) .education__icon {
-  color: var(--color-unibave);
-}
-
-.education__info-wrapper {
-  width: 100%;
-}
-
-.education__info-header {
+.education-card {
   display: flex;
-  justify-content: space-between;
-  gap: clamp(16px, 5vw, 32px);
-}
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid var(--card-color);
 
-.education__role {
-  font-size: clamp(1rem, 5vw, 1.25rem);
-  font-weight: 500;
-}
+  .education-icon {
+    border-radius: var(--base-radius);
+    background-color: var(--background-color);
+    border: 1px solid var(--stroke-color);
+    font-size: 24px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
 
-.education__timespan,
-.education__description {
-  color: var(--color-secondary);
-}
+    i {
+      color: var(--accent-color);
+    }
+  }
 
-.education__timespan {
-  display: inline-block;
-  margin-left: auto;
-  font-size: 0.875rem;
-}
+  .education-info {
+    width: 100%;
+    div {
+      display: flex;
+      justify-content: space-between;
+    }
 
-.education__description {
-  margin-top: 4px;
-}
+    h3 {
+      font: var(--card-title);
+      color: var(--text-highlight-color);
+    }
 
-@media screen and (max-width: 600px) {
-  .education__card {
-    grid-template-columns: 1fr;
+    span {
+      font: var(--text-sm);
+    }
   }
 }
