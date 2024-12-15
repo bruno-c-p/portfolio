@@ -18,7 +18,3 @@
 - HTML
 - CSS
 - Javascript
-
-<h2 id="patterns">⌨️ Patterns</h2>
-
-- BEMCSS
