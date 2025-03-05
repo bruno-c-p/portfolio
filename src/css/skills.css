@@ -1,0 +1,26 @@
+#skills {
+  ul {
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style: none;
+
+    li {
+      border: 1px solid var(--accent-color);
+      font: var(--text-badge);
+      text-transform: uppercase;
+      padding: 4px 8px;
+      border-radius: var(--default-radius);
+      color: var(--accent-color);
+      background-color: transparent;
+      transition: background-color 0.3s, color 0.3s;
+
+      &:hover {
+        background-color: var(--accent-color);
+        color: var(--background-color);
+        cursor: not-allowed;
+      }
+    }
+  }
+}

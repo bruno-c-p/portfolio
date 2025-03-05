@@ -1,84 +1,49 @@
-#experience-intro {
-  max-width: 460px;
-
-  p {
+#experience {
+  ul {
     margin-top: 24px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    li {
+      .experience-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h3 {
+          font: var(--subtitle);
+        }
+
+        time {
+          font: var(--text-sm);
+          color: var(--accent-color);
+        }
+      }
+
+      span {
+        font: var(--subtitle);
+        color: var(--accent-color);
+      }
+
+      p {
+        margin-top: 16px;
+      }
+    }
+
+    .experience-details {
+      list-style-type: disc;
+      list-style-position: inside;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      li {
+        p {
+          display: inline;
+        }
+      }
+    }
   }
-}
-
-#experience-list {
-  margin-top: 64px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 32px;
-  justify-content: space-between;
-  align-items: stretch;
-  list-style-type: none;
-
-  li:nth-child(1) .experience-symbol {
-    transform: rotate(135deg);
-    background: radial-gradient(
-      circle,
-      rgba(223, 194, 153, 0) 0%,
-      rgba(223, 194, 153, 1) 100%
-    );
-  }
-
-  li:nth-child(2) .experience-symbol {
-    transform: rotate(60deg);
-    background: radial-gradient(
-      circle,
-      rgba(96, 163, 174, 0) 0%,
-      rgba(96, 163, 174, 1) 100%
-    );
-  }
-
-  li:nth-child(3) .experience-symbol {
-    transform: rotate(75deg);
-    background: radial-gradient(
-      circle,
-      rgba(229, 161, 121, 0) 0%,
-      rgba(229, 161, 121, 1) 100%
-    );
-  }
-}
-
-.experience-card {
-  border: 4px solid var(--card-color);
-  border-radius: var(--base-radius);
-  padding: 24px;
-
-  h3 {
-    margin-top: 32px;
-    font: var(--text-highlight);
-    color: var(--text-highlight-color);
-  }
-
-  span {
-    display: block;
-  }
-
-  span + span {
-    font: var(--text-sm);
-    margin-top: 24px;
-  }
-}
-
-.experience-symbol {
-  width: 50px;
-  height: 50px;
-  border-radius: var(--base-radius);
-  position: relative;
-}
-
-.experience-symbol::after {
-  content: "";
-  background-color: var(--background-color);
-  width: 32px;
-  height: 32px;
-  border-radius: var(--base-radius);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
