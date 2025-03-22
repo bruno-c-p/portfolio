@@ -13,6 +13,6 @@ https://www.figma.com/design/3rSc6Oj9NlrpE7ruYOSc05/Portfolio?node-id=812-16&t=c
 
 ## Credits
 
-- Icons: [Iconoir](https://iconoir.com/) - A comprehensive open-source icon library
+- Icons: [Iconoir](https://iconoir.com/) - A high-quality selection of free icons
 
 
