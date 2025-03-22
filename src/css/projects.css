@@ -20,6 +20,7 @@
 
         h3 {
           font: var(--subtitle);
+          color: var(--primary-color);
           position: relative;
         }
 
