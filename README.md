@@ -13,5 +13,6 @@ https://www.figma.com/design/3rSc6Oj9NlrpE7ruYOSc05/Portfolio?node-id=812-16&t=c
 
 ## Credits
 
-This software uses the following open source packages:
-- Emojis are taken from [here](https://phosphoricons.com/)
+- Icons: [Iconoir](https://iconoir.com/) - A comprehensive open-source icon library
+
+
