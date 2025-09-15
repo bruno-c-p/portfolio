@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Geist } from "next/font/google"
+import { Toaster } from "sonner"
 import "./globals.css"
 
 const geist = Geist({
@@ -10,9 +11,8 @@ const geist = Geist({
 })
 
 export const metadata: Metadata = {
-  title: "Felix Macaspac - HubSpot CMS Developer",
-  description: "HubSpot CMS Developer from Philippines with 5 years of experience.",
-  generator: "v0.app",
+  title: "Bruno Cardozo - Backend Software Engineer",
+  description: "Product-oriented Backend Software Engineer with 4+ years of enterprise experience building scalable and efficient systems. Based in Brazil.",
 }
 
 export default function RootLayout({
@@ -22,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geist.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        {children}
+        <Toaster />
+      </body>
     </html>
   )
 }
