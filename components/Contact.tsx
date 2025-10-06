@@ -57,13 +57,13 @@ export default function Contact({ sectionsRef }: ContactProps) {
       ref={(el) => {
         sectionsRef.current[3] = el
       }}
-      className="min-h-screen py-20 sm:py-32 opacity-0"
+      className="min-h-screen py-16 sm:py-28 opacity-0"
     >
       <div className="space-y-12 sm:space-y-16">
         <div className="space-y-6 sm:space-y-8">
         <h2 className="text-3xl sm:text-4xl font-light">Let&apos;s Connect</h2>
           <div className="max-w-lg">
-            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
               Always interested in new opportunities and collaborations. Feel free to reach out.
             </p>
           </div>
@@ -74,7 +74,7 @@ export default function Contact({ sectionsRef }: ContactProps) {
             <div className="text-sm text-muted-foreground font-mono">EMAIL</div>
             <button
               onClick={handleEmailClick}
-              className="text-2xl sm:text-3xl font-light hover:text-muted-foreground transition-colors duration-300 cursor-pointer text-left"
+              className="text-xl sm:text-2xl font-light hover:text-muted-foreground transition-colors duration-300 cursor-pointer text-left break-words"
             >
               dev@brunocardozo.com.br
             </button>

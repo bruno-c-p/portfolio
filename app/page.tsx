@@ -80,7 +80,7 @@ export default function Home() {
       <div className="relative z-10">
         <Navigation activeSection={activeSection} onSectionClick={handleSectionClick} />
 
-        <main className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-16">
+        <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-16">
           <Header sectionsRef={sectionsRef} />
           <WorkExperience sectionsRef={sectionsRef} />
           <Projects sectionsRef={sectionsRef} />
