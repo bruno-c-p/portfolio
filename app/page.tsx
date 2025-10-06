@@ -1,13 +1,14 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import Lenis from "lenis"
 import Header from "@/components/Header"
 import WorkExperience from "@/components/WorkExperience"
 import Projects from "@/components/Projects"
 import Contact from "@/components/Contact"
 import Navigation from "@/components/Navigation"
 import Footer from "@/components/Footer"
-import { Component as EtheralShadow } from "@/components/ui/etheral-shadow"
+import { Squares } from "@/components/ui/squares-background"
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState(0)
@@ -18,6 +19,22 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
+    // Ensure Lenis is initialized (fallback if not in layout)
+    if (!(window as any).lenis) {
+      const lenis = new Lenis({
+        duration: 1.2,
+        smoothWheel: true,
+        smoothTouch: false,
+        easing: (t: number) => 1 - Math.pow(1 - t, 3),
+      })
+      function raf(time: number) {
+        lenis.raf(time)
+        requestAnimationFrame(raf)
+      }
+      requestAnimationFrame(raf)
+      ;(window as any).lenis = lenis
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -41,24 +58,22 @@ export default function Home() {
   }, [])
 
   const handleSectionClick = (index: number) => {
-    sectionsRef.current[index]?.scrollIntoView({ behavior: "smooth" })
+    const el = sectionsRef.current[index]
+    const lenis = (window as any).lenis as InstanceType<typeof Lenis> | undefined
+    if (el && lenis) {
+      lenis.scrollTo(el, { offset: 0 })
+    } else if (el) {
+      el.scrollIntoView({ behavior: "smooth" })
+    }
   }
 
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
       <div className="fixed inset-0 z-0">
-        <EtheralShadow 
-          color="rgba(64, 64, 64, .8)"
-          animation={{ 
-            scale: 35, 
-            speed: 90
-          }}
-          noise={{ 
-            opacity: 1, 
-            scale: 1.2
-          }}
-          sizing="fill"
-          className="w-full h-full"
+        <Squares className="w-full h-full opacity-15"           
+          direction="diagonal"
+          speed={0.25}
+          squareSize={50}
         />
       </div>
 
@@ -72,8 +87,6 @@ export default function Home() {
           <Contact sectionsRef={sectionsRef} />
           <Footer />
         </main>
-
-        <div className="fixed bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none z-20"></div>
       </div>
     </div>
   )

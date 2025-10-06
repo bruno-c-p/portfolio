@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Geist } from "next/font/google"
 import { Toaster } from "sonner"
 import "./globals.css"
+import LenisProvider from "@/components/LenisProvider"
 
 const geist = Geist({
   subsets: ["latin"],
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable}`}>
       <body className="font-sans antialiased">
+        <LenisProvider />
         {children}
         <Toaster />
       </body>

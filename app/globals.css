@@ -136,3 +136,8 @@
     }
   }
 }
+
+html {
+  /* Disable native smooth scrolling to let Lenis handle it */
+  scroll-behavior: auto;
+}
