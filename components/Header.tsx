@@ -4,7 +4,7 @@ interface HeaderProps {
   sectionsRef: React.RefObject<(HTMLElement | null)[]>
 }
 
-const skills = ["NestJS", "Node.js", "Typescript", "PostgreSQL", "Architecture"]
+const skills = ["AWS", "Node.js", "Typescript", "React", "PostgreSQL"]
 
 const SkillTag = ({ skill }: { skill: string }) => (
   <span
@@ -37,7 +37,7 @@ export default function Header({ sectionsRef }: HeaderProps) {
 
           <div className="space-y-5 max-w-md">
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-              Product-oriented Backend Software Engineer dedicated to building
+              Product-oriented Fullstack Software Engineer dedicated to building
               <span className="text-foreground"> high scalable</span> and
               <span className="text-foreground"> efficient systems</span>.
             </p>
