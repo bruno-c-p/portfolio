@@ -47,7 +47,7 @@ export default function Header({ sectionsRef }: HeaderProps) {
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                 Available for work
               </div>
-              <div>São Ludgero, Brazil</div>
+              <div>São Paulo, Brazil</div>
               <div>GMT-3</div>
             </div>
           </div>
