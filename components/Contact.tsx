@@ -1,15 +1,13 @@
-import React from "react"
-import { ArrowUpRight } from "lucide-react"
-import { toast } from "sonner"
+"use client";
 
-interface ContactProps {
-  sectionsRef: React.RefObject<(HTMLElement | null)[]>
-}
+import React from "react";
+import { ArrowUpRight } from "lucide-react";
+import { toast } from "sonner";
 
 interface SocialLink {
-  platform: string
-  handle: string
-  url: string
+  platform: string;
+  handle: string;
+  url: string;
 }
 
 const socialLinks: SocialLink[] = [
@@ -23,7 +21,7 @@ const socialLinks: SocialLink[] = [
     handle: "@bruno-cardozo",
     url: "https://www.linkedin.com/in/bruno-cardozo-pereira/",
   },
-]
+];
 
 const SocialLinkCard = ({ link }: { link: SocialLink }) => (
   <a
@@ -38,33 +36,30 @@ const SocialLinkCard = ({ link }: { link: SocialLink }) => (
     </div>
     <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
   </a>
-)
+);
 
-export default function Contact({ sectionsRef }: ContactProps) {
+export default function Contact() {
   const handleEmailClick = async () => {
     try {
-      await navigator.clipboard.writeText('dev@brunocardozo.com.br')
-      toast.success('Email copied to clipboard!')
+      await navigator.clipboard.writeText("dev@brunocardozo.com.br");
+      toast.success("Email copied to clipboard!");
     } catch (err) {
-      console.error('Failed to copy email: ', err)
-      toast.error('Failed to copy email')
+      console.error("Failed to copy email: ", err);
+      toast.error("Failed to copy email");
     }
-  }
+  };
 
   return (
-    <section
-      id="connect"
-      ref={(el) => {
-        sectionsRef.current[3] = el
-      }}
-      className="min-h-screen py-16 sm:py-28 opacity-0"
-    >
+    <section id="connect" className="min-h-screen py-16 sm:py-28">
       <div className="space-y-12 sm:space-y-16">
         <div className="space-y-6 sm:space-y-8">
-        <h2 className="text-3xl sm:text-4xl font-light">Let&apos;s Connect</h2>
+          <h2 className="text-3xl sm:text-4xl font-light">
+            Let&apos;s Connect
+          </h2>
           <div className="max-w-lg">
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-              Always interested in new opportunities and collaborations. Feel free to reach out.
+              Always interested in new opportunities and collaborations. Feel
+              free to reach out.
             </p>
           </div>
         </div>
@@ -81,7 +76,9 @@ export default function Contact({ sectionsRef }: ContactProps) {
           </div>
 
           <div className="space-y-6">
-            <div className="text-sm text-muted-foreground font-mono">SOCIAL</div>
+            <div className="text-sm text-muted-foreground font-mono">
+              SOCIAL
+            </div>
             <div className="grid sm:grid-cols-2 gap-4">
               {socialLinks.map((link, index) => (
                 <SocialLinkCard key={index} link={link} />
@@ -91,5 +88,5 @@ export default function Contact({ sectionsRef }: ContactProps) {
         </div>
       </div>
     </section>
-  )
+  );
 }
