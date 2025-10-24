@@ -56,7 +56,7 @@ export default function Contact() {
           <h2 className="text-3xl sm:text-4xl font-light">
             Let&apos;s Connect
           </h2>
-          <div className="max-w-lg">
+          <div className="max-w-[500px]">
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
               Always interested in new opportunities and collaborations. Feel
               free to reach out.

@@ -14,31 +14,24 @@ const jobs: Job[] = [
     role: "Software Engineer",
     company: "Frengee",
     description:
-      "Leading globalization of large-scale products with Microservices Architecture. Focus on performance optimization, incident resolution, and implementing innovative solutions through PoCs.",
-    tech: [
-      "NestJS",
-      "Node.js",
-      "TypeScript",
-      "MongoDB",
-      "RabbitMQ",
-      "Microservices",
-    ],
+      "I engineer and scale the global e-commerce platform for the world's #1 powersports brand.",
+    tech: ["Node.js", "TypeScript", "React", "MongoDB", "AWS"],
   },
   {
     year: "2022",
     role: "Software Engineer",
     company: "Wise",
     description:
-      "Developed scalable enterprise APIs serving tens of thousands of daily requests.",
-    tech: ["Java", "Maven", "Hibernate", "PostgreSQL", "AWS"],
+      "Developed scalable APIs serving more than 100k daily requests for a DentalCare platform.",
+    tech: ["Typescript", "Node.js", "React", "Java", "AWS"],
   },
   {
     year: "2021",
     role: "Software Developer",
     company: "Projedata",
     description:
-      "Contributed to migrating legacy desktop application to modern web-based solution.",
-    tech: ["Java", "PL/SQL"],
+      "Contributed to migrating legacy desktop application to a modern web-based solution.",
+    tech: ["Java", "Javascript", "PL/SQL", "SQL"],
   },
 ];
 
