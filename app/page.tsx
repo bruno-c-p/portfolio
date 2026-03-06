@@ -9,8 +9,12 @@ import { FOCUS, WORK, LINKS } from "./constants";
 export default function Home() {
   return (
     <main className="relative flex h-screen w-screen overflow-hidden bg-black">
-      <section className="relative z-10 flex w-[45%] flex-col justify-between bg-black px-12 py-14">
-        <div className="space-y-10">
+      <div className="absolute inset-0 opacity-10 md:hidden">
+        <HalftonePanel speed={0.08} />
+      </div>
+
+      <section className="relative z-10 flex w-full flex-col justify-between px-8 py-10 md:w-[50%] md:bg-black md:px-12 md:py-14 min-[1100px]:w-[45%]">
+        <div className="space-y-8 md:space-y-10">
           <DecryptedText
             text="brunocardozo.dev"
             animateOn="view"
@@ -67,7 +71,7 @@ export default function Home() {
         </footer>
       </section>
 
-      <div className="relative flex-1">
+      <div className="relative hidden flex-1 md:block">
         <HalftonePanel />
       </div>
     </main>
