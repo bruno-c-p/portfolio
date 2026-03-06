@@ -8,7 +8,7 @@ import { FOCUS, WORK, LINKS } from "./constants";
 
 export default function Home() {
   return (
-    <main className="relative flex h-screen w-screen overflow-hidden bg-black">
+    <main className="relative flex min-h-screen w-screen bg-black md:h-screen md:overflow-hidden">
       <div className="absolute inset-0 opacity-10 md:hidden">
         <HalftonePanel speed={0.08} />
       </div>

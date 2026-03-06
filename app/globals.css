@@ -15,8 +15,10 @@
   100% { transform: translate(100%, 0%); opacity: 0; }
 }
 
-html,
-body {
-  overflow: hidden;
-  height: 100%;
+@media (min-width: 768px) {
+  html,
+  body {
+    overflow: hidden;
+    height: 100%;
+  }
 }
