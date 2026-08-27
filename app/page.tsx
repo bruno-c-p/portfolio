@@ -15,14 +15,21 @@ export default function Home() {
 
       <section className="relative z-10 flex w-full flex-col justify-between px-8 py-10 md:w-[50%] md:bg-black md:px-12 md:py-14 min-[1100px]:w-[45%]">
         <div className="space-y-8 md:space-y-10">
-          <DecryptedText
-            text="brunocardozo.dev"
-            animateOn="view"
-            sequential
-            revealDirection="start"
-            speed={60}
-            className="text-base text-zinc-600"
-          />
+          <div className="flex items-center gap-3">
+            <img
+              src="/bruno-cardozo-mark.svg"
+              alt="Bruno Cardozo"
+              className="size-9 shrink-0"
+            />
+            <DecryptedText
+              text="brunocardozo.dev"
+              animateOn="view"
+              sequential
+              revealDirection="start"
+              speed={60}
+              className="text-base text-zinc-600"
+            />
+          </div>
 
           <div>
             <h1 className="text-3xl leading-none text-white">
