@@ -1,7 +1,6 @@
 // All visible content, in English and Brazilian Portuguese.
 // Sources: the current brunocardozo.com.br copy and Bruno's CV (bruno-cardozo.pdf).
 // Nothing here is invented. Things the owner should confirm are listed in README.md:
-//   - github.com/bruno-c-p/orchestrate and /bstack answer 404 publicly (private or renamed?).
 //   - Exact month spans come from the CV (Projedata 04-2021 to 04-2022, Wise 05-2022 to 02-2025,
 //     Frengee 03-2025 to now).
 //   - The one-by-one vs bulk figure and the record grid are labeled as illustrations.
@@ -211,30 +210,6 @@ export const jobs: Job[] = [
 
 export const projects = [
   {
-    name: 'Orchestrate',
-    kind: { en: 'Agent skill', pt: 'Skill de agente' },
-    year: '2026',
-    readout: { en: '6 agent hosts', pt: '6 hosts de agente' },
-    count: 6,
-    href: 'https://github.com/bruno-c-p/orchestrate',
-    desc: {
-      en: 'The main agent talks to you and is the one that says the work is done. A sub-agent gets one job and the files it may touch. It does not merge, deploy or pick up extra files. Written for Codex, Grok, Claude, Cursor, OpenCode and Gemini.',
-      pt: 'O agente principal fala com você e é quem diz que o trabalho acabou. Um sub-agente ganha uma tarefa e os arquivos que pode tocar. Não faz merge, não faz deploy, não pega arquivo extra. Escrita para Codex, Grok, Claude, Cursor, OpenCode e Gemini.',
-    },
-  },
-  {
-    name: 'bstack',
-    kind: { en: 'Agent skills', pt: 'Skills de agente' },
-    year: '2026',
-    readout: { en: '6 skills', pt: '6 skills' },
-    count: 6,
-    href: 'https://github.com/bruno-c-p/bstack',
-    desc: {
-      en: 'Playbooks for coding agents that prefer a small diff and a real check at the end: how, why, architect, tdd, unslop, verify. Any agent that reads SKILL.md can load them.',
-      pt: 'Playbooks para agentes de código que preferem um diff pequeno e uma prova no final: how, why, architect, tdd, unslop, verify. Qualquer agente que lê SKILL.md consegue carregar.',
-    },
-  },
-  {
     name: 'Wild West Vibes',
     kind: { en: 'VS Code theme', pt: 'Tema de VS Code' },
     year: '2025',
@@ -279,7 +254,7 @@ export const copy = {
     running: 'still running',
     open: 'Open case',
     projectsTitle: 'Off the clock',
-    projectsLede: 'Things I build for the way I work.',
+    projectsLede: 'Built after hours, for the way I work.',
     projectLink: 'View on GitHub',
     aboutTitle: 'About',
     aboutOne: 'Most of my day is backend. Schemas, queues, APIs: the stretch between a bottleneck and something you can ship. React and TypeScript on the client, Node and Postgres behind it.',
@@ -340,7 +315,7 @@ export const copy = {
     running: 'em andamento',
     open: 'Abrir caso',
     projectsTitle: 'Fora do expediente',
-    projectsLede: 'Coisas que construo para o meu jeito de trabalhar.',
+    projectsLede: 'Feito fora do expediente, para o meu jeito de trabalhar.',
     projectLink: 'Ver no GitHub',
     aboutTitle: 'Sobre',
     aboutOne: 'A maior parte do meu dia é backend. Schemas, filas, APIs: o trecho entre um gargalo e algo que dá para publicar. React e TypeScript no cliente, Node e Postgres atrás.',

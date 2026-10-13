@@ -4,8 +4,8 @@
 
 - **Subject:** Bruno Cardozo, full-stack engineer (backend-leaning), Santa Catarina, Brazil.
   Five years: Projedata (2021 to 2022, ERP migration), Wise (2022 to 2025, APIs), Frengee
-  (2025 to now, global ecommerce + LLM category matching). Three side projects (two agent
-  skills, one VS Code theme).
+  (2025 to now, global ecommerce + LLM category matching). One side project (the Wild West
+  Vibes VS Code theme).
 - **Audience:** engineering managers, founders and recruiters hiring a remote senior-leaning
   engineer; peers who arrive from GitHub.
 - **Job:** get hired or get a contract. Make "he makes slow systems fast" obvious in 3 seconds,

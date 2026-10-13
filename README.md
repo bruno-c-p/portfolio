@@ -37,8 +37,6 @@ npx wrangler pages deploy dist             # Cloudflare Pages
 
 ## To confirm before publishing
 
-- `github.com/bruno-c-p/orchestrate` and `github.com/bruno-c-p/bstack` return 404 publicly.
-  Make them public or change the links in `src/data/site.ts`.
 - The second About paragraph ("I like the part of the work nobody sees until it breaks...")
   is new copy written in Bruno's voice. Rewrite it if it doesn't sound like you.
 - Case-study wording is condensed from the CV and the old site. Check every sentence.
