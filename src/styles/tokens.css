@@ -1,0 +1,73 @@
+/* Design tokens. Palette from Wild West Vibes, Bruno's VS Code theme (see DESIGN.md). */
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/archivo-var.woff2') format('woff2');
+  font-weight: 400 820;
+  font-style: normal;
+  font-stretch: 100% 125%;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'JB Mono';
+  src: url('/fonts/jb-mono-400_600-normal.woff2') format('woff2');
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Metric-matched fallback so the swap does not shift the hero. */
+@font-face {
+  font-family: 'Archivo Fallback';
+  src: local('Arial');
+  size-adjust: 101%;
+  ascent-override: 88%;
+  descent-override: 21%;
+  line-gap-override: 0%;
+}
+
+:root {
+  /* Color, by role */
+  --c-bg: #1d1a23;        /* dusk */
+  --c-fg: #e1dfe5;        /* moonlight */
+  --c-muted: #aea8bb;
+  --c-line: #3c3746;
+  --c-accent: #fed9b7;    /* sun: fast, now */
+  --c-rock: #a25a63;      /* slow: before (bars) */
+  --c-rock-text: #c4727c; /* slow: before (text, 4.9:1) */
+  --c-deep: #15131a;      /* footer floor */
+  --c-curtain: var(--c-accent);
+  --c-on-accent: var(--c-bg);
+
+  /* Type */
+  --f-display: 'Archivo', 'Archivo Fallback', system-ui, sans-serif;
+  --f-body: 'Archivo', 'Archivo Fallback', system-ui, sans-serif;
+  --f-mono: 'JB Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --t-mega: clamp(3.4rem, 0.9rem + 11.2vw, 13.5rem);
+  --t-xl: clamp(2.6rem, 1rem + 6.2vw, 8rem);
+  --t-l: clamp(1.75rem, 1.2rem + 2.2vw, 3.25rem);
+  --t-m: clamp(1.25rem, 1.05rem + 0.75vw, 1.75rem);
+  --t-body: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
+  --t-s: 0.875rem;
+  --t-xs: 0.8125rem;
+
+  /* Space */
+  --u: clamp(0.5rem, 0.35rem + 0.6vw, 1rem);
+  --gutter: clamp(1.125rem, 0.6rem + 1.6vw, 2.5rem);
+  --cols: 12;
+  --header-h: 4.5rem;
+
+  /* Shape: spans are hard-edged */
+  --radius: 0px;
+
+  /* Motion (CSS side of the engine eases) */
+  --e-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --e-soft: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+  /* Layers */
+  --z-content: 1;
+  --z-header: 50;
+  --z-menu: 70;
+  --z-curtain: 90;
+}

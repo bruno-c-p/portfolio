@@ -1,0 +1,62 @@
+---
+import { copy, homePath, altPath, type Lang } from '../data/site';
+interface Props { lang: Lang; current: 'home' | 'work' | 'none'; notFound?: boolean }
+const { lang, current, notFound = false } = Astro.props;
+const c = copy[lang];
+const home = homePath(lang);
+const onHome = current === 'home';
+const anchor = (id: string) => (onHome ? `#${id}` : `${home}#${id}`);
+const items = [
+  { id: 'work', label: c.nav.work },
+  { id: 'projects', label: c.nav.projects },
+  { id: 'about', label: c.nav.about },
+  { id: 'contact', label: c.nav.contact },
+];
+const path = notFound ? '/' : Astro.url.pathname;
+---
+<header class="frame" data-frame>
+  <a class="frame__name" href={home}>
+    <span class="frame__wordmark">Bruno Cardozo</span>
+    <span class="frame__role" aria-hidden="true">{c.role}</span>
+  </a>
+  <nav class="frame__nav" aria-label={lang === 'pt' ? 'Principal' : 'Primary'}>
+    <ul class="frame__links">
+      {items.map((it) => (
+        <li>
+          <a
+            class="draw"
+            href={anchor(it.id)}
+            data-nav={it.id}
+            aria-current={it.id === 'work' && current === 'work' ? 'true' : undefined}
+          >{it.label}</a>
+        </li>
+      ))}
+    </ul>
+    <div class="lang" role="group" aria-label={c.language}>
+      <a href={altPath(path, 'en')} hreflang="en" lang="en" aria-current={lang === 'en' ? 'true' : undefined} data-lang>EN</a>
+      <a href={altPath(path, 'pt')} hreflang="pt-BR" lang="pt-BR" aria-current={lang === 'pt' ? 'true' : undefined} data-lang>PT</a>
+    </div>
+  </nav>
+  <button class="frame__menu" type="button" aria-expanded="false" aria-controls="menu" data-menu-open>
+    <span class="frame__menu-bar" aria-hidden="true"></span>{c.menu}
+  </button>
+</header>
+<div class="menu" id="menu" hidden data-menu>
+  <div class="menu__top">
+    <span class="frame__wordmark" aria-hidden="true">Bruno Cardozo</span>
+    <button class="menu__close" type="button" data-menu-close>{c.close}</button>
+  </div>
+  <nav class="menu__nav" aria-label={c.menu}>
+    <ol>
+      {items.map((it) => (
+        <li><a href={anchor(it.id)} data-menu-link><span>{it.label}</span></a></li>
+      ))}
+    </ol>
+  </nav>
+  <div class="menu__foot">
+    <div class="lang" role="group" aria-label={c.language}>
+      <a href={altPath(path, 'en')} hreflang="en" lang="en" aria-current={lang === 'en' ? 'true' : undefined}>English</a>
+      <a href={altPath(path, 'pt')} hreflang="pt-BR" lang="pt-BR" aria-current={lang === 'pt' ? 'true' : undefined}>Português</a>
+    </div>
+  </div>
+</div>

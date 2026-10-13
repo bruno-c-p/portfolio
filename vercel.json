@@ -1,16 +1,17 @@
 {
-  "framework": "vite",
+  "framework": "astro",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "trailingSlash": true,
   "headers": [
     {
-      "source": "/portrait.webp",
+      "source": "/fonts/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     },
     {
-      "source": "/portrait.jpg",
+      "source": "/_astro/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]

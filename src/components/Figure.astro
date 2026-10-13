@@ -1,0 +1,78 @@
+---
+// Trace figures for case studies. All numbers come from site.ts; illustrations say so.
+import type { Figure, Lang } from '../data/site';
+interface Props { fig: Figure; lang: Lang; index: number }
+const { fig, lang } = Astro.props;
+const fmt = (ms: number) => (ms >= 60000 ? `${Math.round(ms / 60000)} min` : ms >= 1000 ? `${(ms / 1000).toFixed(1)} s` : `${ms} ms`);
+const steps = 18;
+const rows = 10;
+---
+{fig.kind === 'compare' && (() => {
+  const minutes = Math.round(fig.before.ms / 60000);
+  const tickEvery = minutes > 8 ? 3 : 1;
+  const ticks = Array.from({ length: Math.floor(minutes / tickEvery) + 1 }, (_, i) => i * tickEvery);
+  const ratio = fig.after.ms / fig.before.ms;
+  return (
+    <figure class="fig fig--compare" data-fig="compare" style={`--r:${ratio}`} data-before={fig.before.ms} data-after={fig.after.ms}>
+      <figcaption class="fig__title">{fig.title[lang]}</figcaption>
+      <div class="fig__axis" aria-hidden="true">
+        {ticks.map((m) => <span class="fig__tick" style={`--x:${m / minutes}`}><span class="mono">{m === 0 ? '0' : `${m} min`}</span></span>)}
+      </div>
+      <div class="fig__lane">
+        <span class="fig__label">{fig.before.label[lang]} <span class="mono fig__val fig__val--slow">{fmt(fig.before.ms)}{fig.before.ms === 360000 ? '+' : ''}</span></span>
+        <span class="fig__bar fig__bar--slow" aria-hidden="true" data-reveal="span"></span>
+      </div>
+      <div class="fig__lane">
+        <span class="fig__label">{fig.after.label[lang]} <span class="mono fig__val" data-fig-readout>{fmt(fig.after.ms)}</span></span>
+        <span class="fig__bar fig__bar--fast" aria-hidden="true" data-fig-fast></span>
+      </div>
+      <p class="fig__note">{fig.note[lang]}</p>
+    </figure>
+  );
+})()}
+{fig.kind === 'batch' && (
+  <figure class="fig fig--batch" data-fig="batch">
+    <figcaption class="fig__title">{fig.title[lang]}</figcaption>
+    <div class="fig__group">
+      <span class="fig__label">{fig.slow[lang]}</span>
+      <div class="fig__stairs" aria-hidden="true">
+        {Array.from({ length: steps }, (_, i) => <span class="fig__step" style={`--i:${i};--n:${steps}`} data-step></span>)}
+      </div>
+    </div>
+    <div class="fig__group">
+      <span class="fig__label">{fig.fast[lang]}</span>
+      <div class="fig__stairs fig__stairs--bulk" aria-hidden="true">
+        <span class="fig__step fig__step--bulk" data-bulk></span>
+      </div>
+    </div>
+    <p class="fig__note">{fig.note[lang]}</p>
+  </figure>
+)}
+{fig.kind === 'records' && (
+  <figure class="fig fig--records" data-fig="records">
+    <figcaption class="fig__title">{fig.title[lang]}</figcaption>
+    <div class="fig__grid" aria-hidden="true">
+      {Array.from({ length: rows }, (_, i) => <span class="fig__recrow" style={`--i:${i}`} data-rec></span>)}
+    </div>
+    <p class="fig__count"><span class="mono">0</span> {lang === 'pt' ? 'registros perdidos' : 'records lost'}</p>
+    <p class="fig__note">{fig.note[lang]}</p>
+  </figure>
+)}
+{fig.kind === 'migration' && (
+  <figure class="fig fig--migration" data-fig="migration">
+    <figcaption class="fig__title">{fig.title[lang]}</figcaption>
+    <div class="fig__axis" aria-hidden="true">
+      {[0, 5, 10, 15, 20].map((y) => <span class="fig__tick" style={`--x:${y / 21}`}><span class="mono">{y === 20 ? '2021' : lang === 'pt' ? `${20 - y}+ anos antes` : `${20 - y}+ years before`}</span></span>)}
+      <span class="fig__tick" style="--x:1"><span class="mono">2022</span></span>
+    </div>
+    <div class="fig__lane">
+      <span class="fig__label">{fig.desktop[lang]} <span class="mono fig__val fig__val--slow">20+ {lang === 'pt' ? 'anos' : 'years'}</span></span>
+      <span class="fig__bar fig__bar--slow fig__bar--open" aria-hidden="true" data-reveal="span" style="--to:0.9524"></span>
+    </div>
+    <div class="fig__lane">
+      <span class="fig__label">{fig.web[lang]} <span class="mono fig__val">{lang === 'pt' ? 'abr 2021 a abr 2022' : 'Apr 2021 to Apr 2022'}</span></span>
+      <span class="fig__bar fig__bar--fast fig__bar--at" aria-hidden="true" data-reveal="span" data-delay="0.5" style="--from:0.9524"></span>
+    </div>
+    <p class="fig__note">{fig.note[lang]}</p>
+  </figure>
+)}

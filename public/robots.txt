@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.brunocardozo.com.br/sitemap-index.xml

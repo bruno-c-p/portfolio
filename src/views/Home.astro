@@ -1,0 +1,16 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Trace from '../components/Trace.astro';
+import Projects from '../components/Projects.astro';
+import About from '../components/About.astro';
+import type { Lang } from '../data/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+---
+<Base lang={lang} current="home">
+  <Hero lang={lang} />
+  <Trace lang={lang} />
+  <Projects lang={lang} />
+  <About lang={lang} />
+</Base>

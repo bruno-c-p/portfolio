@@ -1,0 +1,54 @@
+---
+import { Picture } from 'astro:assets';
+import portrait from '../assets/portrait.jpg';
+import { copy, stackDaily, stackAI, type Lang } from '../data/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const c = copy[lang];
+const from = 2020, to = 2027;
+const pos = (y: number) => +((y - from) / (to - from)).toFixed(4);
+const years = Array.from({ length: to - from }, (_, i) => from + i);
+---
+<section class="about" id="about" aria-labelledby="about-title">
+  <figure class="about__figure">
+    <div class="about__frame" data-reveal="span">
+      <Picture src={portrait} formats={['avif', 'webp']} widths={[360, 640]} sizes="(max-width: 767px) 80vw, 34vw" alt={c.portraitAlt} class="about__img" loading="lazy" />
+    </div>
+    <figcaption class="about__caption">{c.portraitCaption}</figcaption>
+  </figure>
+  <div class="about__text">
+    <h2 class="sec-title" id="about-title" data-split="lines">{c.aboutTitle}</h2>
+    <p class="about__lead">{c.aboutOne}</p>
+    <p>{c.aboutTwo}</p>
+    <div class="study">
+      <h3 class="study__k">{c.school}</h3>
+      <div class="study__axis" aria-hidden="true">
+        {years.map((y) => <span class="trace__year" style={`--x:${pos(y)}`}><span class="mono">{y}</span></span>)}
+      </div>
+      <ol class="study__rows">
+        {c.studyTrace.map((st) => (
+          <li class="study__row" style={`--a:${pos(st.start)};--b:${pos(st.end)}`}>
+            <span class="study__name">{st.name} <span class="study__what">{st.what}</span></span>
+            <span class="study__lane" aria-hidden="true"><span class="study__bar" data-reveal="span"></span></span>
+            <span class="sr-only">{st.start | 0} to {Math.ceil(st.end) - 1}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+    <dl class="about__lists">
+      <div><dt>{c.daily}</dt><dd><ul class="chips">{stackDaily.map((s) => <li>{s}</li>)}</ul></dd></div>
+      <div><dt>{c.ai}</dt><dd><ul class="chips">{stackAI.map((s) => <li>{s}</li>)}</ul></dd></div>
+      <div><dt>{c.languages}</dt><dd><ul>{c.languageItems.map((s) => <li>{s}</li>)}</ul></dd></div>
+    </dl>
+  </div>
+  <svg class="sr-only" aria-hidden="true" focusable="false">
+    <filter id="dusk" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="0.299 0.587 0.114 0 0  0.299 0.587 0.114 0 0  0.299 0.587 0.114 0 0  0 0 0 1 0" />
+      <feComponentTransfer>
+        <feFuncR type="table" tableValues="0.114 0.996" />
+        <feFuncG type="table" tableValues="0.102 0.851" />
+        <feFuncB type="table" tableValues="0.137 0.718" />
+      </feComponentTransfer>
+    </filter>
+  </svg>
+</section>

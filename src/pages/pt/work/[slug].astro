@@ -1,0 +1,9 @@
+---
+import Case from '../../../views/Case.astro';
+import { jobs } from '../../../data/site';
+export function getStaticPaths() {
+  return jobs.map((job) => ({ params: { slug: job.slug }, props: { job } }));
+}
+const { job } = Astro.props;
+---
+<Case lang="pt" job={job} />

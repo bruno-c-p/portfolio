@@ -1,0 +1,25 @@
+---
+import { copy, projects, type Lang } from '../data/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const c = copy[lang];
+---
+<section class="projects" id="projects" aria-labelledby="projects-title">
+  <div class="sec-head">
+    <h2 class="sec-title" id="projects-title" data-split="lines">{c.projectsTitle}</h2>
+    <p class="sec-lede">{c.projectsLede}</p>
+  </div>
+  <ol class="proj">
+    {projects.map((p) => (
+      <li>
+        <a class="proj__row" href={p.href} target="_blank" rel="noopener">
+          <span class="proj__fill" aria-hidden="true"></span>
+          <span class="proj__name">{p.name}</span>
+          <span class="proj__kind">{p.kind[lang]} <span class="mono">{p.year}</span><span class="proj__ticks" aria-hidden="true">{Array.from({ length: p.count }, (_, i) => <span style={`--i:${i}`}></span>)}</span><span class="mono proj__readout">{p.readout[lang]}</span></span>
+          <span class="proj__desc">{p.desc[lang]}</span>
+          <span class="proj__go">{c.projectLink}<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15 15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="1.6" /></svg></span>
+        </a>
+      </li>
+    ))}
+  </ol>
+</section>

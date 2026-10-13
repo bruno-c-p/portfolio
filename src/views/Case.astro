@@ -1,0 +1,116 @@
+---
+import Base from '../layouts/Base.astro';
+import Figure from '../components/Figure.astro';
+import { axis, copy, jobs, casePath, homePath, site, type Job, type Lang } from '../data/site';
+interface Props { lang: Lang; job: Job }
+const { lang, job } = Astro.props;
+const c = copy[lang];
+const i = jobs.findIndex((j) => j.slug === job.slug);
+const next = jobs[(i + 1) % jobs.length];
+const d = new Date();
+const now = d.getFullYear() + d.getMonth() / 12;
+const span = axis.to - axis.from;
+const pos = (y: number) => +((y - axis.from) / span).toFixed(4);
+const a = pos(job.start);
+const b = job.end === null ? pos(now) : pos(job.end);
+const na = pos(next.start);
+const nb = next.end === null ? pos(now) : pos(next.end);
+const years = Array.from({ length: span }, (_, k) => axis.from + k);
+const val = (v: string | Record<Lang, string>) => (typeof v === 'string' ? v : v[lang]);
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  name: `${job.name}: ${job.role[lang]}`,
+  description: job.description[lang],
+  inLanguage: c.htmlLang,
+  author: { '@type': 'Person', name: site.name, url: site.url },
+};
+---
+<Base lang={lang} title={`${job.name}: ${job.headline[lang]}`} description={job.description[lang]} current="work" jsonLd={jsonLd}>
+  <article class="case" data-case>
+    <header class="case__head">
+      <div class="case__axis" aria-hidden="true" style={`--a:${a};--b:${b}`}>
+        {years.map((y) => <span class="trace__year" style={`--x:${pos(y)}`}><span class="mono">{y}</span></span>)}
+        <span class="case__span" data-reveal="span" data-intro data-delay="0.1"></span>
+        <span class="trace__now case__now" style={`--now:${pos(now)}`}><span class="mono">{c.now}</span></span>
+      </div>
+      <p class="case__crumb">
+        <a class="cta cta--small" href={`${homePath(lang)}#work`}>
+          <span class="cta__fill" aria-hidden="true"></span>
+          <svg class="cta__arrow cta__arrow--back" viewBox="0 0 20 20" aria-hidden="true"><path d="M17 10H4M9 4.5 3.5 10 9 15.5" fill="none" stroke="currentColor" stroke-width="1.6" /></svg>
+          <span class="cta__label">{c.caseBack}</span>
+        </a>
+      </p>
+      <h1 class="case__h1">
+        <span class="case__title" data-split="chars" data-intro style={`--len:${job.name.length}`}>{job.name}</span>
+        <span class="case__headline">{job.headline[lang]}</span>
+      </h1>
+      <dl class="case__meta">
+        <div><dt class="sr-only">{lang === 'pt' ? 'Cargo' : 'Role'}</dt><dd>{job.role[lang]}</dd></div>
+        <div><dt class="sr-only">{lang === 'pt' ? 'Onde' : 'Where'}</dt><dd>{job.place[lang]}</dd></div>
+        <div><dt class="sr-only">{lang === 'pt' ? 'Quando' : 'When'}</dt><dd class="mono">{job.period[lang]}</dd></div>
+      </dl>
+      <div class="case__lead">
+        <p class="case__summary" data-split="lines" data-intro data-delay="0.25">{job.summary[lang]}</p>
+        <p class="case__readout" data-reveal="span" data-intro data-delay="0.45">
+          <span class="case__readout-v mono">{val(job.stats[0].value)}</span>
+          <span class="case__readout-l">{job.stats[0].label[lang]}</span>
+        </p>
+      </div>
+    </header>
+
+    <section class="case__story" aria-labelledby="problem-title">
+      <div class="case__block" style="--a:0;--b:0.36">
+        <span class="case__lane" aria-hidden="true"><span class="case__bar" data-reveal="span"></span></span>
+        <h2 class="case__label" id="problem-title">{c.caseProblem}</h2>
+        <p>{job.problem[lang]}</p>
+      </div>
+    </section>
+
+    <div class="case__figs">
+      {job.figures.map((fig, k) => <Figure fig={fig} lang={lang} index={k} />)}
+    </div>
+
+    <section class="case__story" aria-labelledby="work-title">
+      <div class="case__block" style="--a:0.3;--b:0.8">
+        <span class="case__lane" aria-hidden="true"><span class="case__bar" data-reveal="span"></span></span>
+        <h2 class="case__label" id="work-title">{c.caseWork}</h2>
+        <p>{job.work[lang]}</p>
+      </div>
+      <div class="case__block case__block--done" style="--a:0.74;--b:1">
+        <span class="case__lane" aria-hidden="true"><span class="case__bar" data-reveal="span"></span></span>
+        <h2 class="case__label" id="outcome-title">{c.caseOutcome}</h2>
+        <p>{job.outcome[lang]}</p>
+      </div>
+    </section>
+
+    <section class="case__numbers" aria-labelledby={job.stats.length > 1 ? 'numbers-title' : 'stack-title'}>
+      {job.stats.length > 1 && (
+        <>
+          <h2 class="case__label" id="numbers-title">{c.caseNumbers}</h2>
+          <dl class="stats">
+            {job.stats.slice(1).map((s) => (
+              <div class="stat"><dt class="stat__v mono">{val(s.value)}</dt><dd class="stat__l">{s.label[lang]}</dd></div>
+            ))}
+          </dl>
+        </>
+      )}
+      <h2 class="case__label case__label--stack" id="stack-title">{c.caseStack}</h2>
+      <ul class="chips case__chips" aria-labelledby="stack-title">{job.stack.map((s) => <li>{s}</li>)}</ul>
+    </section>
+
+    <nav class="case__next" aria-label={c.caseNext} style={`--now:${pos(now)}`}>
+      <a class="trace__row case__next-row" href={casePath(lang, next.slug)} data-span style={`--a:${na};--b:${nb}`}>
+        <span class="trace__head">
+          <span class="case__next-k">{c.caseNext}</span>
+          <span class="trace__name">{next.name}</span>
+          <span class="trace__period mono">{next.period[lang]}</span>
+        </span>
+        <span class="trace__lane">
+          <span class="trace__bar" aria-hidden="true" data-bar></span>
+          <span class={`trace__result mono${nb > 0.7 ? ' is-flip' : ''}`}>{next.result[lang]}</span>
+        </span>
+      </a>
+    </nav>
+  </article>
+</Base>

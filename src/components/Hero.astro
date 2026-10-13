@@ -1,0 +1,35 @@
+---
+// Signature: a six-minute span holding the headline. The driver (src/motion/hero.ts) compresses
+// it to 800 ms on scroll. Without JS or with reduced motion, the full span stands still.
+import { copy, type Lang } from '../data/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const c = copy[lang];
+const ticks = [0, 1, 2, 3, 4, 5, 6];
+---
+<section class="hero" data-hero aria-labelledby="hero-title">
+  <div class="hero__stage">
+    <div class="hero__axis" aria-hidden="true">
+      {ticks.map((m) => (
+        <span class="hero__tick" style={`--x:${m / 6}`}><span class="mono">{m === 0 ? '0' : `${m} min`}</span></span>
+      ))}
+    </div>
+    <div class="hero__track" data-hero-track>
+      <div class="hero__ghost" aria-hidden="true"><span class="mono">6 min+</span></div>
+      <div class="hero__field" aria-hidden="true" data-hero-field></div>
+      <p class="hero__spanlabel hero__ink" aria-hidden="true">{c.heroSpan}</p>
+      <h1 class="hero__title hero__ink" id="hero-title">{c.heroTitle}</h1>
+      <p class="sr-only">{c.heroStatic}</p>
+      <div class="hero__head" aria-hidden="true" data-hero-head></div>
+      <span class="hero__chip mono" aria-hidden="true" data-hero-chip></span>
+    </div>
+    <div class="hero__foot">
+      <p class="hero__readout" aria-hidden="true">
+        <span class="mono hero__readout-n" data-readout>6:00.000</span>
+        <span class="hero__readout-l" data-readout-label data-before={c.heroBefore} data-during={c.heroDuring} data-after={c.heroAfter}>{c.heroBefore}</span>
+      </p>
+      <p class="hero__hint" data-hero-hint><span class="hero__hint-motion">{c.heroHint}</span><span class="hero__hint-static">{c.heroStatic}</span></p>
+      <p class="hero__lede">{c.heroLede}</p>
+    </div>
+  </div>
+</section>

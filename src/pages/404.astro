@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import { copy } from '../data/site';
+const en = copy.en;
+const pt = copy.pt;
+---
+<Base lang="en" notFound title="404" description="Nothing ran at this path. The work of Bruno Cardozo, full-stack engineer, is one request away on the home page.">
+  <section class="nf" aria-labelledby="nf-title">
+    <div class="nf__trace" aria-hidden="true">
+      <span class="nf__req mono">GET <span class="nf__path" data-nf-path>/</span></span>
+      <span class="nf__res mono">404 · 0 ms</span>
+      <span class="nf__ghost"></span>
+    </div>
+    <h1 class="nf__title" id="nf-title" data-split="lines" data-intro>{en.notFoundTitle}</h1>
+    <p class="nf__text">{en.notFoundText}</p>
+    <p class="nf__text nf__text--pt" lang="pt-BR">{pt.notFoundTitle} {pt.notFoundText}</p>
+    <p class="nf__links">
+      <a class="cta" href="/"><span class="cta__fill" aria-hidden="true"></span><span class="cta__label">{en.notFoundBack}</span><svg class="cta__arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="1.6" /></svg></a>
+      <a class="link" href="/pt/" lang="pt-BR">{pt.notFoundBack}</a>
+    </p>
+  </section>
+</Base>

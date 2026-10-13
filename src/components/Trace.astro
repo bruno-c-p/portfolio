@@ -1,0 +1,46 @@
+---
+// Work as a trace waterfall on a true-scale axis (2021 to 2027). Each row opens its case.
+import { axis, copy, jobs, casePath, type Lang } from '../data/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const c = copy[lang];
+const d = new Date();
+const now = d.getFullYear() + d.getMonth() / 12;
+const span = axis.to - axis.from;
+const pos = (y: number) => +((y - axis.from) / span).toFixed(4);
+const years = Array.from({ length: span }, (_, i) => axis.from + i);
+---
+<section class="work" id="work" aria-labelledby="work-title">
+  <div class="sec-head">
+    <h2 class="sec-title" id="work-title" data-split="lines">{c.workTitle}</h2>
+    <p class="sec-lede">{c.workLede}</p>
+  </div>
+  <div class="trace" data-trace style={`--now:${pos(now)}`}>
+    <div class="trace__axis" aria-hidden="true">
+      {years.map((y) => <span class="trace__year" style={`--x:${pos(y)}`}><span class="mono">{y}</span></span>)}
+      <span class="trace__now" data-now><span class="mono">{c.now}</span></span>
+    </div>
+    <ol class="trace__rows">
+      {jobs.map((j) => {
+        const a = pos(j.start);
+        const b = j.end === null ? pos(now) : pos(j.end);
+        const flip = b > 0.7;
+        return (
+          <li>
+            <a class="trace__row" href={casePath(lang, j.slug)} data-span style={`--a:${a};--b:${b}`} data-open={j.end === null ? '' : undefined}>
+              <span class="trace__head">
+                <span class="trace__name">{j.name}</span>
+                <span class="trace__role">{j.role[lang]}, {j.place[lang]}</span>
+                <span class="trace__period mono">{j.period[lang]}</span>
+              </span>
+              <span class="trace__lane">
+                <span class="trace__bar" aria-hidden="true" data-bar>{j.end === null && <span class="trace__live" data-live></span>}</span>
+                <span class={`trace__result mono${flip ? ' is-flip' : ''}`}>{j.result[lang]}</span>
+              </span>
+            </a>
+          </li>
+        );
+      })}
+    </ol>
+  </div>
+</section>

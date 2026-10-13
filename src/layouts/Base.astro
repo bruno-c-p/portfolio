@@ -1,0 +1,106 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import { site, copy, altPath, type Lang } from '../data/site';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/tokens.css';
+import '../styles/engine.css';
+import '../styles/site.css';
+
+interface Props {
+  lang: Lang;
+  title?: string;
+  description?: string;
+  image?: string;
+  current?: 'home' | 'work' | 'none';
+  jsonLd?: Record<string, unknown>;
+  notFound?: boolean;
+}
+const { lang, title, description, image = '/og.png', current = 'none', jsonLd, notFound = false } = Astro.props;
+const c = copy[lang];
+const fullTitle = title ? `${title} | ${site.name}` : c.title;
+const desc = description ?? c.description;
+const base = Astro.site ?? site.url;
+const path = Astro.url.pathname;
+const canonical = new URL(path, base).href;
+const altEn = new URL(altPath(path, 'en'), base).href;
+const altPt = new URL(altPath(path, 'pt'), base).href;
+const ogImage = new URL(image, base).href;
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: site.name,
+  jobTitle: c.role,
+  url: site.url,
+  email: `mailto:${site.email}`,
+  address: { '@type': 'PostalAddress', addressRegion: 'Santa Catarina', addressCountry: 'BR' },
+  worksFor: { '@type': 'Organization', name: 'Frengee' },
+  alumniOf: [{ '@type': 'CollegeOrUniversity', name: 'UNIBAVE' }],
+  knowsLanguage: ['pt-BR', 'en'],
+  sameAs: [site.linkedin, site.github],
+};
+---
+<!doctype html>
+<html lang={c.htmlLang} transition:animate="none">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={desc} />
+    <meta name="author" content={site.name} />
+    {notFound ? <meta name="robots" content="noindex" /> : (
+      <>
+        <link rel="canonical" href={canonical} />
+        <link rel="alternate" hreflang="en" href={altEn} />
+        <link rel="alternate" hreflang="pt-BR" href={altPt} />
+        <link rel="alternate" hreflang="x-default" href={altEn} />
+      </>
+    )}
+    <meta name="theme-color" content="#1d1a23" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content={lang === 'pt' ? 'pt_BR' : 'en_US'} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={desc} />
+    <meta name="twitter:image" content={ogImage} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd ?? person)} />
+    <link rel="preload" href="/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/jb-mono-400_600-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <script is:inline>
+      document.documentElement.classList.add('js');
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion');
+    </script>
+    <ClientRouter fallback="swap" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{c.skip}</a>
+    <div id="curtain" transition:persist="curtain" aria-hidden="true">
+      <div class="curtain__panel">
+        <span class="curtain__req" data-curtain-req></span>
+        <span class="curtain__line" data-curtain-line></span>
+        <span class="curtain__res mono" data-curtain-res></span>
+      </div>
+    </div>
+    <Header lang={lang} current={current} notFound={notFound} />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <Footer lang={lang} />
+    <script>
+      import { start } from '../engine/astro';
+      import { setupMotion } from '../motion/setup';
+      start(setupMotion);
+    </script>
+  </body>
+</html>

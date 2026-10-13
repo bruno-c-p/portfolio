@@ -1,0 +1,28 @@
+---
+import { copy, site, type Lang } from '../data/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const c = copy[lang];
+const year = new Date().getFullYear();
+---
+<footer class="foot" id="contact" aria-labelledby="contact-title">
+  <div class="foot__axis" aria-hidden="true"><span class="foot__axis-line" data-reveal="span"></span></div>
+  <h2 class="foot__title" id="contact-title" data-split="lines">{c.contactTitle}</h2>
+  <p class="foot__lede">{c.contactLede}</p>
+  <a class="cta" href={`mailto:${site.email}`}>
+    <span class="cta__fill" aria-hidden="true"></span>
+    <span class="cta__label">{site.email}</span>
+    <svg class="cta__arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4.5 16.5 10 11 15.5" fill="none" stroke="currentColor" stroke-width="1.6" /></svg>
+  </a>
+  <ul class="foot__links">
+    <li><a class="utility draw" href={site.linkedin} rel="me noopener" target="_blank">LinkedIn</a></li>
+    <li><a class="utility draw" href={site.github} rel="me noopener" target="_blank">GitHub</a></li>
+    <li><a class="utility draw" href={site.cv} download="Bruno-Cardozo-CV.pdf">{c.cv}</a></li>
+  </ul>
+  <div class="foot__meta">
+    <p class="foot__clock"><span>{c.localTime}</span> <time class="mono" data-clock>--:--:--</time></p>
+    <p class="foot__load"><span>{c.loadedIn}</span> <span class="mono" data-loadtime>…</span></p>
+    <p class="foot__colophon">{c.colophon}</p>
+    <p class="foot__copy">© {year} {site.name}</p>
+  </div>
+</footer>
