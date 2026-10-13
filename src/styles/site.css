@@ -130,9 +130,8 @@ html.menu-open .frame { translate: none; }
   font-variant-numeric: tabular-nums;
   position: absolute; top: -1.9rem; left: 0; padding: 0.2rem 0.45rem; background: var(--c-bg); border: 1px solid var(--c-line);
   font-size: 0.75rem; line-height: 1.2; color: var(--c-fg); white-space: nowrap; opacity: 0; pointer-events: none;
-  translate: 0.6rem -0.15rem;
+  translate: 0 -0.15rem;
 }
-.hero__chip.is-left { translate: calc(-100% - 0.6rem) -0.15rem; }
 .hero__hint { transition: opacity 0.4s; }
 .hero__hint.is-done { opacity: 0; }
 .hero__foot {

@@ -81,8 +81,11 @@ export function startHero() {
       const usePointer = pointer !== null && t - lastMove < 2.5;
       const f = usePointer ? pointer! : real;
       hx(f * W);
-      cx(f * W);
-      chip.classList.toggle('is-left', f > 0.8);
+      // The tag sits right of the playhead when it fits, left when it doesn't, and never
+      // leaves the axis (on phones it is wide relative to the screen).
+      const cw = chip.offsetWidth, gap = 8, at = f * W;
+      const side = at + gap + cw <= W ? at + gap : at - gap - cw;
+      cx(Math.max(0, Math.min(side, W - cw)));
       const txt = usePointer ? clock(f * BEFORE) : `${waited} ${clock(((t - t0) * 1000) % BEFORE).slice(0, -4)}`;
       if (chip.textContent !== txt) chip.textContent = txt;
     };
