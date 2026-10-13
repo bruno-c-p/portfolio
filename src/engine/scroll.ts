@@ -18,7 +18,9 @@ export function initScroll() {
     if (!lenis) addEventListener('scroll', nativeTick, { passive: true });
     return;
   }
-  lenis = new Lenis({ lerp: 0.1, wheelMultiplier: 1, touchMultiplier: 1.2, anchors: true });
+  // anchors: false. In-page anchor clicks are handled once, in src/motion/anchors.ts (Lenis and
+  // Astro's router both grabbed them and fought: the hash changed but the page did not move).
+  lenis = new Lenis({ lerp: 0.1, wheelMultiplier: 1, touchMultiplier: 1.2, anchors: false });
   lenis.on('scroll', (l: Lenis) => {
     state.y = l.scroll;
     state.velocity = l.velocity;
@@ -51,10 +53,14 @@ export function resetScroll() {
   state.y = 0;
   state.velocity = 0;
 }
-export function scrollToTarget(target: string | HTMLElement | number) {
-  if (lenis) lenis.scrollTo(target, { duration: 1.4, easing: (t) => 1 - Math.pow(1 - t, 4) });
-  else if (typeof target === 'number') scrollTo({ top: target });
+export function scrollToTarget(target: string | HTMLElement | number, opts: { onComplete?: () => void } = {}) {
+  if (lenis) {
+    lenis.scrollTo(target, { duration: 1.2, easing: (t) => 1 - Math.pow(1 - t, 4), force: true, onComplete: () => opts.onComplete?.() });
+    return;
+  }
+  if (typeof target === 'number') scrollTo({ top: target });
   else (typeof target === 'string' ? document.querySelector(target) : target)?.scrollIntoView();
+  opts.onComplete?.();
 }
 
 /** After the router restored a scroll position (back/forward), make Lenis adopt it. */

@@ -32,7 +32,7 @@ p { text-wrap: pretty; }
 
 /* Accessibility */
 :focus-visible { outline: 2px solid var(--c-accent); outline-offset: 4px; border-radius: 0; }
-#main:focus { outline: none; }
+#main:focus, section[tabindex='-1']:focus, footer[tabindex='-1']:focus { outline: none; }
 .skip-link {
   position: fixed; right: var(--gutter); top: calc(var(--header-h) + 0.5rem); z-index: calc(var(--z-curtain) + 1);
   padding: 0.7em 1.1em; background: var(--c-accent); color: var(--c-on-accent); font-weight: 600;

@@ -9,6 +9,11 @@ import { site } from '../data/site';
 export function startFrame() {
   let last = 0;
   onScroll(({ y }) => {
+    if (document.documentElement.classList.contains('is-jumping')) { // keep the nav on screen during a jump
+      document.documentElement.classList.toggle('frame-solid', y > 40);
+      last = y;
+      return;
+    }
     if (Math.abs(y - last) < 4) return;
     const h = document.documentElement.classList;
     h.toggle('frame-away', y > 160 && y > last);
