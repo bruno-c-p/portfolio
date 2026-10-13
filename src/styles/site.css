@@ -200,12 +200,18 @@ html:not(.motion) .hero__hint-static { display: inline; }
 }
 .trace__result.is-flip { left: auto; right: calc((1 - var(--a)) * 100% + 1rem); }
 .trace__row:active::before { clip-path: inset(0); }
+/* Touch: a press floods the row, so the text must flip with it (hover rules never run on touch). */
+.trace__row:active { color: var(--c-on-accent); }
+.trace__row:active :is(.trace__result, .trace__period, .trace__role, .case__next-k) { color: var(--c-on-accent); }
+.trace__row:active .trace__bar { background: var(--c-on-accent); }
+.trace__row:active .trace__live { opacity: 0 !important; }
 @media (hover: hover) {
   .trace__row:hover { color: var(--c-on-accent); }
   .trace__row:hover::before { clip-path: inset(0); }
   .trace__row:hover .trace__name { font-stretch: 125%; }
   .trace__row:hover :is(.trace__result, .trace__period, .trace__role, .case__next-k) { color: var(--c-on-accent); }
   .trace__row:hover .trace__bar { background: var(--c-on-accent); }
+  .trace__row:hover .trace__live { opacity: 0 !important; }
   .trace__row:hover .trace__lane::after { border-color: var(--c-on-accent); }
 }
 .trace__row { transition: color 0.35s; }
@@ -242,6 +248,8 @@ html:not(.motion) .hero__hint-static { display: inline; }
 .proj__go { grid-column: 8 / 13; display: inline-flex; align-items: center; gap: 0.4rem; font-size: var(--t-s); font-weight: 560; color: var(--c-accent); transition: color 0.35s; }
 .proj__go svg { width: 0.95rem; transition: translate 0.4s var(--e-out); }
 .proj__row:active .proj__fill { clip-path: inset(0); }
+.proj__row:active, .proj__row:active :is(.proj__kind, .proj__desc, .proj__go, .proj__readout) { color: var(--c-on-accent); }
+.proj__row:active .proj__ticks span { background: var(--c-on-accent); }
 @media (hover: hover) {
   .proj__row:hover { color: var(--c-on-accent); }
   .proj__row:hover .proj__fill { clip-path: inset(0); }
@@ -493,8 +501,6 @@ html:not(.motion) .hero__hint-static { display: inline; }
   .trace__lane { height: 2.25rem; margin-bottom: 2rem; }
   .trace__result { left: calc(var(--a) * 100%); top: calc(100% + 0.45rem); translate: none; }
   .trace__result.is-flip { left: auto; right: calc((1 - var(--b)) * 100%); }
-  @media (hover: hover) { .trace__row:hover .trace__result { color: var(--c-fg); } }
-  .trace__row:focus-visible .trace__result { color: var(--c-fg); }
   .proj__row { display: grid; grid-template-columns: 1fr; }
   .proj__name, .proj__kind, .proj__desc, .proj__go { grid-column: 1; }
   .proj__kind { padding-top: 0; }
