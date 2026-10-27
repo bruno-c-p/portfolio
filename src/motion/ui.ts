@@ -1,14 +1,12 @@
 // Small global behaviors: the frame that steps aside, the phone menu, the current-section
-// marker, the footer meters (local time, real load time), and the trace's live edge.
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { onPage, onScroll, ease, prefersReducedMotion, stopScroll, startScroll } from '../engine';
+// marker, and the footer meters (local time, real load time).
+import { animate, onPage, onScroll, ease, prefersReducedMotion, stopScroll, startScroll } from '../engine';
 import { nav } from '../engine/astro';
 import { site } from '../data/site';
 
 export function startFrame() {
   let last = 0;
-  onScroll(({ y }) => {
+  onScroll((y) => {
     if (document.documentElement.classList.contains('is-jumping')) { // keep the nav on screen during a jump
       document.documentElement.classList.toggle('frame-solid', y > 40);
       last = y;
@@ -32,7 +30,6 @@ export function startMenu() {
     const openBtn = document.querySelector<HTMLButtonElement>('[data-menu-open]');
     const closeBtn = document.querySelector<HTMLButtonElement>('[data-menu-close]');
     if (!menu || !openBtn || !closeBtn) return;
-    const links = [...menu.querySelectorAll<HTMLElement>('[data-menu-link] span')];
     const focusables = () => [...menu.querySelectorAll<HTMLElement>('a[href], button')];
     let isOpen = false;
     const reduced = prefersReducedMotion();
@@ -44,10 +41,7 @@ export function startMenu() {
       openBtn.setAttribute('aria-expanded', 'true');
       document.documentElement.classList.add('menu-open');
       stopScroll();
-      if (!reduced) {
-        gsap.fromTo(menu, { clipPath: 'inset(0% 100% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 0.7, ease: ease.inOut });
-        gsap.fromTo(links, { yPercent: 110 }, { yPercent: 0, duration: 0.9, ease: ease.out, stagger: 0.05, delay: 0.25 });
-      }
+      if (!reduced) animate(menu, { clipPath: 'inset(0% 100% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)' }, { duration: 0.7, ease: ease.inOut });
       focusables()[1]?.focus();
     };
     const close = (restore = true) => {
@@ -56,9 +50,13 @@ export function startMenu() {
       openBtn.setAttribute('aria-expanded', 'false');
       document.documentElement.classList.remove('menu-open');
       startScroll();
-      const done = () => { menu.hidden = true; if (restore) openBtn.focus(); };
+      const done = () => {
+        if (isOpen) return;
+        menu.hidden = true;
+        if (restore) openBtn.focus();
+      };
       if (reduced) done();
-      else gsap.to(menu, { clipPath: 'inset(0% 0% 0% 100%)', duration: 0.55, ease: ease.inOut, onComplete: done });
+      else animate(menu, { clipPath: 'inset(0% 0% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 100%)' }, { duration: 0.55, ease: ease.inOut }).then(done);
     };
     const key = (e: KeyboardEvent) => {
       if (!isOpen) return;
@@ -82,22 +80,24 @@ export function startMenu() {
   });
 }
 
-/** Marks the nav item of the section in view (home only). */
+/** Marks the nav item of the section crossing 55% of the screen (home only). */
 export function startSpy() {
   onPage(() => {
     const links = [...document.querySelectorAll<HTMLAnchorElement>('[data-nav]')];
     if (!document.querySelector('[data-hero]')) return;
-    const set = (id: string | null) => links.forEach((a) => {
-      if (a.dataset.nav === id) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
-    });
+    const active = new Set<string>();
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => (e.isIntersecting ? active.add(e.target.id) : active.delete(e.target.id)));
+      const id = [...active].pop() ?? null;
+      links.forEach((a) => {
+        if (a.dataset.nav === id) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+      });
+    }, { rootMargin: '-55% 0px -45% 0px' });
     ['work', 'projects', 'about', 'contact'].forEach((id) => {
       const el = document.getElementById(id);
-      if (!el) return;
-      ScrollTrigger.create({
-        trigger: el, start: 'top 55%', end: 'bottom 55%',
-        onToggle: (self) => { if (self.isActive) set(id); else if (id === 'work' && self.direction < 0) set(null); },
-      });
+      if (el) io.observe(el);
     });
+    return () => io.disconnect();
   });
 }
 
@@ -122,35 +122,16 @@ export function startMeters() {
     }
     if (!clockEl) return;
     const fmt = new Intl.DateTimeFormat('en-GB', { timeZone: site.timezone, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
-    let lastSec = -1;
     const tick = () => {
-      const now = Date.now();
-      const sec = Math.floor(now / 1000);
-      if (sec === lastSec) return;
-      lastSec = sec;
-      const t = fmt.format(now);
+      const t = fmt.format(Date.now());
       clockEl.textContent = t;
       clockEl.setAttribute('datetime', t);
     };
     tick();
-    const st = ScrollTrigger.create({
-      trigger: clockEl, start: 'top bottom', end: 'bottom top',
-      onToggle: (self) => (self.isActive ? gsap.ticker.add(tick) : gsap.ticker.remove(tick)),
-    });
-    return () => { gsap.ticker.remove(tick); st.kill(); };
-  });
-}
-
-/** The open Frengee span: its live end breathes while the trace is on screen. */
-export function startLiveEdge() {
-  onPage(() => {
-    const live = document.querySelector<HTMLElement>('[data-live]');
-    if (!live || prefersReducedMotion()) return;
-    const tw = gsap.fromTo(live, { opacity: 0 }, { opacity: 0.55, duration: 1.4, ease: 'sine.inOut', repeat: -1, yoyo: true, paused: true });
-    ScrollTrigger.create({
-      trigger: live.closest('[data-trace]') || live, start: 'top bottom', end: 'bottom top',
-      onToggle: (self) => (self.isActive ? tw.play() : tw.pause()),
-    });
+    // Land each update on the second boundary.
+    let id: ReturnType<typeof setInterval> | undefined;
+    const timeout = setTimeout(() => { tick(); id = setInterval(tick, 1000); }, 1000 - (Date.now() % 1000));
+    return () => { clearTimeout(timeout); clearInterval(id); };
   });
 }
 

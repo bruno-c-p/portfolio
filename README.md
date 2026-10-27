@@ -6,8 +6,9 @@ Design decisions live in `DESIGN.md`.
 
 ## Stack
 
-Astro 7 (static HTML, about 59 KB of gzipped JS per page), GSAP + ScrollTrigger + SplitText,
-Lenis. No WebGL and no loader: a site about speed should not make anyone wait.
+Astro 7 (static HTML, about 12 KB of gzipped JS per page). Motion runs on the Web Animations
+API, IntersectionObserver and native scroll, with no animation library. No WebGL and no loader: a
+site about speed should not make anyone wait.
 
 ## Run
 

@@ -76,7 +76,6 @@ const person = {
     <meta name="twitter:image" content={ogImage} />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd ?? person)} />
     <link rel="preload" href="/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/jb-mono-400_600-normal.woff2" as="font" type="font/woff2" crossorigin />
     <script is:inline>
       document.documentElement.classList.add('js');
       if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion');

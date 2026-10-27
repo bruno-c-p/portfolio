@@ -102,7 +102,7 @@ Section moods: hero (sticky 200svh), work (airy), projects (normal), about (airy
 A real-time playhead crawls along the hero's six-minute axis at true speed (about 4 px per
 second at 1440 wide), which is the point: six minutes is slow. After compression, the 800 ms
 sliver redraws every 800 ms. The Frengee span is still open: its live end has a slow sheen.
-All on `gsap.ticker`, paused off screen, absent under reduced motion.
+The playhead runs on one frame loop that stops off screen; the sheen is a CSS animation. Both are absent under reduced motion.
 
 **Decision: case pages hold still at rest.** They are reading pages (problem, work, outcome,
 numbers). Their life comes from the figures, which record themselves as they scroll in (the

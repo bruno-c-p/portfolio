@@ -1,72 +1,50 @@
-// Smooth scroll on ONE clock: Lenis is driven by gsap.ticker, ScrollTrigger reads Lenis.
-// Reduced motion → native scroll, no Lenis.
-import Lenis from 'lenis';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// Native scroll. One passive listener, coalesced to one callback per frame.
 import { prefersReducedMotion } from './env';
 
-gsap.registerPlugin(ScrollTrigger);
-
-let lenis: Lenis | null = null;
-const listeners = new Set<(s: ScrollState) => void>();
-
-export type ScrollState = { y: number; velocity: number; progress: number };
-const state: ScrollState = { y: 0, velocity: 0, progress: 0 };
+const listeners = new Set<(y: number) => void>();
+let queued = false;
 
 export function initScroll() {
-  if (lenis || prefersReducedMotion()) {
-    if (!lenis) addEventListener('scroll', nativeTick, { passive: true });
-    return;
-  }
-  // anchors: false. In-page anchor clicks are handled once, in src/motion/anchors.ts (Lenis and
-  // Astro's router both grabbed them and fought: the hash changed but the page did not move).
-  lenis = new Lenis({ lerp: 0.1, wheelMultiplier: 1, touchMultiplier: 1.2, anchors: false });
-  lenis.on('scroll', (l: Lenis) => {
-    state.y = l.scroll;
-    state.velocity = l.velocity;
-    state.progress = l.limit > 0 ? l.scroll / l.limit : 0;
-    ScrollTrigger.update();
-    listeners.forEach((fn) => fn(state));
-  });
-  gsap.ticker.add((time) => lenis?.raf(time * 1000));
-  gsap.ticker.lagSmoothing(0);
+  addEventListener('scroll', () => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => {
+      queued = false;
+      listeners.forEach((fn) => fn(scrollY));
+    });
+  }, { passive: true });
 }
 
-function nativeTick() {
-  const max = document.documentElement.scrollHeight - innerHeight;
-  state.velocity = scrollY - state.y;
-  state.y = scrollY;
-  state.progress = max > 0 ? scrollY / max : 0;
-  listeners.forEach((fn) => fn(state));
-}
-
-export const onScroll = (fn: (s: ScrollState) => void) => {
+export const onScroll = (fn: (y: number) => void) => {
   listeners.add(fn);
   return () => { listeners.delete(fn); };
 };
-export const scrollState = () => state;
-export const stopScroll = () => lenis?.stop();
-export const startScroll = () => lenis?.start();
-export function resetScroll() {
-  if (lenis) lenis.scrollTo(0, { immediate: true, force: true });
-  else scrollTo(0, 0);
-  state.y = 0;
-  state.velocity = 0;
-}
-export function scrollToTarget(target: string | HTMLElement | number, opts: { onComplete?: () => void } = {}) {
-  if (lenis) {
-    lenis.scrollTo(target, { duration: 1.2, easing: (t) => 1 - Math.pow(1 - t, 4), force: true, onComplete: () => opts.onComplete?.() });
-    return;
-  }
-  if (typeof target === 'number') scrollTo({ top: target });
-  else (typeof target === 'string' ? document.querySelector(target) : target)?.scrollIntoView();
-  opts.onComplete?.();
-}
+export const stopScroll = () => document.documentElement.classList.add('is-locked');
+export const startScroll = () => document.documentElement.classList.remove('is-locked');
+export const resetScroll = () => scrollTo(0, 0);
+/** After back/forward, land where the visitor left (the browser's own restore runs before the
+ *  sticky hero has its height). */
+export const adoptScroll = (y = scrollY) => scrollTo(0, y);
 
-/** After the router restored a scroll position (back/forward), make Lenis adopt it. */
-export function adoptScroll(to?: number) {
-  const y = to ?? scrollY;
-  if (!lenis) { scrollTo(0, y); return; }
-  lenis.resize();
-  lenis.scrollTo(y, { immediate: true, force: true });
+/** Glide to an element (ease-out quart, 1.2 s). A wheel or touch from the visitor, or a scroll
+ *  lock (a page leaving, the menu opening), stops the glide. */
+export function scrollToTarget(el: HTMLElement, done: () => void) {
+  if (prefersReducedMotion()) { el.scrollIntoView(); return done(); }
+  const from = scrollY;
+  const to = Math.min(el.getBoundingClientRect().top + from, document.documentElement.scrollHeight - innerHeight);
+  const t0 = performance.now();
+  let stopped = false;
+  const stop = () => { stopped = true; };
+  addEventListener('wheel', stop, { once: true, passive: true });
+  addEventListener('touchstart', stop, { once: true, passive: true });
+  const step = (now: number) => {
+    const t = Math.min(1, (now - t0) / 1200);
+    if (document.documentElement.classList.contains('is-locked')) stopped = true;
+    if (!stopped) scrollTo(0, from + (to - from) * (1 - (1 - t) ** 4));
+    if (t < 1 && !stopped) return void requestAnimationFrame(step);
+    removeEventListener('wheel', stop);
+    removeEventListener('touchstart', stop);
+    done();
+  };
+  requestAnimationFrame(step);
 }

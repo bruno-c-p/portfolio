@@ -1,6 +1,6 @@
 // Astro adapter (ClientRouter). Call start(setup) once from the layout's <script>.
 // The leave animation runs IN PARALLEL with fetching the next page, so transitions add no latency.
-import { boot, cleanup, enter, leave, syncFlags } from './index';
+import { boot, cleanup, enter, leave, stopScroll, syncFlags } from './index';
 
 let navigating = false;
 let backForward = false;
@@ -24,7 +24,11 @@ export function start(setup?: () => void) {
     };
   });
   document.addEventListener('astro:before-swap', () => cleanup());
-  document.addEventListener('astro:after-swap', () => syncFlags());
+  // The swap replaces <html>'s classes, scroll lock included; keep it until the curtain lifts.
+  document.addEventListener('astro:after-swap', () => {
+    syncFlags();
+    if (navigating) stopScroll();
+  });
   document.addEventListener('astro:page-load', () => {
     if (!navigating) return void boot(setup);
     navigating = false;

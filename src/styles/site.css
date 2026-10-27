@@ -193,6 +193,9 @@ html:not(.motion) .hero__hint-static { display: inline; }
   position: absolute; top: 0; bottom: 0; left: calc(var(--b) * 100% - 5rem); width: 5rem;
   background: linear-gradient(90deg, transparent, var(--c-bg)); opacity: 0;
 }
+/* The open span's live end breathes. */
+.motion .trace__live { animation: breathe 1.4s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate; }
+@keyframes breathe { to { opacity: 0.55; } }
 .trace__result {
   position: absolute; top: 50%; translate: 0 -50%; left: calc(var(--b) * 100% + 1rem);
   font-size: var(--t-xs); white-space: nowrap; transition: color 0.3s;

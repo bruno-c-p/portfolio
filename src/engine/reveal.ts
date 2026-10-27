@@ -1,100 +1,76 @@
 // Declarative motion through data attributes. Authoring happens in markup:
-//   data-split="lines|words|chars"   text reveal (SplitText), on scroll or on intro
-//   data-reveal="span|up|fade"       block reveal ("span" draws open left to right)
-//   data-intro                       play with the page intro instead of on scroll
-//   data-delay="0.2"                 extra delay (seconds)
-//   data-parallax="0.15"             scrubbed vertical drift (fraction of element height)
+//   data-split="lines|chars"   text reveal, on scroll or on intro
+//   data-reveal                block reveal: a span drawn open left to right
+//   data-intro                 play with the page intro instead of on scroll
+//   data-delay="0.2"           extra delay (seconds)
 // Motion verb: lines are recorded like spans, so they clip open from the left.
+// Text is split only when it reveals and restored after. Lines measured against a fallback font
+// would re-wrap when the web font swaps in, so until it has landed the text is wiped open whole.
 // Every effect is skipped under reduced motion; CSS keeps content visible without JS.
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { SplitText } from 'gsap/SplitText';
-import { ease, prefersReducedMotion } from './env';
+import { animate } from './animate';
+import { prefersReducedMotion } from './env';
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
-
-const durations = { lines: 1.1, words: 0.9, chars: 0.8 } as const;
-const staggers = { lines: 0.08, words: 0.03, chars: 0.016 } as const;
-
-// autoSplit re-splits after font load / resize. A text that already revealed must stay revealed,
-// so the state lives outside onSplit.
-function splitTween(el: HTMLElement, isIntro: boolean) {
-  const type = (el.dataset.split || 'lines') as keyof typeof durations;
-  const delay = parseFloat(el.dataset.delay || '0');
-  const s = { tween: undefined as gsap.core.Tween | undefined, done: false, requested: false };
-  SplitText.create(el, {
-    type: type === 'lines' ? 'lines' : `lines,${type}`,
-    mask: type === 'lines' ? undefined : 'lines',
-    autoSplit: true,
-    linesClass: 'split-line',
-    onSplit(self) {
-      gsap.set(el, { visibility: 'visible' });
-      if (s.done) return;
-      const lines = type === 'lines';
-      const targets = lines ? self.lines : type === 'words' ? self.words : self.chars;
-      s.tween = gsap.fromTo(
-        targets,
-        lines ? { clipPath: 'inset(-10% 100% -20% -2%)' } : { yPercent: 110 },
-        {
-          ...(lines ? { clipPath: 'inset(-10% -25% -20% -2%)', clearProps: 'clipPath' } : { yPercent: 0 }),
-          duration: durations[type],
-          stagger: staggers[type],
-          ease: ease.out,
-          delay,
-          paused: isIntro && !s.requested,
-          onComplete: () => { s.done = true; },
-          scrollTrigger: isIntro ? undefined : { trigger: el, start: 'top 88%', once: true },
-        },
-      );
-      return s.tween;
-    },
-  });
-  return () => { s.requested = true; s.tween?.play(); };
+function split(el: HTMLElement, chars: boolean) {
+  const line = (text: string) => Object.assign(document.createElement('span'), { className: 'split-line', textContent: text });
+  if (chars) {
+    const spans = [...el.textContent!.trim()].map((ch) => Object.assign(document.createElement('span'), { textContent: ch }));
+    const mask = line('');
+    mask.append(...spans);
+    el.replaceChildren(mask);
+    return spans;
+  }
+  // Measure each breakable piece (words, and word parts after a hyphen) with its trailing space.
+  const pieces = el.textContent!.trim().match(/\S+?-(?=\S)|\S+\s*/g)!;
+  const words = pieces.map((p) => Object.assign(document.createElement('span'), { textContent: p }));
+  el.replaceChildren(...words);
+  const lines: string[] = [];
+  let top = NaN;
+  for (const w of words) {
+    if (w.offsetTop !== top) { lines.push(''); top = w.offsetTop; }
+    lines[lines.length - 1] += w.textContent;
+  }
+  const spans = lines.map((l) => line(l.trim()));
+  el.replaceChildren(...spans);
+  return spans;
 }
 
-function blockTween(el: HTMLElement, paused: boolean) {
-  const kind = el.dataset.reveal || 'span';
+function reveal(el: HTMLElement) {
   const delay = parseFloat(el.dataset.delay || '0');
-  const from: gsap.TweenVars =
-    kind === 'fade' ? { autoAlpha: 0 }
-    : kind === 'span' ? { clipPath: 'inset(0% 100% 0% 0%)', autoAlpha: 1 }
-    : { y: 40, autoAlpha: 0 };
-  const to: gsap.TweenVars = kind === 'span' ? { clipPath: 'inset(0% 0% 0% 0%)' } : {};
-  gsap.set(el, { visibility: 'visible' });
-  return gsap.fromTo(el, from, {
-    ...to,
-    y: 0,
-    autoAlpha: 1,
-    duration: kind === 'fade' ? 1 : 1.3,
-    ease: ease.out,
-    delay,
-    paused,
-    scrollTrigger: paused ? undefined : { trigger: el, start: 'top 90%', once: true },
-  });
+  el.style.visibility = 'visible';
+  if (!el.hasAttribute('data-split')) {
+    animate(el, { clipPath: 'inset(0% 100% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)' }, { duration: 1.3, delay });
+    return;
+  }
+  const from = { clipPath: 'inset(-10% 100% -20% -2%)' }, to = { clipPath: 'inset(-10% -25% -20% -2%)' };
+  if (!document.fonts.check(`1em ${getComputedStyle(el).fontFamily.split(',')[0]}`)) {
+    animate(el, from, to, { duration: 1.1, delay }).then(() => { el.style.clipPath = ''; });
+    return;
+  }
+  const text = el.textContent!;
+  const done = el.dataset.split === 'chars'
+    ? animate(split(el, true), { transform: 'translateY(110%)' }, { transform: 'none' }, { duration: 0.8, stagger: 0.016, delay })
+    : animate(split(el, false), from, to, { duration: 1.1, stagger: 0.08, delay });
+  done.then(() => { el.textContent = text; });
 }
 
-/** Wire every reveal inside `root`. Returns the intro timeline (paused) for the page entrance. */
-export function initReveals(root: ParentNode = document) {
-  const intro = gsap.timeline({ paused: true });
-  if (prefersReducedMotion()) return intro;
+const inView = (el: Element) => {
+  const r = el.getBoundingClientRect();
+  return r.top < innerHeight && r.bottom > 0;
+};
 
-  root.querySelectorAll<HTMLElement>('[data-split]').forEach((el) => {
-    const isIntro = el.hasAttribute('data-intro');
-    const play = splitTween(el, isIntro);
-    if (isIntro) intro.add(play, 0);
+/** Wire every reveal on the page. Intro reveals are handed to `intro`. When `late`, the CSS
+ *  failsafe has already shown the content, so whatever is on screen stays put. Returns a cleanup. */
+export function initReveals(intro: (fn: () => void) => void, late: boolean) {
+  if (prefersReducedMotion()) return () => {};
+  const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+    if (!e.isIntersecting) return;
+    io.unobserve(e.target);
+    reveal(e.target as HTMLElement);
+  }), { rootMargin: '0px 0px -10% 0px' });
+  document.querySelectorAll<HTMLElement>('[data-split], [data-reveal]').forEach((el) => {
+    if (late && inView(el)) el.style.visibility = 'visible';
+    else if (el.hasAttribute('data-intro')) intro(() => reveal(el));
+    else io.observe(el);
   });
-  root.querySelectorAll<HTMLElement>('[data-reveal]').forEach((el) => {
-    const isIntro = el.hasAttribute('data-intro');
-    const t = blockTween(el, isIntro);
-    if (isIntro) intro.add(() => { t.play(); }, 0);
-  });
-  root.querySelectorAll<HTMLElement>('[data-parallax]').forEach((el) => {
-    const amount = parseFloat(el.dataset.parallax || '0.15');
-    gsap.fromTo(el, { yPercent: -amount * 100 }, {
-      yPercent: amount * 100,
-      ease: 'none',
-      scrollTrigger: { trigger: el.parentElement || el, start: 'top bottom', end: 'bottom top', scrub: true },
-    });
-  });
-  return intro;
+  return () => io.disconnect();
 }

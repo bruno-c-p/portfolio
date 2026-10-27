@@ -44,21 +44,22 @@ p { text-wrap: pretty; }
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
 
-/* Lenis */
-html.lenis, html.lenis body { height: auto; }
-.lenis:not(.lenis-autoToggle).lenis-stopped { overflow: clip; }
-.lenis [data-lenis-prevent] { overscroll-behavior: contain; }
-.lenis.lenis-smooth iframe { pointer-events: none; }
+html.is-locked { overflow: clip; }
 
 #main { position: relative; z-index: var(--z-content); }
 
-/* Hidden-until-revealed (only when motion is allowed and JS runs) */
+/* Hidden-until-revealed (only when motion is allowed and JS runs). On a slow connection the
+   script can arrive late, so the content shows on its own after 1s and the engine leaves it be. */
 .motion [data-split], .motion [data-reveal] { visibility: hidden; }
-.split-line { padding-bottom: 0.08em; margin-bottom: -0.08em; }
+.motion:not(.is-booted) :is([data-split], [data-reveal]) { animation: failsafe 0s 1s forwards; }
+@keyframes failsafe { to { visibility: visible; } }
+.split-line { display: block; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+[data-split='chars'] > .split-line { overflow: clip; }
+[data-split='chars'] > .split-line > span { display: inline-block; }
 [data-split] > *, [data-split] > * > * { text-indent: 0; }
 [data-split] > :first-child, [data-split] > :first-child > :first-child { text-indent: inherit; }
 
-/* Curtain (page transitions): GSAP owns its clip-path; no CSS transform here. */
+/* Curtain (page transitions): the script owns its clip-path; no CSS transform here. */
 #curtain { position: fixed; inset: 0; z-index: var(--z-curtain); pointer-events: none; visibility: hidden; }
 .curtain__panel { position: absolute; inset: 0; background: var(--c-curtain); color: var(--c-on-accent); }
 
