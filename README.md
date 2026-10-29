@@ -1,16 +1,18 @@
 # brunocardozo.com.br
 
-Bruno Cardozo's portfolio, rebuilt as a performance trace: every section is a span on a time
+BRUNO CARDOZO's portfolio, rebuilt as a performance trace: every job is a span on a time
 axis, and the hero compresses a real six-minute request (Wise) to 800 ms as you scroll.
 Design decisions live in `DESIGN.md`.
 
 ## Stack
 
-Astro 7 (static HTML, about 12 KB of gzipped JS per page). Motion runs on the Web Animations
+Astro 7 (static HTML, about 11 KB of gzipped JS per page). Motion runs on the Web Animations
 API, IntersectionObserver and native scroll, with no animation library. No WebGL and no loader: a
 site about speed should not make anyone wait.
 
 ## Run
+
+Requires Node.js 22.12 or newer.
 
 ```bash
 npm install
@@ -21,7 +23,7 @@ npm run preview
 
 ## Content
 
-Every visible string, in English and Portuguese, lives in `src/data/site.ts`: jobs, case
+All English and Portuguese copy lives in `src/data/site.ts`: jobs, case
 studies, figures, projects, about, footer. Pages: `/`, `/pt/`, `/work/<slug>/`,
 `/pt/work/<slug>/`, `/404`.
 
